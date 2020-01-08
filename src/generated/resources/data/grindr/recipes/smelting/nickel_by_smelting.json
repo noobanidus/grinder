@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/nickel",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:furnace",
+        "ingredient": {
+          "item": "grindr:nickel_dust"
+        },
+        "result": {
+          "tag": "forge:ingots/nickel"
+        },
+        "experience": 0.125,
+        "cookingtime": 200
+      }
+    }
+  ]
+}

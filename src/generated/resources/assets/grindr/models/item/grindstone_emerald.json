@@ -1,0 +1,7 @@
+{
+  "parent": "grindr:item/grindstone_template",
+  "textures": {
+    "grindstone_top": "grindr:block/emerald",
+    "grindstone_side": "grindr:block/emerald_side"
+  }
+}

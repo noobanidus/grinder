@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:ingots/iron"
+    },
+    "X": {
+      "item": "minecraft:granite"
+    }
+  },
+  "result": {
+    "item": "grindr:grindstone_granite"
+  }
+}

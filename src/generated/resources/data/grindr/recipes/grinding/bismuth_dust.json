@@ -1,0 +1,25 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ores/bismuth",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:grinder",
+        "ingredient": {
+          "tag": "forge:ores/bismuth"
+        },
+        "result": "grindr:bismuth_dust",
+        "experience": 0.125,
+        "cookingtime": 100
+      }
+    }
+  ]
+}

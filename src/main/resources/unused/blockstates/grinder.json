@@ -1,0 +1,25 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "transform":"forge:default-block",
+    "model": "grindr:block/grinder"
+  },
+  "variants": {
+    "normal": [{
+      "model": "grindr:block/grinder"
+    }],
+    "inventory": [{
+      "model": "grindr:block/grinder"
+    }],
+    "static": [{
+      "true":
+      [{
+        "model": "grindr:block/grinder"
+      }],
+      "false":
+      [{
+        "model": "grindr:block/grinder"
+      }]
+    }]
+  }
+}

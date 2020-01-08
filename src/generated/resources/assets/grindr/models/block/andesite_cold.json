@@ -1,0 +1,8 @@
+{
+  "parent": "grindr:block/grinder_template",
+  "textures": {
+    "front": "grindr:block/grinder_front_cold",
+    "grindstone_top": "grindr:block/andesite",
+    "grindstone_side": "grindr:block/andesite_side"
+  }
+}

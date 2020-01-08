@@ -1,0 +1,47 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/zinc",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "grindr:smelting/zinc_by_smelting"
+          ]
+        },
+        "criteria": {
+          "has_dust": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "item": "grindr:zinc_dust"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "grindr:smelting/zinc_by_smelting"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_dust",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

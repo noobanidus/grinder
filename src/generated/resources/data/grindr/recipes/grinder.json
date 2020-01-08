@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XIX",
+    "XFX",
+    "XXX"
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:ingots/iron"
+    },
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "X": {
+      "item": "minecraft:polished_andesite"
+    }
+  },
+  "result": {
+    "item": "grindr:grinder"
+  }
+}
