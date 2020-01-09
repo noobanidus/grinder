@@ -35,6 +35,7 @@ public class Grindr {
   public static CustomRegistrate REGISTRATE;
 
   public Grindr() {
+    ConfigManager.loadConfig(ConfigManager.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve(Grindr.MODID + "-common.toml"));
     IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
     modBus.addListener(CommonSetup::init);
 
@@ -51,8 +52,5 @@ public class Grindr {
     ModRecipes.load();
     ModContainers.load();
     ModLang.load();
-
-    ConfigManager.loadConfig(ConfigManager.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve(Grindr.MODID + "-common.toml"));
-    ConfigManager.loadConfig(ConfigManager.CLIENT_CONFIG, FMLPaths.CONFIGDIR.get().resolve(Grindr.MODID + "-client.toml"));
   }
 }

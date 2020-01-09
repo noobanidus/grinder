@@ -29,17 +29,17 @@ public class GrindstoneItem extends Item {
     super.addInformation(stack, worldIn, tooltip, flagIn);
 
     if (type != GrindstoneType.EMPTY) {
-      float speed = type.getSpeedModifier() * 100;
+      double speed = type.getSpeedModifier() * 100;
       boolean neg = false;
       if (speed > 100) {
         speed = -(speed - 100);
         neg = true;
       }
 
-      float multiplier = type.getResultModifier() * 100;
+      double multiplier = type.getResultModifier() * 100;
       boolean neg2 = false;
       if (multiplier < 100) {
-        multiplier = -(multiplier);
+        multiplier = -(100 - multiplier);
         neg2 = true;
       }
 

@@ -16,16 +16,16 @@ public enum GrindstoneType implements IStringSerializable {
   GRANITE("granite", Items.GRANITE),
   DIORITE("diorite", Items.DIORITE),
   ANDESITE("andesite", Items.ANDESITE),
-  IRON("iron", Tags.Items.STORAGE_BLOCKS_IRON),
-  GOLD("gold", Tags.Items.STORAGE_BLOCKS_GOLD),
-  DIAMOND("diamond", Tags.Items.STORAGE_BLOCKS_DIAMOND),
-  EMERALD("emerald", Tags.Items.STORAGE_BLOCKS_EMERALD);
+  IRON("iron", Tags.Items.INGOTS_IRON),
+  GOLD("gold", Tags.Items.INGOTS_GOLD),
+  DIAMOND("diamond", Tags.Items.GEMS_DIAMOND),
+  EMERALD("emerald", Tags.Items.GEMS_EMERALD);
 
   private String name;
   private Tag<Item> itemType = null;
   private IItemProvider item = Items.AIR;
-  private float resultModifier = -100;
-  private float speedModifier = -100;
+  private double resultModifier = -100;
+  private double speedModifier = -100;
 
   GrindstoneType(String name, Tag<Item> itemType) {
     this.name = name;
@@ -47,14 +47,14 @@ public enum GrindstoneType implements IStringSerializable {
     return item;
   }
 
-  public float getResultModifier() {
+  public double getResultModifier() {
     if (resultModifier == -100) {
       resultModifier = ConfigManager.RESULT_MODIFIER.get(this.name).get();
     }
     return resultModifier;
   }
 
-  public float getSpeedModifier() {
+  public double getSpeedModifier() {
     if (speedModifier == -100) {
       speedModifier = ConfigManager.SPEED_MODIFIER.get(this.name).get();
     }

@@ -172,9 +172,12 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
         this.count = -1;
       }
 
-      float modifier = type.getResultModifier() + 1;
+      double modifier = type.getResultModifier();
+/*      if (modifier > 1) {
+        modifier += 1;
+      }*/
       this.count = 0;
-      for (; modifier > 1; modifier--) {
+      for (; modifier > 0; modifier--) {
         if (random.nextFloat() < modifier) {
           this.count++;
         }
@@ -281,7 +284,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
 
       if (wasBurning != this.isBurning()) {
         dirty = true;
-        this.world.setBlockState(this.pos, this.world.getBlockState(this.pos).with(AbstractFurnaceBlock.LIT, this.isBurning()), 3);
+        this.world.setBlockState(this.pos, this.world.getBlockState(this.pos).with(GrinderBlock.ACTIVE, this.isBurning()), 3);
       }
     }
 

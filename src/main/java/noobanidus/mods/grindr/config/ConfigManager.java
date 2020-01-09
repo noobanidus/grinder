@@ -21,13 +21,11 @@ import java.util.Map;
 
 public class ConfigManager {
   private static ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
-  private static ForgeConfigSpec.Builder CLIENT_BUILDER = new ForgeConfigSpec.Builder();
 
   public static ForgeConfigSpec COMMON_CONFIG;
-  public static ForgeConfigSpec CLIENT_CONFIG;
-  private static Map<String, ForgeConfigSpec.ConfigValue<Boolean>> CONFIG_MAP = new HashMap<>();
-  public static Map<String, ForgeConfigSpec.ConfigValue<Float>> RESULT_MODIFIER = new HashMap<>();
-  public static Map<String, ForgeConfigSpec.ConfigValue<Float>> SPEED_MODIFIER = new HashMap<>();
+  private static Map<String, ForgeConfigSpec.BooleanValue> CONFIG_MAP = new HashMap<>();
+  public static Map<String, ForgeConfigSpec.DoubleValue> RESULT_MODIFIER = new HashMap<>();
+  public static Map<String, ForgeConfigSpec.DoubleValue> SPEED_MODIFIER = new HashMap<>();
 
   public static ForgeConfigSpec.ConfigValue<Boolean> SHOW_HUD;
 
@@ -37,53 +35,52 @@ public class ConfigManager {
     COMMON_BUILDER.push("dust_settings");
     for (String d : dusts) {
       String dust = d.toLowerCase();
-      CONFIG_MAP.put(dust, COMMON_BUILDER.comment("whether or not " + dust.replace("_", " ") + " should be hidden").define(dust, true));
+      CONFIG_MAP.put(dust, COMMON_BUILDER.define("hide_" + dust, true));
     }
     COMMON_BUILDER.pop();
 
     COMMON_BUILDER.push("grindstone_settings");
     COMMON_BUILDER.push("stone");
-    RESULT_MODIFIER.put("stone", COMMON_BUILDER.comment("result modifier for stone grindstone").define("stone_result_modifier", 1.1f));
-    SPEED_MODIFIER.put("stone", COMMON_BUILDER.comment("speed modifier for stone grindstone").define("stone_speed_modifier", 1.3f));
+    RESULT_MODIFIER.put("stone", COMMON_BUILDER.defineInRange("stone_result_modifier", 1.1, 0, 10));
+    SPEED_MODIFIER.put("stone", COMMON_BUILDER.defineInRange("stone_speed_modifier", 1.3, 0, 10));
     COMMON_BUILDER.pop();
     COMMON_BUILDER.push("granite");
-    RESULT_MODIFIER.put("granite", COMMON_BUILDER.comment("result modifier for granite grindstone").define("granite_result_modifier", 1.1f));
-    SPEED_MODIFIER.put("granite", COMMON_BUILDER.comment("speed modifier for granite grindstone").define("granite_speed_modifier", 1.3f));
+    RESULT_MODIFIER.put("granite", COMMON_BUILDER.defineInRange("granite_result_modifier", 1.1, 0, 10));
+    SPEED_MODIFIER.put("granite", COMMON_BUILDER.defineInRange("granite_speed_modifier", 1.3, 0, 10));
     COMMON_BUILDER.pop();
     COMMON_BUILDER.push("diorite");
-    RESULT_MODIFIER.put("diorite", COMMON_BUILDER.comment("result modifier for diorite grindstone").define("diorite_result_modifier", 1.1f));
-    SPEED_MODIFIER.put("diorite", COMMON_BUILDER.comment("speed modifier for diorite grindstone").define("diorite_speed_modifier", 1.3f));
+    RESULT_MODIFIER.put("diorite", COMMON_BUILDER.defineInRange("diorite_result_modifier", 1.1, 0, 10));
+    SPEED_MODIFIER.put("diorite", COMMON_BUILDER.defineInRange("diorite_speed_modifier", 1.3, 0, 10));
     COMMON_BUILDER.pop();
     COMMON_BUILDER.push("andesite");
-    RESULT_MODIFIER.put("andesite", COMMON_BUILDER.comment("result modifier for andesite grindstone").define("andesite_result_modifier", 1.1f));
-    SPEED_MODIFIER.put("andesite", COMMON_BUILDER.comment("speed modifier for andesite grindstone").define("andesite_speed_modifier", 1.3f));
+    RESULT_MODIFIER.put("andesite", COMMON_BUILDER.defineInRange("andesite_result_modifier", 1.1, 0, 10));
+    SPEED_MODIFIER.put("andesite", COMMON_BUILDER.defineInRange("andesite_speed_modifier", 1.3, 0, 10));
     COMMON_BUILDER.pop();
 
     COMMON_BUILDER.push("iron");
-    RESULT_MODIFIER.put("iron", COMMON_BUILDER.comment("result modifier for iron grindstone").define("iron_result_modifier", 1.7f));
-    SPEED_MODIFIER.put("iron", COMMON_BUILDER.comment("speed modifier for iron grindstone").define("iron_speed_modifier", 1f));
+    RESULT_MODIFIER.put("iron", COMMON_BUILDER.defineInRange("iron_result_modifier", 1.7, 0, 10));
+    SPEED_MODIFIER.put("iron", COMMON_BUILDER.defineInRange("iron_speed_modifier", 1.0, 0, 10));
     COMMON_BUILDER.pop();
 
     COMMON_BUILDER.push("gold");
-    RESULT_MODIFIER.put("gold", COMMON_BUILDER.comment("result modifier for gold grindstone").define("gold_result_modifier", 1.4f));
-    SPEED_MODIFIER.put("gold", COMMON_BUILDER.comment("speed modifier for gold grindstone").define("gold_speed_modifier", 0.5f));
+    RESULT_MODIFIER.put("gold", COMMON_BUILDER.defineInRange("gold_result_modifier", 1.4, 0, 10));
+    SPEED_MODIFIER.put("gold", COMMON_BUILDER.defineInRange("gold_speed_modifier", 0.5, 0, 10));
     COMMON_BUILDER.pop();
 
     COMMON_BUILDER.push("diamond");
-    RESULT_MODIFIER.put("diamond", COMMON_BUILDER.comment("result modifier for diamond grindstone").define("diamond_result_modifier", 2.0f));
-    SPEED_MODIFIER.put("diamond", COMMON_BUILDER.comment("speed modifier for diamond grindstone").define("diamond_speed_modifier", 0.7f));
+    RESULT_MODIFIER.put("diamond", COMMON_BUILDER.defineInRange("diamond_result_modifier", 2.0, 0, 10));
+    SPEED_MODIFIER.put("diamond", COMMON_BUILDER.defineInRange("diamond_speed_modifier", 0.7, 0, 10));
     COMMON_BUILDER.pop();
 
     COMMON_BUILDER.push("emerald");
-    RESULT_MODIFIER.put("emerald", COMMON_BUILDER.comment("result modifier for emerald grindstone").define("emerald_result_modifier", 2.5f));
-    SPEED_MODIFIER.put("emerald", COMMON_BUILDER.comment("speed modifier for emerald grindstone").define("emerald_speed_modifier", 1f));
+    RESULT_MODIFIER.put("emerald", COMMON_BUILDER.defineInRange("emerald_result_modifier", 2.5, 0, 10));
+    SPEED_MODIFIER.put("emerald", COMMON_BUILDER.defineInRange("emerald_speed_modifier", 1.0, 0, 10));
     COMMON_BUILDER.pop();
     COMMON_BUILDER.pop();
 
+    COMMON_BUILDER.push("client").comment("whether or not a helpful (but annoying) hud should be displayed when targeting the grinder");
+    SHOW_HUD = COMMON_BUILDER.define("show_grinder_hud", false);
     COMMON_CONFIG = COMMON_BUILDER.build();
-
-    SHOW_HUD = CLIENT_BUILDER.comment("whether or not the HUD should display on the grinder").define("show_grinder_hud", false);
-    CLIENT_CONFIG = CLIENT_BUILDER.build();
   }
 
   @SuppressWarnings("ConstantConditions")

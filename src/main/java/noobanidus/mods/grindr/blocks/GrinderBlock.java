@@ -59,13 +59,13 @@ public class GrinderBlock extends AbstractFurnaceBlock {
 
   @Override
   public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
-    if (state.get(GRINDSTONE) != GrindstoneType.EMPTY) {
-      GrinderTile te = (GrinderTile) worldIn.getTileEntity(pos);
-      if (te != null) {
-        te.removeGrindstone();
-      }
-    }
     if (state.getBlock() != newState.getBlock()) {
+      if (state.get(GRINDSTONE) != GrindstoneType.EMPTY) {
+        GrinderTile te = (GrinderTile) worldIn.getTileEntity(pos);
+        if (te != null) {
+          te.removeGrindstone();
+        }
+      }
       TileEntity tileentity = worldIn.getTileEntity(pos);
       if (tileentity instanceof GrinderTile) {
         InventoryHelper.dropInventoryItems(worldIn, pos, (GrinderTile) tileentity);
