@@ -6,6 +6,7 @@ import net.minecraft.tags.Tag;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.common.Tags;
+import noobanidus.mods.grindr.Grindr;
 import noobanidus.mods.grindr.config.ConfigManager;
 
 import javax.annotation.Nullable;
@@ -49,14 +50,30 @@ public enum GrindstoneType implements IStringSerializable {
 
   public double getResultModifier() {
     if (resultModifier == -100) {
-      resultModifier = ConfigManager.RESULT_MODIFIER.get(this.name).get();
+      if (this == EMPTY) {
+        resultModifier = 0;
+      } else {
+        if (ConfigManager.RESULT_MODIFIER == null || ConfigManager.RESULT_MODIFIER.get(this.name) == null) {
+          Grindr.LOG.error("No configuration information found for Grindstone type: " + this.name);
+          return 1;
+        }
+        resultModifier = ConfigManager.RESULT_MODIFIER.get(this.name).get();
+      }
     }
     return resultModifier;
   }
 
   public double getSpeedModifier() {
     if (speedModifier == -100) {
-      speedModifier = ConfigManager.SPEED_MODIFIER.get(this.name).get();
+      if (this == EMPTY) {
+        speedModifier = 0;
+      } else {
+        if (ConfigManager.SPEED_MODIFIER == null || ConfigManager.SPEED_MODIFIER.get(this.name) == null) {
+          Grindr.LOG.error("No configuration information found for Grindstone type: " + this.name);
+          return 1;
+        }
+        speedModifier = ConfigManager.SPEED_MODIFIER.get(this.name).get();
+      }
     }
     return speedModifier;
   }
