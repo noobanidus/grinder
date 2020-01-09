@@ -127,10 +127,15 @@ dependencies {
 shadowJar {
     configurations = [project.configurations.shade]
     relocate 'com.tterrag.registrate', 'noobanidus.mods.repack_grindr.registrate'
+    classifier ''
 }
+
+jar.classifier = 'nodep'
 
 reobf {
     shadowJar {}
 }
+
+build.dependsOn reobfShadowJar
 
 
