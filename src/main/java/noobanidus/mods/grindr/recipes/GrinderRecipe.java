@@ -10,8 +10,11 @@ import noobanidus.mods.grindr.init.ModRecipes;
 
 @SuppressWarnings({"NullableProblems", "WeakerAccess"})
 public class GrinderRecipe extends AbstractCookingRecipe {
-  public GrinderRecipe(ResourceLocation idIn, String groupIn, Ingredient ingredientIn, ItemStack resultIn, float experienceIn, int cookTimeIn) {
+  private boolean staticOutput;
+
+  public GrinderRecipe(ResourceLocation idIn, String groupIn, Ingredient ingredientIn, ItemStack resultIn, float experienceIn, int cookTimeIn, boolean staticOutput) {
     super(ModRecipes.GRINDER_TYPE, idIn, groupIn, ingredientIn, resultIn, experienceIn, cookTimeIn);
+    this.staticOutput = staticOutput;
   }
 
   @Override
@@ -19,15 +22,8 @@ public class GrinderRecipe extends AbstractCookingRecipe {
     return ModRecipes.GRINDER_SERIALIZER.get();
   }
 
-  public static class Serializer extends AbstractCookingRecipeSerializer<GrinderRecipe> {
-    public Serializer() {
-      super(GrinderRecipe::new, 100);
-    }
-  }
-
-  @Override
-  public ItemStack getCraftingResult(IInventory inv) {
-    return super.getCraftingResult(inv);
+  public boolean hasStaticOutput() {
+    return staticOutput;
   }
 }
 

@@ -1,7 +1,7 @@
 package noobanidus.mods.grindr.tiles;
 
 import com.google.common.collect.Maps;
-import net.minecraft.block.AbstractFurnaceBlock;
+import com.tterrag.registrate.util.RegistryEntry;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,7 +14,6 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.nbt.CompoundNBT;
@@ -27,7 +26,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
@@ -129,7 +127,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
       return;
     }
 
-    RegistryObject<GrindstoneItem> item = ModItems.GRINDSTONE_MAP.get(state.get(GrinderBlock.GRINDSTONE));
+    RegistryEntry<GrindstoneItem> item = ModItems.GRINDSTONE_MAP.get(state.get(GrinderBlock.GRINDSTONE));
     if (item == null) {
       return;
     }
@@ -167,19 +165,20 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
 
   private int getCount() {
     if (this.count == -1) {
-      GrindstoneType type = getGrindstone();
-      if (type == GrindstoneType.EMPTY) {
-        this.count = -1;
-      }
+      if (getRecipe().hasStaticOutput()) {
+        this.count = getRecipe().getRecipeOutput().getCount();
+      } else {
+        GrindstoneType type = getGrindstone();
+        if (type == GrindstoneType.EMPTY) {
+          this.count = -1;
+        }
 
-      double modifier = type.getResultModifier();
-/*      if (modifier > 1) {
-        modifier += 1;
-      }*/
-      this.count = 0;
-      for (; modifier > 0; modifier--) {
-        if (random.nextFloat() < modifier) {
-          this.count++;
+        double modifier = type.getResultModifier();
+        this.count = 0;
+        for (; modifier > 0; modifier--) {
+          if (random.nextFloat() < modifier) {
+            this.count++;
+          }
         }
       }
     }
@@ -250,7 +249,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     if (world != null && !this.world.isRemote) {
       ItemStack fuel = this.items.get(FUEL);
       if (this.isBurning() || !fuel.isEmpty() && !this.items.get(INPUT).isEmpty()) {
-        AbstractCookingRecipe irecipe = getRecipe();
+        GrinderRecipe irecipe = getRecipe();
         boolean valid = this.canSmelt(irecipe);
         if (!this.isBurning() && valid && isValid) {
           this.burnTime = this.getBurnTime(fuel);
@@ -448,7 +447,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
   private GrinderRecipe curRecipe;
   private ItemStack failedMatch = ItemStack.EMPTY;
 
-  private boolean canSmelt(@Nullable IRecipe<?> recipe) {
+  private boolean canSmelt(@Nullable GrinderRecipe recipe) {
     if (!this.items.get(0).isEmpty() && recipe != null) {
       ItemStack recipeOutput = recipe.getRecipeOutput();
       if (!recipeOutput.isEmpty()) {
@@ -462,7 +461,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     return false;
   }
 
-  private void smeltItem(@Nullable IRecipe<?> recipe) {
+  private void smeltItem(@Nullable GrinderRecipe recipe) {
     if (recipe != null && this.canSmelt(recipe)) {
       ItemStack itemstack = this.items.get(0);
       ItemStack itemstack1 = recipe.getRecipeOutput();
@@ -485,14 +484,14 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
   }
 
   private int getCookTime() {
-    AbstractCookingRecipe rec = getRecipe();
+    GrinderRecipe rec = getRecipe();
     if (rec == null) return 200;
     int cookTime = rec.getCookTime();
     GrindstoneType type = getGrindstone();
     return (int) ((float) cookTime * type.getSpeedModifier());
   }
 
-  protected AbstractCookingRecipe getRecipe() {
+  protected GrinderRecipe getRecipe() {
     ItemStack input = this.getStackInSlot(INPUT);
     if (input.isEmpty() || input == failedMatch) return null;
     if (world == null) return null;

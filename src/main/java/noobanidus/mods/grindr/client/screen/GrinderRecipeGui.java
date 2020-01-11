@@ -36,6 +36,7 @@ public class GrinderRecipeGui extends AbstractRecipeBookGui {
   }
 
   @Override
+  @SuppressWarnings("deprecation")
   protected Set<Item> func_212958_h() {
     return AbstractFurnaceTileEntity.getBurnTimes().keySet();
   }

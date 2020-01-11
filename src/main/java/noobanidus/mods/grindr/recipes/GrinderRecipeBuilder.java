@@ -33,19 +33,25 @@ public class GrinderRecipeBuilder {
   protected String group;
   private final int cookingTime;
   private final Builder advancementBuilder = Builder.builder();
+  private final boolean staticOutput;
   private Tag<Item> tag;
 
-  protected GrinderRecipeBuilder(IItemProvider result, Tag<Item> tag, float xp, int cookTime) {
+  protected GrinderRecipeBuilder(IItemProvider result, Tag<Item> tag, float xp, int cookTime, boolean staticOutput) {
     this.result = result.asItem();
     this.experience = xp;
     this.cookingTime = cookTime;
     this.tag = tag;
     this.ingredient = Ingredient.fromTag(tag);
     this.addOre(tag);
+    this.staticOutput = staticOutput;
   }
 
   public static GrinderRecipeBuilder builder (IItemProvider result, Tag<Item> tag) {
-    return new GrinderRecipeBuilder(result, tag, 0.125f, 100);
+    return new GrinderRecipeBuilder(result, tag, 0.125f, 100, false);
+  }
+
+  public static GrinderRecipeBuilder builder (IItemProvider result, Tag<Item> tag, boolean staticOutput) {
+    return new GrinderRecipeBuilder(result, tag, 0.125f, 100, staticOutput);
   }
 
   private void addOre(Tag<Item> ore) {
@@ -69,7 +75,7 @@ public class GrinderRecipeBuilder {
   public void build(Consumer<IFinishedRecipe> consumer, ResourceLocation resource) {
     this.validate(resource);
     this.advancementBuilder.withParentId(new ResourceLocation("recipes/root")).withCriterion("has_the_recipe", new Instance(resource)).withRewards(net.minecraft.advancements.AdvancementRewards.Builder.recipe(resource)).withRequirementsStrategy(IRequirementsStrategy.OR);
-    ConditionalRecipe.builder().addCondition(new NotCondition(new TagEmptyCondition(tag.getId()))).addRecipe(new GrinderRecipeBuilder.Result(resource, this.group == null ? "" : this.group, this.ingredient, this.result, this.experience, this.cookingTime, this.advancementBuilder, new ResourceLocation(resource.getNamespace(), "recipes/" + this.result.getGroup().getPath() + "/" + resource.getPath()))).setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/" + resource.getPath()), ConditionalAdvancement.builder().addCondition(new NotCondition(new TagEmptyCondition(tag.getId()))).addAdvancement(this.advancementBuilder)).build(consumer, resource);
+    ConditionalRecipe.builder().addCondition(new NotCondition(new TagEmptyCondition(tag.getId()))).addRecipe(new GrinderRecipeBuilder.Result(resource, this.group == null ? "" : this.group, this.ingredient, this.result, this.experience, this.cookingTime, this.advancementBuilder, new ResourceLocation(resource.getNamespace(), "recipes/" + this.result.getGroup().getPath() + "/" + resource.getPath()), staticOutput)).setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/" + resource.getPath()), ConditionalAdvancement.builder().addCondition(new NotCondition(new TagEmptyCondition(tag.getId()))).addAdvancement(this.advancementBuilder)).build(consumer, resource);
   }
 
   private void validate(ResourceLocation resource) {
@@ -87,8 +93,9 @@ public class GrinderRecipeBuilder {
     private final int cookingTime;
     private final Builder advancementBuilder;
     private final ResourceLocation advancementId;
+    private final boolean staticOutput;
 
-    public Result(ResourceLocation resource, String group, Ingredient ingredient, Item output, float xp, int cookTime, Builder advBuilder, ResourceLocation advResource) {
+    public Result(ResourceLocation resource, String group, Ingredient ingredient, Item output, float xp, int cookTime, Builder advBuilder, ResourceLocation advResource, boolean staticOutput) {
       this.id = resource;
       this.group = group;
       this.ingredient = ingredient;
@@ -97,6 +104,7 @@ public class GrinderRecipeBuilder {
       this.cookingTime = cookTime;
       this.advancementBuilder = advBuilder;
       this.advancementId = advResource;
+      this.staticOutput = staticOutput;
     }
 
     @Override
@@ -109,6 +117,9 @@ public class GrinderRecipeBuilder {
       json.addProperty("result", ForgeRegistries.ITEMS.getKey(this.result).toString());
       json.addProperty("experience", this.experience);
       json.addProperty("cookingtime", this.cookingTime);
+      if (staticOutput) {
+        json.addProperty("static", staticOutput);
+      }
     }
 
     @Override

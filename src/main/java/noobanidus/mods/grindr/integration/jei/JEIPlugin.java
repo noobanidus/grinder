@@ -1,5 +1,6 @@
 package noobanidus.mods.grindr.integration.jei;
 
+import com.tterrag.registrate.util.RegistryEntry;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaRecipeCategoryUid;
@@ -8,12 +9,10 @@ import mezz.jei.api.helpers.IJeiHelpers;
 import mezz.jei.api.registration.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.RegistryObject;
 import noobanidus.mods.grindr.Grindr;
 import noobanidus.mods.grindr.client.screen.GrinderScreen;
 import noobanidus.mods.grindr.containers.GrinderContainer;
@@ -78,7 +77,7 @@ public class JEIPlugin implements IModPlugin {
   @Override
   public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
     registration.addRecipeCatalyst(new ItemStack(ModBlocks.GRINDER.get()), GrinderCategory.UID, VanillaRecipeCategoryUid.FUEL);
-    for (RegistryObject<GrindstoneItem> grindstone : ModItems.GRINDSTONE_MAP.values()) {
+    for (RegistryEntry<GrindstoneItem> grindstone : ModItems.GRINDSTONE_MAP.values()) {
       registration.addRecipeCatalyst(new ItemStack(grindstone.get()), GrindstoneCategory.UID);
     }
   }

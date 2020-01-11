@@ -15,17 +15,14 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
 @SuppressWarnings("ALL")
-public abstract class AbstractCookingRecipeSerializer<T extends AbstractCookingRecipe> extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<T> {
-  protected final int defaultCookTime;
-  protected final IFactory<T> serializer;
+public class GrinderRecipeSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<GrinderRecipe> {
+  protected final int defaultCookTime = 100;
 
-  public AbstractCookingRecipeSerializer(IFactory<T> serializer, int defaultCookTime) {
-    this.defaultCookTime = defaultCookTime;
-    this.serializer = serializer;
+  public GrinderRecipeSerializer() {
   }
 
   @Override
-  public T read(ResourceLocation recipeId, JsonObject json) {
+  public GrinderRecipe read(ResourceLocation recipeId, JsonObject json) {
     String s = JSONUtils.getString(json, "group", "");
     JsonElement jsonelement = (JSONUtils.isJsonArray(json, "ingredient") ? JSONUtils.getJsonArray(json, "ingredient") : JSONUtils.getJsonObject(json, "ingredient"));
     Ingredient ingredient = Ingredient.deserialize(jsonelement);
@@ -42,33 +39,33 @@ public abstract class AbstractCookingRecipeSerializer<T extends AbstractCookingR
       if (item == null) {
         throw new IllegalStateException("Item: " + s1 + " does not exist");
       }
-      itemstack = new ItemStack(item);
+      int count = JSONUtils.getInt(json, "count", 1);
+      itemstack = new ItemStack(item, count);
     }
+    boolean staticOutput = JSONUtils.getBoolean(json, "static", false);
     float f = JSONUtils.getFloat(json, "experience", 0.0F);
     int i = JSONUtils.getInt(json, "cookingtime", this.defaultCookTime);
-    return this.serializer.create(recipeId, s, ingredient, itemstack, f, i);
+    return new GrinderRecipe(recipeId, s, ingredient, itemstack, f, i, staticOutput);
   }
 
   @Override
-  public T read(ResourceLocation recipeId, PacketBuffer buffer) {
+  public GrinderRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
     String s = buffer.readString(32767);
     Ingredient ingredient = Ingredient.read(buffer);
     ItemStack itemstack = buffer.readItemStack();
     float f = buffer.readFloat();
     int i = buffer.readVarInt();
-    return this.serializer.create(recipeId, s, ingredient, itemstack, f, i);
+    boolean st = buffer.readBoolean();
+    return new GrinderRecipe(recipeId, s, ingredient, itemstack, f, i, st);
   }
 
   @Override
-  public void write(PacketBuffer buffer, T recipe) {
+  public void write(PacketBuffer buffer, GrinderRecipe recipe) {
     buffer.writeString(recipe.getGroup());
     recipe.getIngredients().forEach(o -> o.write(buffer));
     buffer.writeItemStack(recipe.getRecipeOutput());
     buffer.writeFloat(recipe.getExperience());
     buffer.writeVarInt(recipe.getCookTime());
-  }
-
-  public interface IFactory<T extends AbstractCookingRecipe> {
-    T create(ResourceLocation rl, String group, Ingredient input, ItemStack result, float xp, int cookTime);
+    buffer.writeBoolean(recipe.hasStaticOutput());
   }
 }

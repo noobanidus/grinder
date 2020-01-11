@@ -4,15 +4,9 @@ import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.loading.FMLPaths;
 import noobanidus.mods.grindr.Grindr;
-import noobanidus.mods.grindr.items.GroundItem;
 
-import java.awt.*;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -84,7 +78,7 @@ public class ConfigManager {
   }
 
   @SuppressWarnings("ConstantConditions")
-  public static NonNullUnaryOperator<Item.Properties> getProperty (String dust) {
+  public static NonNullUnaryOperator<Item.Properties> getProperty(String dust) {
     ForgeConfigSpec.ConfigValue<Boolean> val = CONFIG_MAP.get(dust);
     if (val == null || !val.get()) {
       return (o) -> o.group(null);
