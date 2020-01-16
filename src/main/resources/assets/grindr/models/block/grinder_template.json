@@ -2,12 +2,11 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"post": "minecraft:block/anvil",
-		"sides": "minecraft:block/polished_andesite",
+		"post": "block/anvil",
+		"particle": "block/polished_andesite",
+		"sides": "block/polished_andesite",
 		"front": "grindr:block/grinder_front_cold",
-		"grindstone_top": "grindr:block/granite",
-		"grindstone_side": "grindr:block/granite_side",
-		"particle": "minecraft:block/polished_andesite"
+		"grindstone": "grindr:block/granite"
 	},
 	"elements": [
 		{
@@ -86,12 +85,12 @@
 			"to": [12, 16, 12],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 13, 8]},
 			"faces": {
-				"north": {"uv": [0, 0, 10, 6], "texture": "#grindstone_side"},
-				"east": {"uv": [0, 0, 10, 6], "texture": "#grindstone_side"},
-				"south": {"uv": [0, 0, 10, 6], "texture": "#grindstone_side"},
-				"west": {"uv": [0, 0, 10, 6], "texture": "#grindstone_side"},
-				"up": {"uv": [0, 0, 10, 10], "texture": "#grindstone_top"},
-				"down": {"uv": [0, 0, 10, 10], "texture": "#grindstone_top"}
+				"north": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
+				"east": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
+				"south": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
+				"west": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
+				"up": {"uv": [0, 0, 10, 10], "texture": "#grindstone"},
+				"down": {"uv": [0, 0, 10, 10], "texture": "#grindstone"}
 			}
 		},
 		{

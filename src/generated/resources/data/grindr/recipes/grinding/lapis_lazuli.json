@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ores/lapis",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:grinder",
+        "ingredient": {
+          "tag": "forge:ores/lapis"
+        },
+        "tagResult": false,
+        "result": "minecraft:lapis_lazuli",
+        "experience": 0.125,
+        "cookingtime": 100
+      }
+    }
+  ]
+}

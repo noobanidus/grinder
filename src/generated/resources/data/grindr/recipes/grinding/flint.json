@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:gravel",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:grinder",
+        "ingredient": {
+          "tag": "forge:gravel"
+        },
+        "tagResult": false,
+        "result": "minecraft:flint",
+        "experience": 0.125,
+        "cookingtime": 100
+      }
+    }
+  ]
+}

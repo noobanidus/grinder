@@ -1,0 +1,47 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ores/emerald",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "grindr:grinding/emerald"
+          ]
+        },
+        "criteria": {
+          "has_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "tag": "forge:ores/emerald"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "grindr:grinding/emerald"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_ore",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

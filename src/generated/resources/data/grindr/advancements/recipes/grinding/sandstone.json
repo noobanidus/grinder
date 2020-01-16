@@ -1,0 +1,47 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:sandstone",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "grindr:grinding/sandstone"
+          ]
+        },
+        "criteria": {
+          "has_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "tag": "forge:sandstone"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "grindr:grinding/sandstone"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_ore",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

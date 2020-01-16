@@ -1,0 +1,47 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ores/diamond",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "grindr:grinding/diamond"
+          ]
+        },
+        "criteria": {
+          "has_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "tag": "forge:ores/diamond"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "grindr:grinding/diamond"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_ore",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -2,10 +2,15 @@ package noobanidus.mods.grindr.init;
 
 import com.tterrag.registrate.util.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.crafting.ConditionalAdvancement;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
+import net.minecraftforge.common.crafting.conditions.NotCondition;
+import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
 import noobanidus.mods.grindr.Grindr;
 import noobanidus.mods.grindr.GrindrTags;
 import noobanidus.mods.grindr.blocks.GrindstoneType;
@@ -116,7 +121,11 @@ public class ModItems {
               throw new IllegalArgumentException("Invalid Grindstone Type " + type.toString() + ": no Tag or associated Item");
             }
 
-            builder.build(p);
+            if (GrindstoneType.INGOT_TO_ORE.containsKey(type)) {
+              ConditionalRecipe.builder().addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId()))).addRecipe(builder::build).setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/" + type.name().toLowerCase()), ConditionalAdvancement.builder().addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId()))).addAdvancement(Advancement.Builder.builder())).build(p, new ResourceLocation(Grindr.MODID, ctx.getEntry().getRegistryName().getPath()));
+            } else {
+              builder.build(p);
+            }
             GrinderRecipeBuilder.builder(type.getRecycleItem(), GRINDSTONE_MAP.get(type).get(), 6, true).build(p, new ResourceLocation(Grindr.MODID, "recycle/" + type.name().toLowerCase()));
           })
           .lang("Grindstone (" + StringUtil.capitalize(type.toString()) + ")")

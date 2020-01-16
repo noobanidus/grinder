@@ -3,7 +3,7 @@
 	"parent": "block/block",
 	"textures": {
 		"post": "block/anvil",
-		"grindstone_top": "grindr:block/granite"
+		"grindstone": "grindr:block/granite"
 	},
 	"elements": [
 		{
@@ -12,12 +12,12 @@
 			"to": [12, 6, 12],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3, 8]},
 			"faces": {
-				"north": {"uv": [0, 10, 10, 16], "texture": "#grindstone_top"},
-				"east": {"uv": [0, 10, 10, 16], "texture": "#grindstone_top"},
-				"south": {"uv": [0, 10, 10, 16], "texture": "#grindstone_top"},
-				"west": {"uv": [0, 10, 10, 16], "texture": "#grindstone_top"},
-				"up": {"uv": [0, 0, 10, 10], "texture": "#grindstone_top"},
-				"down": {"uv": [0, 0, 10, 10], "texture": "#grindstone_top"}
+				"north": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
+				"east": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
+				"south": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
+				"west": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
+				"up": {"uv": [0, 0, 10, 10], "texture": "#grindstone"},
+				"down": {"uv": [0, 0, 10, 10], "texture": "#grindstone"}
 			}
 		},
 		{

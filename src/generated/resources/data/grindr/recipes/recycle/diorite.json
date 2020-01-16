@@ -1,0 +1,12 @@
+{
+  "type": "grindr:grinder",
+  "ingredient": {
+    "item": "grindr:grindstone_diorite"
+  },
+  "tagResult": false,
+  "result": "minecraft:diorite",
+  "experience": 0.125,
+  "cookingtime": 100,
+  "static": true,
+  "count": 6
+}

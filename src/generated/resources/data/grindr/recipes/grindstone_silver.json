@@ -1,0 +1,35 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ores/silver",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          " I ",
+          "XXX",
+          "XXX"
+        ],
+        "key": {
+          "I": {
+            "tag": "forge:ingots/iron"
+          },
+          "X": {
+            "tag": "forge:ingots/silver"
+          }
+        },
+        "result": {
+          "item": "grindr:grindstone_silver"
+        }
+      }
+    }
+  ]
+}

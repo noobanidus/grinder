@@ -8,10 +8,13 @@ import net.minecraft.util.IItemProvider;
 import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.common.Tags;
 import noobanidus.mods.grindr.Grindr;
+import noobanidus.mods.grindr.GrindrTags;
 import noobanidus.mods.grindr.config.ConfigManager;
 import noobanidus.mods.grindr.init.ModItems;
 
 import javax.annotation.Nullable;
+import java.util.HashMap;
+import java.util.Map;
 
 public enum GrindstoneType implements IStringSerializable {
   EMPTY("empty", Items.AIR),
@@ -19,10 +22,32 @@ public enum GrindstoneType implements IStringSerializable {
   GRANITE("granite", Items.GRANITE),
   DIORITE("diorite", Items.DIORITE),
   ANDESITE("andesite", Items.ANDESITE),
+  ALUMINUM("aluminum", GrindrTags.Items.ALUMINUM_INGOT, ModItems.ALUMINUM_DUST),
+  COPPER("copper", GrindrTags.Items.COPPER_INGOT, ModItems.COPPER_DUST),
   IRON("iron", Tags.Items.INGOTS_IRON, ModItems.IRON_DUST),
+  NICKEL("nickel", GrindrTags.Items.NICKEL_INGOT, ModItems.NICKEL_DUST),
+  LEAD("lead", GrindrTags.Items.LEAD_INGOT, ModItems.LEAD_DUST),
   GOLD("gold", Tags.Items.INGOTS_GOLD, ModItems.GOLD_DUST),
+  SILVER("silver", GrindrTags.Items.SILVER_INGOT, ModItems.SILVER_DUST),
+  PLATINUM("platinum", GrindrTags.Items.PLATINUM_INGOT, ModItems.PLATINUM_DUST),
+  MERCURY("mercury", GrindrTags.Items.MERCURY_INGOT, ModItems.MERCURY_DUST),
+  ZINC("zinc", GrindrTags.Items.ZINC_INGOT, ModItems.ZINC_DUST),
   DIAMOND("diamond", Tags.Items.GEMS_DIAMOND, Items.DIAMOND),
-  EMERALD("emerald", Tags.Items.GEMS_EMERALD, Items.EMERALD);
+  EMERALD("emerald", Tags.Items.GEMS_EMERALD, Items.EMERALD),
+  URANIUM("uranium", GrindrTags.Items.URANIUM_INGOT, ModItems.URANIUM_DUST);
+
+  public static Map<GrindstoneType, Tag<Item>> INGOT_TO_ORE = new HashMap<>();
+  static {
+    INGOT_TO_ORE.put(ALUMINUM, GrindrTags.Items.ALUMINUM_ORE);
+    INGOT_TO_ORE.put(COPPER, GrindrTags.Items.COPPER_ORE);
+    INGOT_TO_ORE.put(NICKEL, GrindrTags.Items.NICKEL_ORE);
+    INGOT_TO_ORE.put(LEAD, GrindrTags.Items.LEAD_ORE);
+    INGOT_TO_ORE.put(SILVER, GrindrTags.Items.SILVER_ORE);
+    INGOT_TO_ORE.put(PLATINUM, GrindrTags.Items.PLATINUM_ORE);
+    INGOT_TO_ORE.put(MERCURY, GrindrTags.Items.MERCURY_ORE);
+    INGOT_TO_ORE.put(ZINC, GrindrTags.Items.ZINC_ORE);
+    INGOT_TO_ORE.put(URANIUM, GrindrTags.Items.URANIUM_ORE);
+  }
 
   private String name;
   private Tag<Item> itemType = null;

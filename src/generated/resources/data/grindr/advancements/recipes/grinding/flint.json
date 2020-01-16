@@ -1,0 +1,47 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:gravel",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "grindr:grinding/flint"
+          ]
+        },
+        "criteria": {
+          "has_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "tag": "forge:gravel"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "grindr:grinding/flint"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_ore",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

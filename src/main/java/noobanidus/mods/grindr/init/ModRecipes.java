@@ -27,9 +27,9 @@ public class ModRecipes {
       GrinderRecipeBuilder.builder(Items.COAL, Tags.Items.ORES_COAL).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/coal"));
       GrinderRecipeBuilder.builder(Items.DIAMOND, Tags.Items.ORES_DIAMOND).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/diamond"));
       GrinderRecipeBuilder.builder(Items.EMERALD, Tags.Items.ORES_EMERALD).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/emerald"));
-      GrinderRecipeBuilder.builder(Items.QUARTZ, Tags.Items.ORES_QUARTZ).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/quartz"));
-      GrinderRecipeBuilder.builder(Items.BONE_MEAL, Tags.Items.BONES).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/bone_meal"));
-      GrinderRecipeBuilder.builder(Items.SUGAR, Items.SUGAR_CANE).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/sugar"));
+      GrinderRecipeBuilder.builder(Items.QUARTZ, Tags.Items.ORES_QUARTZ, 2).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/quartz"));
+      GrinderRecipeBuilder.builder(Items.BONE_MEAL, Tags.Items.BONES, 2).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/bone_meal"));
+      GrinderRecipeBuilder.builder(Items.SUGAR, Items.SUGAR_CANE, 2).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/sugar"));
       GrinderRecipeBuilder.builder(Items.SAND, Tags.Items.SANDSTONE, 4).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/sandstone"));
       GrinderRecipeBuilder.builder(Items.GRAVEL, Tags.Items.STONE).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gravel"));
       GrinderRecipeBuilder.builder(Items.FLINT, Tags.Items.GRAVEL).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/flint"));
