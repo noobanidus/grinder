@@ -1,12 +1,28 @@
 {
-  "type": "grindr:grinder",
-  "ingredient": {
-    "item": "grindr:grindstone_mercury"
-  },
-  "tagResult": false,
-  "result": "grindr:mercury_dust",
-  "experience": 0.125,
-  "cookingtime": 100,
-  "static": true,
-  "count": 6
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ores/mercury",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:grinder",
+        "ingredient": {
+          "item": "grindr:grindstone_mercury"
+        },
+        "tagResult": false,
+        "result": "grindr:mercury_dust",
+        "experience": 0.125,
+        "cookingtime": 100,
+        "static": true,
+        "count": 6
+      }
+    }
+  ]
 }

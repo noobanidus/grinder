@@ -122,11 +122,25 @@ public class ModItems {
             }
 
             if (GrindstoneType.INGOT_TO_ORE.containsKey(type)) {
-              ConditionalRecipe.builder().addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId()))).addRecipe(builder::build).setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/" + type.name().toLowerCase()), ConditionalAdvancement.builder().addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId()))).addAdvancement(Advancement.Builder.builder())).build(p, new ResourceLocation(Grindr.MODID, ctx.getEntry().getRegistryName().getPath()));
+              ConditionalRecipe.builder()
+                  .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
+                  .addRecipe(builder::build)
+                  .setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/" + type.name().toLowerCase()), ConditionalAdvancement.builder()
+                      .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
+                      .addAdvancement(Advancement.Builder.builder()))
+                  .build(p, new ResourceLocation(Grindr.MODID, ctx.getEntry().getRegistryName().getPath()));
+              ConditionalRecipe.builder()
+                  .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
+                  .addRecipe(GrinderRecipeBuilder.builder(type.getRecycleItem(), GRINDSTONE_MAP.get(type).get(), 6, true)::build)
+                  .setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/recycle/" + type.name().toLowerCase()), ConditionalAdvancement.builder()
+                      .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
+                      .addAdvancement(Advancement.Builder.builder()))
+                  .build(p, new ResourceLocation(Grindr.MODID, "recycle/" + type.name().toLowerCase()));
             } else {
               builder.build(p);
+              GrinderRecipeBuilder.builder(type.getRecycleItem(), GRINDSTONE_MAP.get(type).get(), 6, true).build(p, new ResourceLocation(Grindr.MODID, "recycle/" + type.name().toLowerCase()));
             }
-            GrinderRecipeBuilder.builder(type.getRecycleItem(), GRINDSTONE_MAP.get(type).get(), 6, true).build(p, new ResourceLocation(Grindr.MODID, "recycle/" + type.name().toLowerCase()));
+
           })
           .lang("Grindstone (" + StringUtil.capitalize(type.toString()) + ")")
           .register());
