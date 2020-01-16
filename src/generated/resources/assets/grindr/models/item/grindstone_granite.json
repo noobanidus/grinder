@@ -1,7 +1,6 @@
 {
   "parent": "grindr:item/grindstone_template",
   "textures": {
-    "grindstone_top": "grindr:block/granite",
-    "grindstone_side": "grindr:block/granite_side"
+    "grindstone": "grindr:block/granite"
   }
 }

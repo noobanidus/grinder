@@ -1,12 +1,15 @@
 package noobanidus.mods.grindr.blocks;
 
+import com.tterrag.registrate.util.RegistryEntry;
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.EnumProperty;
@@ -18,6 +21,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import noobanidus.mods.grindr.init.ModItems;
 import noobanidus.mods.grindr.items.GrindstoneItem;
 import noobanidus.mods.grindr.tiles.GrinderTile;
 import noobanidus.mods.grindr.util.VoxelUtil;
@@ -61,9 +65,11 @@ public class GrinderBlock extends AbstractFurnaceBlock {
   public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
     if (state.getBlock() != newState.getBlock()) {
       if (state.get(GRINDSTONE) != GrindstoneType.EMPTY) {
-        GrinderTile te = (GrinderTile) worldIn.getTileEntity(pos);
-        if (te != null) {
-          te.removeGrindstone();
+        RegistryEntry<GrindstoneItem> item = ModItems.GRINDSTONE_MAP.get(state.get(GrinderBlock.GRINDSTONE));
+        if (item != null) {
+          ItemStack stack = new ItemStack(item.get());
+          ItemEntity entity = new ItemEntity(worldIn, pos.getX() + 0.5, pos.getY() + 1.5, pos.getZ() + 0.5, stack);
+          worldIn.addEntity(entity);
         }
       }
       TileEntity tileentity = worldIn.getTileEntity(pos);

@@ -2,7 +2,6 @@
   "parent": "grindr:block/grinder_no_grindstone",
   "textures": {
     "front": "grindr:block/grinder_front_cold",
-    "grindstone_top": "grindr:block/granite",
-    "grindstone_side": "grindr:block/granite_side"
+    "grindstone": "grindr:block/granite"
   }
 }

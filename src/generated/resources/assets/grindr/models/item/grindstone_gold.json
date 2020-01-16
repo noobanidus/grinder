@@ -1,7 +1,6 @@
 {
   "parent": "grindr:item/grindstone_template",
   "textures": {
-    "grindstone_top": "grindr:block/gold",
-    "grindstone_side": "grindr:block/gold_side"
+    "grindstone": "grindr:block/gold"
   }
 }

@@ -16,6 +16,7 @@
         "ingredient": {
           "tag": "forge:ores/bismuth"
         },
+        "tagResult": false,
         "result": "grindr:bismuth_dust",
         "experience": 0.125,
         "cookingtime": 100

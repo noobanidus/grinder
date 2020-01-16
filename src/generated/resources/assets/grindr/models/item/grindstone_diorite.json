@@ -1,7 +1,6 @@
 {
   "parent": "grindr:item/grindstone_template",
   "textures": {
-    "grindstone_top": "grindr:block/diorite",
-    "grindstone_side": "grindr:block/diorite_side"
+    "grindstone": "grindr:block/diorite"
   }
 }

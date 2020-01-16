@@ -1,5 +1,6 @@
 package noobanidus.mods.grindr.blocks;
 
+import com.tterrag.registrate.util.RegistryEntry;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tags.Tag;
@@ -8,6 +9,7 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.common.Tags;
 import noobanidus.mods.grindr.Grindr;
 import noobanidus.mods.grindr.config.ConfigManager;
+import noobanidus.mods.grindr.init.ModItems;
 
 import javax.annotation.Nullable;
 
@@ -17,10 +19,10 @@ public enum GrindstoneType implements IStringSerializable {
   GRANITE("granite", Items.GRANITE),
   DIORITE("diorite", Items.DIORITE),
   ANDESITE("andesite", Items.ANDESITE),
-  IRON("iron", Tags.Items.INGOTS_IRON),
-  GOLD("gold", Tags.Items.INGOTS_GOLD),
-  DIAMOND("diamond", Tags.Items.GEMS_DIAMOND),
-  EMERALD("emerald", Tags.Items.GEMS_EMERALD);
+  IRON("iron", Tags.Items.INGOTS_IRON, ModItems.IRON_DUST),
+  GOLD("gold", Tags.Items.INGOTS_GOLD, ModItems.GOLD_DUST),
+  DIAMOND("diamond", Tags.Items.GEMS_DIAMOND, Items.DIAMOND),
+  EMERALD("emerald", Tags.Items.GEMS_EMERALD, Items.EMERALD);
 
   private String name;
   private Tag<Item> itemType = null;
@@ -28,9 +30,19 @@ public enum GrindstoneType implements IStringSerializable {
   private double resultModifier = -100;
   private double speedModifier = -100;
 
-  GrindstoneType(String name, Tag<Item> itemType) {
+  private IItemProvider recycleItem = null;
+  private RegistryEntry<? extends Item> recycleItemEntry = null;
+
+  GrindstoneType(String name, Tag<Item> itemType, RegistryEntry<? extends Item> recycle) {
     this.name = name;
     this.itemType = itemType;
+    this.recycleItemEntry = recycle;
+  }
+
+  GrindstoneType(String name, Tag<Item> itemType, IItemProvider recycle) {
+    this.name = name;
+    this.itemType = itemType;
+    this.recycleItem = recycle;
   }
 
   GrindstoneType(String name, IItemProvider item) {
@@ -46,6 +58,17 @@ public enum GrindstoneType implements IStringSerializable {
   @Nullable
   public IItemProvider getItem() {
     return item;
+  }
+
+  public IItemProvider getRecycleItem() {
+    if (itemType == null) {
+      return item;
+    }
+    if (recycleItem != null) {
+      return recycleItem;
+    } else {
+      return recycleItemEntry.get();
+    }
   }
 
   public double getResultModifier() {

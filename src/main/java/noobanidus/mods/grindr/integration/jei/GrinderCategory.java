@@ -23,4 +23,9 @@ public class GrinderCategory extends AbstractCookingCategory<GrinderRecipe> {
   public Class<? extends GrinderRecipe> getRecipeClass() {
     return GrinderRecipe.class;
   }
+
+  @Override
+  public void draw(GrinderRecipe recipe, double mouseX, double mouseY) {
+    super.draw(recipe, mouseX, mouseY);
+  }
 }

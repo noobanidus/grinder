@@ -97,8 +97,7 @@ public class ModItems {
 
       GRINDSTONE_MAP.put(type, REGISTRATE.item("grindstone_" + type.toString(), (b) -> new GrindstoneItem(b, type)).properties(ITEM_PROPERTIES).model((ctx, p) -> {
         p.withExistingParent("grindstone_" + type.toString(), new ResourceLocation(Grindr.MODID, "item/grindstone_template"))
-            .texture("grindstone_top", new ResourceLocation(Grindr.MODID, "block/" + type.toString()))
-            .texture("grindstone_side", new ResourceLocation(Grindr.MODID, "block/" + type.toString() + "_side"));
+            .texture("grindstone", new ResourceLocation(Grindr.MODID, "block/" + type.toString()));
       })
           .recipe((ctx, p) -> {
             ShapedRecipeBuilder builder = ShapedRecipeBuilder.shapedRecipe(ctx.getEntry(), 1)
@@ -118,6 +117,7 @@ public class ModItems {
             }
 
             builder.build(p);
+            GrinderRecipeBuilder.builder(type.getRecycleItem(), GRINDSTONE_MAP.get(type).get(), 6, true).build(p, new ResourceLocation(Grindr.MODID, "recycle/" + type.name().toLowerCase()));
           })
           .lang("Grindstone (" + StringUtil.capitalize(type.toString()) + ")")
           .register());

@@ -16,6 +16,7 @@
         "ingredient": {
           "tag": "forge:ores/aluminum"
         },
+        "tagResult": false,
         "result": "grindr:aluminum_dust",
         "experience": 0.125,
         "cookingtime": 100

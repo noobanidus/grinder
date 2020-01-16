@@ -29,9 +29,15 @@ public class GrinderRecipeSerializer extends ForgeRegistryEntry<IRecipeSerialize
     //Forge: Check if primitive string to keep vanilla or a object which can contain a count field.
     if (!json.has("result"))
       throw new com.google.gson.JsonSyntaxException("Missing result, expected to find a string or object");
-    ItemStack itemstack;
+    ItemStack itemstack = ItemStack.EMPTY;
+    Ingredient result = Ingredient.EMPTY;
     if (json.get("result").isJsonObject())
-      itemstack = ShapedRecipe.deserializeItem(JSONUtils.getJsonObject(json, "result"));
+      if (json.has("tagResult") && json.get("tagResult").getAsBoolean()) {
+        jsonelement = (JSONUtils.isJsonArray(json, "result") ? JSONUtils.getJsonArray(json, "result") : JSONUtils.getJsonObject(json, "result"));
+        result = Ingredient.deserialize(jsonelement);
+      } else {
+        itemstack = ShapedRecipe.deserializeItem(JSONUtils.getJsonObject(json, "result"));
+      }
     else {
       String s1 = JSONUtils.getString(json, "result");
       ResourceLocation resourcelocation = new ResourceLocation(s1);
@@ -45,25 +51,37 @@ public class GrinderRecipeSerializer extends ForgeRegistryEntry<IRecipeSerialize
     boolean staticOutput = JSONUtils.getBoolean(json, "static", false);
     float f = JSONUtils.getFloat(json, "experience", 0.0F);
     int i = JSONUtils.getInt(json, "cookingtime", this.defaultCookTime);
-    return new GrinderRecipe(recipeId, s, ingredient, itemstack, f, i, staticOutput);
+    return new GrinderRecipe(recipeId, s, ingredient, itemstack, result, f, i, staticOutput);
   }
 
   @Override
   public GrinderRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
     String s = buffer.readString(32767);
     Ingredient ingredient = Ingredient.read(buffer);
-    ItemStack itemstack = buffer.readItemStack();
+    ItemStack itemstack = ItemStack.EMPTY;
+    Ingredient result = Ingredient.EMPTY;
+    if (buffer.readBoolean()) {
+      itemstack = buffer.readItemStack();
+    } else {
+      result = Ingredient.read(buffer);
+    }
     float f = buffer.readFloat();
     int i = buffer.readVarInt();
     boolean st = buffer.readBoolean();
-    return new GrinderRecipe(recipeId, s, ingredient, itemstack, f, i, st);
+    return new GrinderRecipe(recipeId, s, ingredient, itemstack, result, f, i, st);
   }
 
   @Override
   public void write(PacketBuffer buffer, GrinderRecipe recipe) {
     buffer.writeString(recipe.getGroup());
     recipe.getIngredients().forEach(o -> o.write(buffer));
-    buffer.writeItemStack(recipe.getRecipeOutput());
+    if (recipe.hasTagResult()) {
+      buffer.writeBoolean(false);
+      recipe.getResultIngredient().write(buffer);
+    } else {
+      buffer.writeBoolean(true);
+      buffer.writeItemStack(recipe.getRecipeOutput());
+    }
     buffer.writeFloat(recipe.getExperience());
     buffer.writeVarInt(recipe.getCookTime());
     buffer.writeBoolean(recipe.hasStaticOutput());

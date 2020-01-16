@@ -16,6 +16,7 @@
         "ingredient": {
           "tag": "forge:ores/quicksilver"
         },
+        "tagResult": false,
         "result": "grindr:mercury_dust",
         "experience": 0.125,
         "cookingtime": 100

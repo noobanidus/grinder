@@ -36,8 +36,7 @@ public class ModBlocks {
             ModelFile model = p.getBuilder(type.toString() + (active ? "_hot" : "_cold"))
                 .parent(existing)
                 .texture("front", new ResourceLocation(Grindr.MODID, active ? "block/grinder_front_hot" : "block/grinder_front_cold"))
-                .texture("grindstone_top", new ResourceLocation(Grindr.MODID, "block/" + texture))
-                .texture("grindstone_side", new ResourceLocation(Grindr.MODID, "block/" + texture + "_side"));
+                .texture("grindstone", new ResourceLocation(Grindr.MODID, "block/" + texture));
 
             return ConfiguredModel.builder()
                 .modelFile(model)
