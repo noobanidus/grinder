@@ -101,6 +101,11 @@ public class ConfigManager {
     SPEED_MODIFIER.put("diamond", COMMON_BUILDER.defineInRange("diamond_speed_modifier", 0.7, 0, 10));
     COMMON_BUILDER.pop();
 
+    COMMON_BUILDER.push("bismuth");
+    RESULT_MODIFIER.put("bismuth", COMMON_BUILDER.defineInRange("bismuth_result_modifier", 3.2, 0, 10));
+    SPEED_MODIFIER.put("bismuth", COMMON_BUILDER.defineInRange("bismuth_speed_modifier", 3.5, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.push("emerald");
     RESULT_MODIFIER.put("emerald", COMMON_BUILDER.defineInRange("emerald_result_modifier", 2.5, 0, 10));
     SPEED_MODIFIER.put("emerald", COMMON_BUILDER.defineInRange("emerald_speed_modifier", 1.0, 0, 10));
