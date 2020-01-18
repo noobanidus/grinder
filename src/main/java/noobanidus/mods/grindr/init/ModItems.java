@@ -11,6 +11,7 @@ import net.minecraftforge.common.crafting.ConditionalAdvancement;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.NotCondition;
 import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
+import noobanidus.libs.noobutil.util.StringUtil;
 import noobanidus.mods.grindr.Grindr;
 import noobanidus.mods.grindr.GrindrTags;
 import noobanidus.mods.grindr.blocks.GrindstoneType;
@@ -19,7 +20,6 @@ import noobanidus.mods.grindr.items.GrindstoneItem;
 import noobanidus.mods.grindr.items.GroundItem;
 import noobanidus.mods.grindr.recipes.GrinderRecipeBuilder;
 import noobanidus.mods.grindr.recipes.TagCookingRecipeBuilder;
-import noobanidus.mods.grindr.util.StringUtil;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -111,11 +111,13 @@ public class ModItems {
                 .patternLine("XXX")
                 .key('I', Tags.Items.INGOTS_IRON);
 
+            ShapedRecipeBuilder result;
+
             if (type.getTag() != null) {
-              builder = builder.key('X', type.getTag())
+              result = builder.key('X', type.getTag())
                   .addCriterion("has_" + type.toString(), p.hasItem(type.getTag()));
             } else if (type.getItem() != null) {
-              builder = builder.key('X', type.getItem())
+              result = builder.key('X', type.getItem())
                   .addCriterion("has_" + type.toString(), p.hasItem(type.getItem()));
             } else {
               throw new IllegalArgumentException("Invalid Grindstone Type " + type.toString() + ": no Tag or associated Item");
@@ -124,11 +126,27 @@ public class ModItems {
             if (GrindstoneType.INGOT_TO_ORE.containsKey(type)) {
               ConditionalRecipe.builder()
                   .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
-                  .addRecipe(builder::build)
+                  .addRecipe(result::build)
                   .setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/" + type.name().toLowerCase()), ConditionalAdvancement.builder()
                       .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
                       .addAdvancement(Advancement.Builder.builder()))
                   .build(p, new ResourceLocation(Grindr.MODID, ctx.getEntry().getRegistryName().getPath()));
+              if (type == GrindstoneType.MERCURY) {
+                ShapedRecipeBuilder quicksilver = ShapedRecipeBuilder.shapedRecipe(ctx.getEntry(), 1)
+                    .patternLine(" I ")
+                    .patternLine("XXX")
+                    .patternLine("XXX")
+                    .key('I', Tags.Items.INGOTS_IRON)
+                    .key('X', GrindrTags.Items.QUICKSILVER_ORE)
+                    .addCriterion("has_quicksilver", p.hasItem(GrindrTags.Items.QUICKSILVER_INGOT));
+                ConditionalRecipe.builder()
+                    .addCondition(new NotCondition(new TagEmptyCondition(GrindrTags.Items.QUICKSILVER_ORE.getId())))
+                    .addRecipe(quicksilver::build)
+                    .setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/quicksilver"), ConditionalAdvancement.builder()
+                        .addCondition(new NotCondition(new TagEmptyCondition(GrindrTags.Items.QUICKSILVER_ORE.getId())))
+                        .addAdvancement(Advancement.Builder.builder()))
+                    .build(p, new ResourceLocation(Grindr.MODID, "grindstone_quicksilver"));
+              }
               ConditionalRecipe.builder()
                   .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
                   .addRecipe(GrinderRecipeBuilder.builder(type.getRecycleItem(), GRINDSTONE_MAP.get(type).get(), 6, true)::build)

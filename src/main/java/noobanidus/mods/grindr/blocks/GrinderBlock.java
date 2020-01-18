@@ -21,10 +21,10 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import noobanidus.libs.noobutil.util.VoxelUtil;
 import noobanidus.mods.grindr.init.ModItems;
 import noobanidus.mods.grindr.items.GrindstoneItem;
 import noobanidus.mods.grindr.tiles.GrinderTile;
-import noobanidus.mods.grindr.util.VoxelUtil;
 
 import javax.annotation.Nullable;
 

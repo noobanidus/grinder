@@ -51,14 +51,49 @@ public class ConfigManager {
     SPEED_MODIFIER.put("andesite", COMMON_BUILDER.defineInRange("andesite_speed_modifier", 1.3, 0, 10));
     COMMON_BUILDER.pop();
 
+    COMMON_BUILDER.push("aluminum");
+    RESULT_MODIFIER.put("aluminum", COMMON_BUILDER.defineInRange("aluminum_result_modifier", 1.6, 0, 10));
+    SPEED_MODIFIER.put("aluminum", COMMON_BUILDER.defineInRange("aluminum_speed_modifier", 0.9, 0, 10));
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("copper");
+    RESULT_MODIFIER.put("copper", COMMON_BUILDER.defineInRange("copper_result_modifier", 1.4, 0, 10));
+    SPEED_MODIFIER.put("copper", COMMON_BUILDER.defineInRange("copper_speed_modifier", 0.6, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.push("iron");
     RESULT_MODIFIER.put("iron", COMMON_BUILDER.defineInRange("iron_result_modifier", 1.7, 0, 10));
     SPEED_MODIFIER.put("iron", COMMON_BUILDER.defineInRange("iron_speed_modifier", 1.0, 0, 10));
     COMMON_BUILDER.pop();
 
+    COMMON_BUILDER.push("nickel");
+    RESULT_MODIFIER.put("nickel", COMMON_BUILDER.defineInRange("nickel_result_modifier", 1.6, 0, 10));
+    SPEED_MODIFIER.put("nickel", COMMON_BUILDER.defineInRange("nickel_speed_modifier", 0.95, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.push("gold");
     RESULT_MODIFIER.put("gold", COMMON_BUILDER.defineInRange("gold_result_modifier", 1.4, 0, 10));
     SPEED_MODIFIER.put("gold", COMMON_BUILDER.defineInRange("gold_speed_modifier", 0.5, 0, 10));
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("lead");
+    RESULT_MODIFIER.put("lead", COMMON_BUILDER.defineInRange("lead_result_modifier", 2.0, 0, 10));
+    SPEED_MODIFIER.put("lead", COMMON_BUILDER.defineInRange("lead_speed_modifier", 1.6, 0, 10));
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("zinc");
+    RESULT_MODIFIER.put("zinc", COMMON_BUILDER.defineInRange("zinc_result_modifier", 1.45, 0, 10));
+    SPEED_MODIFIER.put("zinc", COMMON_BUILDER.defineInRange("zinc_speed_modifier", 0.8, 0, 10));
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("uranium");
+    RESULT_MODIFIER.put("uranium", COMMON_BUILDER.defineInRange("uranium_result_modifier", 0.75, 0, 10));
+    SPEED_MODIFIER.put("uranium", COMMON_BUILDER.defineInRange("uranium_speed_modifier", 0.2, 0, 10));
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("mercury");
+    RESULT_MODIFIER.put("mercury", COMMON_BUILDER.defineInRange("mercury_result_modifier", 1.3, 0, 10));
+    SPEED_MODIFIER.put("mercury", COMMON_BUILDER.defineInRange("mercury_speed_modifier", 0.3, 0, 10));
     COMMON_BUILDER.pop();
 
     COMMON_BUILDER.push("diamond");
