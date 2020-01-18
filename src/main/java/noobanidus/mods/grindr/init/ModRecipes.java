@@ -1,5 +1,6 @@
 package noobanidus.mods.grindr.init;
 
+import com.google.common.collect.Sets;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.RegistryEntry;
 import net.minecraft.item.Items;
@@ -8,7 +9,12 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
 import noobanidus.mods.grindr.Grindr;
+import noobanidus.mods.grindr.blocks.GrindstoneType;
 import noobanidus.mods.grindr.recipes.*;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 
 import static noobanidus.mods.grindr.Grindr.REGISTRATE;
 
@@ -19,6 +25,8 @@ public class ModRecipes {
 
   public static RegistryEntry<TagFurnaceRecipe.Serializer> TAG_FURNACE_SERIALIZER = REGISTRATE.object("furnace").recipeSerializer(TagFurnaceRecipe.Serializer::new).register();
   public static RegistryEntry<TagBlastingRecipe.Serializer> TAG_BLASTING_SERIALIZER = REGISTRATE.object("blasting").recipeSerializer(TagBlastingRecipe.Serializer::new).register();
+
+  public static Set<GrindstoneType> SKIP = Sets.newHashSet(GrindstoneType.EMPTY, GrindstoneType.STONE, GrindstoneType.GRANITE, GrindstoneType.DIORITE, GrindstoneType.ANDESITE, GrindstoneType.DIAMOND, GrindstoneType.EMERALD);
 
   static {
     REGISTRATE.addDataGenerator(ProviderType.RECIPE, (ctx) -> {
@@ -34,8 +42,17 @@ public class ModRecipes {
       GrinderRecipeBuilder.builder(Items.GRAVEL, Tags.Items.STONE).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gravel"));
       GrinderRecipeBuilder.builder(Items.FLINT, Tags.Items.GRAVEL).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/flint"));
       GrinderRecipeBuilder.builder(Items.GLOWSTONE_DUST, Items.GLOWSTONE, 4, true).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/glowstone_dust"));
+
+      for (GrindstoneType type : GrindstoneType.values()) {
+        if (SKIP.contains(type)) {
+          continue;
+        }
+        GrinderRecipeBuilder.builder(type.getRecycleItem(), type.getTag(), 1, true).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/" + type.toString().toLowerCase() + "_dust_from_ingot"));
+      }
     });
   }
+
+
 
   public static void load() {
 

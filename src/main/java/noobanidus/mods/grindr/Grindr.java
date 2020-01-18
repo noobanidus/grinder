@@ -10,6 +10,7 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
+import noobanidus.mods.grindr.blocks.GrinderBlock;
 import noobanidus.mods.grindr.blocks.GrindstoneType;
 import noobanidus.mods.grindr.client.hud.ManageHUD;
 import noobanidus.mods.grindr.config.ConfigManager;
@@ -43,6 +44,8 @@ public class Grindr {
       modBus.addListener(ClientSetup::init);
       MinecraftForge.EVENT_BUS.addListener(ManageHUD::onRender);
     });
+
+    MinecraftForge.EVENT_BUS.addListener(GrinderBlock::onInteractWith);
 
     REGISTRATE = CustomRegistrate.create(MODID);
     REGISTRATE.itemGroup(NonNullSupplier.of(() -> ITEM_GROUP));

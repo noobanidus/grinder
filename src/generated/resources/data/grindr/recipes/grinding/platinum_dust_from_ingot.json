@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/platinum",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:grinder",
+        "ingredient": {
+          "tag": "forge:ingots/platinum"
+        },
+        "tagResult": false,
+        "result": "grindr:platinum_dust",
+        "experience": 0.125,
+        "cookingtime": 100,
+        "static": true
+      }
+    }
+  ]
+}

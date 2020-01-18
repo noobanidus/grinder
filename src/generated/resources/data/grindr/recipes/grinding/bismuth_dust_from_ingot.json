@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/bismuth",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:grinder",
+        "ingredient": {
+          "tag": "forge:ingots/bismuth"
+        },
+        "tagResult": false,
+        "result": "grindr:bismuth_dust",
+        "experience": 0.125,
+        "cookingtime": 100,
+        "static": true
+      }
+    }
+  ]
+}

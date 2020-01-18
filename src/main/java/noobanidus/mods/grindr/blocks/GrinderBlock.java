@@ -15,13 +15,16 @@ import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import noobanidus.libs.noobutil.util.VoxelUtil;
+import noobanidus.mods.grindr.init.ModBlocks;
 import noobanidus.mods.grindr.init.ModItems;
 import noobanidus.mods.grindr.items.GrindstoneItem;
 import noobanidus.mods.grindr.tiles.GrinderTile;
@@ -58,6 +61,23 @@ public class GrinderBlock extends AbstractFurnaceBlock {
       }
 
       playerEntity.openContainer((INamedContainerProvider) te);
+    }
+  }
+
+  public static void onInteractWith(PlayerInteractEvent.RightClickBlock event) {
+    if (event.getPlayer().isSneaking()) {
+      World world = event.getWorld();
+      BlockState state = world.getBlockState(event.getPos());
+      if (state.getBlock() == ModBlocks.GRINDER.get()) {
+        PlayerEntity player = event.getPlayer();
+        if (player.getHeldItemMainhand().isEmpty()) {
+          event.setCancellationResult(ActionResultType.SUCCESS);
+          event.setCanceled(true);
+          if (!world.isRemote) {
+            ModBlocks.GRINDER.get().onBlockActivated(state, world, event.getPos(), event.getPlayer(), event.getHand(), null);
+          }
+        }
+      }
     }
   }
 

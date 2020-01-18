@@ -1,0 +1,47 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/iron",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "grindr:grinding/iron_dust_from_ingot"
+          ]
+        },
+        "criteria": {
+          "has_ore": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "tag": "forge:ingots/iron"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "grindr:grinding/iron_dust_from_ingot"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_ore",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -75,6 +75,36 @@
       "model": "grindr:block/andesite_cold",
       "y": 90
     },
+    "facing=north,grindstone=diamond,lit=false": {
+      "model": "grindr:block/diamond_cold"
+    },
+    "facing=south,grindstone=diamond,lit=false": {
+      "model": "grindr:block/diamond_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=diamond,lit=false": {
+      "model": "grindr:block/diamond_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=diamond,lit=false": {
+      "model": "grindr:block/diamond_cold",
+      "y": 90
+    },
+    "facing=north,grindstone=emerald,lit=false": {
+      "model": "grindr:block/emerald_cold"
+    },
+    "facing=south,grindstone=emerald,lit=false": {
+      "model": "grindr:block/emerald_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=emerald,lit=false": {
+      "model": "grindr:block/emerald_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=emerald,lit=false": {
+      "model": "grindr:block/emerald_cold",
+      "y": 90
+    },
     "facing=north,grindstone=aluminum,lit=false": {
       "model": "grindr:block/aluminum_cold"
     },
@@ -225,36 +255,6 @@
       "model": "grindr:block/zinc_cold",
       "y": 90
     },
-    "facing=north,grindstone=diamond,lit=false": {
-      "model": "grindr:block/diamond_cold"
-    },
-    "facing=south,grindstone=diamond,lit=false": {
-      "model": "grindr:block/diamond_cold",
-      "y": 180
-    },
-    "facing=west,grindstone=diamond,lit=false": {
-      "model": "grindr:block/diamond_cold",
-      "y": 270
-    },
-    "facing=east,grindstone=diamond,lit=false": {
-      "model": "grindr:block/diamond_cold",
-      "y": 90
-    },
-    "facing=north,grindstone=emerald,lit=false": {
-      "model": "grindr:block/emerald_cold"
-    },
-    "facing=south,grindstone=emerald,lit=false": {
-      "model": "grindr:block/emerald_cold",
-      "y": 180
-    },
-    "facing=west,grindstone=emerald,lit=false": {
-      "model": "grindr:block/emerald_cold",
-      "y": 270
-    },
-    "facing=east,grindstone=emerald,lit=false": {
-      "model": "grindr:block/emerald_cold",
-      "y": 90
-    },
     "facing=north,grindstone=bismuth,lit=false": {
       "model": "grindr:block/bismuth_cold"
     },
@@ -358,6 +358,36 @@
     },
     "facing=east,grindstone=andesite,lit=true": {
       "model": "grindr:block/andesite_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=diamond,lit=true": {
+      "model": "grindr:block/diamond_hot"
+    },
+    "facing=south,grindstone=diamond,lit=true": {
+      "model": "grindr:block/diamond_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=diamond,lit=true": {
+      "model": "grindr:block/diamond_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=diamond,lit=true": {
+      "model": "grindr:block/diamond_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=emerald,lit=true": {
+      "model": "grindr:block/emerald_hot"
+    },
+    "facing=south,grindstone=emerald,lit=true": {
+      "model": "grindr:block/emerald_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=emerald,lit=true": {
+      "model": "grindr:block/emerald_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=emerald,lit=true": {
+      "model": "grindr:block/emerald_hot",
       "y": 90
     },
     "facing=north,grindstone=aluminum,lit=true": {
@@ -508,36 +538,6 @@
     },
     "facing=east,grindstone=zinc,lit=true": {
       "model": "grindr:block/zinc_hot",
-      "y": 90
-    },
-    "facing=north,grindstone=diamond,lit=true": {
-      "model": "grindr:block/diamond_hot"
-    },
-    "facing=south,grindstone=diamond,lit=true": {
-      "model": "grindr:block/diamond_hot",
-      "y": 180
-    },
-    "facing=west,grindstone=diamond,lit=true": {
-      "model": "grindr:block/diamond_hot",
-      "y": 270
-    },
-    "facing=east,grindstone=diamond,lit=true": {
-      "model": "grindr:block/diamond_hot",
-      "y": 90
-    },
-    "facing=north,grindstone=emerald,lit=true": {
-      "model": "grindr:block/emerald_hot"
-    },
-    "facing=south,grindstone=emerald,lit=true": {
-      "model": "grindr:block/emerald_hot",
-      "y": 180
-    },
-    "facing=west,grindstone=emerald,lit=true": {
-      "model": "grindr:block/emerald_hot",
-      "y": 270
-    },
-    "facing=east,grindstone=emerald,lit=true": {
-      "model": "grindr:block/emerald_hot",
       "y": 90
     },
     "facing=north,grindstone=bismuth,lit=true": {

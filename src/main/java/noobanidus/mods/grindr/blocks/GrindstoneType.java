@@ -22,6 +22,8 @@ public enum GrindstoneType implements IStringSerializable {
   GRANITE("granite", Items.GRANITE),
   DIORITE("diorite", Items.DIORITE),
   ANDESITE("andesite", Items.ANDESITE),
+  DIAMOND("diamond", Tags.Items.GEMS_DIAMOND, Items.DIAMOND),
+  EMERALD("emerald", Tags.Items.GEMS_EMERALD, Items.EMERALD),
   ALUMINUM("aluminum", GrindrTags.Items.ALUMINUM_INGOT, ModItems.ALUMINUM_DUST),
   COPPER("copper", GrindrTags.Items.COPPER_INGOT, ModItems.COPPER_DUST),
   IRON("iron", Tags.Items.INGOTS_IRON, ModItems.IRON_DUST),
@@ -32,8 +34,6 @@ public enum GrindstoneType implements IStringSerializable {
   PLATINUM("platinum", GrindrTags.Items.PLATINUM_INGOT, ModItems.PLATINUM_DUST),
   MERCURY("mercury", GrindrTags.Items.MERCURY_INGOT, ModItems.MERCURY_DUST),
   ZINC("zinc", GrindrTags.Items.ZINC_INGOT, ModItems.ZINC_DUST),
-  DIAMOND("diamond", Tags.Items.GEMS_DIAMOND, Items.DIAMOND),
-  EMERALD("emerald", Tags.Items.GEMS_EMERALD, Items.EMERALD),
   BISMUTH("bismuth", GrindrTags.Items.BISMUTH_INGOT, ModItems.BISMUTH_DUST),
   URANIUM("uranium", GrindrTags.Items.URANIUM_INGOT, ModItems.URANIUM_DUST);
 
