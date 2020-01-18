@@ -76,6 +76,11 @@ public class ConfigManager {
     SPEED_MODIFIER.put("gold", COMMON_BUILDER.defineInRange("gold_speed_modifier", 0.5, 0, 10));
     COMMON_BUILDER.pop();
 
+    COMMON_BUILDER.push("silver");
+    RESULT_MODIFIER.put("silver", COMMON_BUILDER.defineInRange("silver_result_modifier", 1.5, 0, 10));
+    SPEED_MODIFIER.put("silver", COMMON_BUILDER.defineInRange("silver_speed_modifier", 0.75, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.push("lead");
     RESULT_MODIFIER.put("lead", COMMON_BUILDER.defineInRange("lead_result_modifier", 2.0, 0, 10));
     SPEED_MODIFIER.put("lead", COMMON_BUILDER.defineInRange("lead_speed_modifier", 1.6, 0, 10));
@@ -99,6 +104,11 @@ public class ConfigManager {
     COMMON_BUILDER.push("diamond");
     RESULT_MODIFIER.put("diamond", COMMON_BUILDER.defineInRange("diamond_result_modifier", 2.0, 0, 10));
     SPEED_MODIFIER.put("diamond", COMMON_BUILDER.defineInRange("diamond_speed_modifier", 0.7, 0, 10));
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("platinum");
+    RESULT_MODIFIER.put("platinum", COMMON_BUILDER.defineInRange("platinum_result_modifier", 2.2, 0, 10));
+    SPEED_MODIFIER.put("platinum", COMMON_BUILDER.defineInRange("platinum_speed_modifier", 0.7, 0, 10));
     COMMON_BUILDER.pop();
 
     COMMON_BUILDER.push("bismuth");
