@@ -36,6 +36,7 @@ public enum GrindstoneType implements IStringSerializable {
   MERCURY("mercury", GrindrTags.Items.MERCURY_INGOT, ModItems.MERCURY_DUST),
   ZINC("zinc", GrindrTags.Items.ZINC_INGOT, ModItems.ZINC_DUST),
   BISMUTH("bismuth", GrindrTags.Items.BISMUTH_INGOT, ModItems.BISMUTH_DUST),
+  NEPTUNIUM("neptunium", GrindrTags.Items.NEPTUNIUM_INGOT, ModItems.NEPTUNIUM_DUST),
   URANIUM("uranium", GrindrTags.Items.URANIUM_INGOT, ModItems.URANIUM_DUST);
 
   public static Map<GrindstoneType, Tag<Item>> INGOT_TO_ORE = new HashMap<>();
@@ -50,6 +51,7 @@ public enum GrindstoneType implements IStringSerializable {
     INGOT_TO_ORE.put(ZINC, GrindrTags.Items.ZINC_ORE);
     INGOT_TO_ORE.put(URANIUM, GrindrTags.Items.URANIUM_ORE);
     INGOT_TO_ORE.put(BISMUTH, GrindrTags.Items.BISMUTH_ORE);
+    INGOT_TO_ORE.put(NEPTUNIUM, GrindrTags.Items.NEPTUNIUM_ORE);
   }
 
   private String name;

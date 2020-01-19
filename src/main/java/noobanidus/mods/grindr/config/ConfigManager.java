@@ -125,6 +125,12 @@ public class ConfigManager {
     RESULT_MODIFIER.put("emerald", COMMON_BUILDER.defineInRange("emerald_result_modifier", 2.5, 0, 10));
     SPEED_MODIFIER.put("emerald", COMMON_BUILDER.defineInRange("emerald_speed_modifier", 1.0, 0, 10));
     COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("neptunium");
+    RESULT_MODIFIER.put("neptunium", COMMON_BUILDER.defineInRange("neptunium_result_modifier", 2.0, 0, 10));
+    SPEED_MODIFIER.put("neptunium", COMMON_BUILDER.defineInRange("neptunium_speed_modifier", 0.8, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.pop();
 
     COMMON_BUILDER.push("client").comment("whether or not a helpful (but annoying) hud should be displayed when targeting the grinder");

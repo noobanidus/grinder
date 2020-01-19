@@ -55,5 +55,6 @@ public class Grindr {
     ModRecipes.load();
     ModContainers.load();
     ModLang.load();
+    ModTags.load();
   }
 }

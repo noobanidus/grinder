@@ -75,6 +75,36 @@
       "model": "grindr:block/andesite_cold",
       "y": 90
     },
+    "facing=north,grindstone=iron,lit=false": {
+      "model": "grindr:block/iron_cold"
+    },
+    "facing=south,grindstone=iron,lit=false": {
+      "model": "grindr:block/iron_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=iron,lit=false": {
+      "model": "grindr:block/iron_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=iron,lit=false": {
+      "model": "grindr:block/iron_cold",
+      "y": 90
+    },
+    "facing=north,grindstone=gold,lit=false": {
+      "model": "grindr:block/gold_cold"
+    },
+    "facing=south,grindstone=gold,lit=false": {
+      "model": "grindr:block/gold_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=gold,lit=false": {
+      "model": "grindr:block/gold_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=gold,lit=false": {
+      "model": "grindr:block/gold_cold",
+      "y": 90
+    },
     "facing=north,grindstone=diamond,lit=false": {
       "model": "grindr:block/diamond_cold"
     },
@@ -150,21 +180,6 @@
       "model": "grindr:block/copper_cold",
       "y": 90
     },
-    "facing=north,grindstone=iron,lit=false": {
-      "model": "grindr:block/iron_cold"
-    },
-    "facing=south,grindstone=iron,lit=false": {
-      "model": "grindr:block/iron_cold",
-      "y": 180
-    },
-    "facing=west,grindstone=iron,lit=false": {
-      "model": "grindr:block/iron_cold",
-      "y": 270
-    },
-    "facing=east,grindstone=iron,lit=false": {
-      "model": "grindr:block/iron_cold",
-      "y": 90
-    },
     "facing=north,grindstone=nickel,lit=false": {
       "model": "grindr:block/nickel_cold"
     },
@@ -193,21 +208,6 @@
     },
     "facing=east,grindstone=lead,lit=false": {
       "model": "grindr:block/lead_cold",
-      "y": 90
-    },
-    "facing=north,grindstone=gold,lit=false": {
-      "model": "grindr:block/gold_cold"
-    },
-    "facing=south,grindstone=gold,lit=false": {
-      "model": "grindr:block/gold_cold",
-      "y": 180
-    },
-    "facing=west,grindstone=gold,lit=false": {
-      "model": "grindr:block/gold_cold",
-      "y": 270
-    },
-    "facing=east,grindstone=gold,lit=false": {
-      "model": "grindr:block/gold_cold",
       "y": 90
     },
     "facing=north,grindstone=silver,lit=false": {
@@ -283,6 +283,21 @@
     },
     "facing=east,grindstone=bismuth,lit=false": {
       "model": "grindr:block/bismuth_cold",
+      "y": 90
+    },
+    "facing=north,grindstone=neptunium,lit=false": {
+      "model": "grindr:block/neptunium_cold"
+    },
+    "facing=south,grindstone=neptunium,lit=false": {
+      "model": "grindr:block/neptunium_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=neptunium,lit=false": {
+      "model": "grindr:block/neptunium_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=neptunium,lit=false": {
+      "model": "grindr:block/neptunium_cold",
       "y": 90
     },
     "facing=north,grindstone=uranium,lit=false": {
@@ -375,6 +390,36 @@
       "model": "grindr:block/andesite_hot",
       "y": 90
     },
+    "facing=north,grindstone=iron,lit=true": {
+      "model": "grindr:block/iron_hot"
+    },
+    "facing=south,grindstone=iron,lit=true": {
+      "model": "grindr:block/iron_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=iron,lit=true": {
+      "model": "grindr:block/iron_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=iron,lit=true": {
+      "model": "grindr:block/iron_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=gold,lit=true": {
+      "model": "grindr:block/gold_hot"
+    },
+    "facing=south,grindstone=gold,lit=true": {
+      "model": "grindr:block/gold_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=gold,lit=true": {
+      "model": "grindr:block/gold_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=gold,lit=true": {
+      "model": "grindr:block/gold_hot",
+      "y": 90
+    },
     "facing=north,grindstone=diamond,lit=true": {
       "model": "grindr:block/diamond_hot"
     },
@@ -450,21 +495,6 @@
       "model": "grindr:block/copper_hot",
       "y": 90
     },
-    "facing=north,grindstone=iron,lit=true": {
-      "model": "grindr:block/iron_hot"
-    },
-    "facing=south,grindstone=iron,lit=true": {
-      "model": "grindr:block/iron_hot",
-      "y": 180
-    },
-    "facing=west,grindstone=iron,lit=true": {
-      "model": "grindr:block/iron_hot",
-      "y": 270
-    },
-    "facing=east,grindstone=iron,lit=true": {
-      "model": "grindr:block/iron_hot",
-      "y": 90
-    },
     "facing=north,grindstone=nickel,lit=true": {
       "model": "grindr:block/nickel_hot"
     },
@@ -493,21 +523,6 @@
     },
     "facing=east,grindstone=lead,lit=true": {
       "model": "grindr:block/lead_hot",
-      "y": 90
-    },
-    "facing=north,grindstone=gold,lit=true": {
-      "model": "grindr:block/gold_hot"
-    },
-    "facing=south,grindstone=gold,lit=true": {
-      "model": "grindr:block/gold_hot",
-      "y": 180
-    },
-    "facing=west,grindstone=gold,lit=true": {
-      "model": "grindr:block/gold_hot",
-      "y": 270
-    },
-    "facing=east,grindstone=gold,lit=true": {
-      "model": "grindr:block/gold_hot",
       "y": 90
     },
     "facing=north,grindstone=silver,lit=true": {
@@ -583,6 +598,21 @@
     },
     "facing=east,grindstone=bismuth,lit=true": {
       "model": "grindr:block/bismuth_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=neptunium,lit=true": {
+      "model": "grindr:block/neptunium_hot"
+    },
+    "facing=south,grindstone=neptunium,lit=true": {
+      "model": "grindr:block/neptunium_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=neptunium,lit=true": {
+      "model": "grindr:block/neptunium_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=neptunium,lit=true": {
+      "model": "grindr:block/neptunium_hot",
       "y": 90
     },
     "facing=north,grindstone=uranium,lit=true": {

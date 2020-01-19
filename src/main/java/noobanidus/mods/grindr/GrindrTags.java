@@ -41,6 +41,22 @@ public class GrindrTags {
     public static Tag<Item> BISMUTH_INGOT = compatTag("ingots/bismuth");
     public static Tag<Item> NEPTUNIUM_INGOT = compatTag("ingots/neptunium");
 
+    public static Tag<Item> GOLD_DUST = compatTag("dusts/gold");
+    public static Tag<Item> IRON_DUST = compatTag("dusts/iron");
+    public static Tag<Item> SILVER_DUST = compatTag("dusts/silver");
+    public static Tag<Item> COPPER_DUST = compatTag("dusts/copper");
+    public static Tag<Item> TIN_DUST = compatTag("dusts/tin");
+    public static Tag<Item> NICKEL_DUST = compatTag("dusts/nickel");
+    public static Tag<Item> LEAD_DUST = compatTag("dusts/lead");
+    public static Tag<Item> ALUMINUM_DUST = compatTag("dusts/aluminum");
+    public static Tag<Item> URANIUM_DUST = compatTag("dusts/uranium");
+    public static Tag<Item> ZINC_DUST = compatTag("dusts/zinc");
+    public static Tag<Item> PLATINUM_DUST = compatTag("dusts/platinum");
+    public static Tag<Item> MERCURY_DUST = compatTag("dusts/mercury");
+    public static Tag<Item> QUICKSILVER_DUST = compatTag("dusts/quicksilver");
+    public static Tag<Item> BISMUTH_DUST = compatTag("dusts/bismuth");
+    public static Tag<Item> NEPTUNIUM_DUST = compatTag("dusts/neptunium");
+
     static Tag<Item> tag(String modid, String name) {
       return tag(ItemTags.Wrapper::new, modid, name);
     }

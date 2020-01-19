@@ -34,47 +34,47 @@ public class ModItems {
   public static final RegistryEntry<GroundItem> GOLD_DUST = REGISTRATE.item("gold_dust", GroundItem::new).properties(ConfigManager.getProperty("gold_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.GOLD_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.GOLD_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.GOLD_DUST).register();
   public static final RegistryEntry<GroundItem> IRON_DUST = REGISTRATE.item("iron_dust", GroundItem::new).properties(ConfigManager.getProperty("iron_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.IRON_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.IRON_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.IRON_DUST).register();
   public static final RegistryEntry<GroundItem> SILVER_DUST = REGISTRATE.item("silver_dust", GroundItem::new).properties(ConfigManager.getProperty("silver_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.SILVER_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.SILVER_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.SILVER_DUST).register();
   public static final RegistryEntry<GroundItem> COPPER_DUST = REGISTRATE.item("copper_dust", GroundItem::new).properties(ConfigManager.getProperty("copper_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.COPPER_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.COPPER_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.COPPER_DUST).register();
   public static final RegistryEntry<GroundItem> TIN_DUST = REGISTRATE.item("tin_dust", GroundItem::new).properties(ConfigManager.getProperty("tin_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.TIN_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.TIN_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.TIN_DUST).register();
   public static final RegistryEntry<GroundItem> NICKEL_DUST = REGISTRATE.item("nickel_dust", GroundItem::new).properties(ConfigManager.getProperty("nickel_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.NICKEL_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.NICKEL_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.NICKEL_DUST).register();
   public static final RegistryEntry<GroundItem> LEAD_DUST = REGISTRATE.item("lead_dust", GroundItem::new).properties(ConfigManager.getProperty("lead_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.LEAD_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.LEAD_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.LEAD_DUST).register();
   public static final RegistryEntry<GroundItem> ALUMINUM_DUST = REGISTRATE.item("aluminum_dust", GroundItem::new).properties(ConfigManager.getProperty("aluminum_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.ALUMINUM_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.ALUMINUM_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.ALUMINUM_DUST).register();
   public static final RegistryEntry<GroundItem> URANIUM_DUST = REGISTRATE.item("uranium_dust", GroundItem::new).properties(ConfigManager.getProperty("uranium_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.URANIUM_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.URANIUM_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.URANIUM_DUST).register();
   public static final RegistryEntry<GroundItem> ZINC_DUST = REGISTRATE.item("zinc_dust", GroundItem::new).properties(ConfigManager.getProperty("zinc_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.ZINC_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.ZINC_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.ZINC_DUST).register();
   public static final RegistryEntry<GroundItem> PLATINUM_DUST = REGISTRATE.item("platinum_dust", GroundItem::new).properties(ConfigManager.getProperty("platinum_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.PLATINUM_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.PLATINUM_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.PLATINUM_DUST).register();
   public static final RegistryEntry<GroundItem> MERCURY_DUST = REGISTRATE.item("mercury_dust", GroundItem::new).properties(ConfigManager.getProperty("mercury_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.MERCURY_ORE).build(p, new ResourceLocation("grindr:grinding/mercury_dust_from_mercury_ore"));
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.MERCURY_INGOT, p);
@@ -84,11 +84,11 @@ public class ModItems {
   public static final RegistryEntry<GroundItem> BISMUTH_DUST = REGISTRATE.item("bismuth_dust", GroundItem::new).properties(ConfigManager.getProperty("bismuth_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.BISMUTH_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.BISMUTH_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.BISMUTH_DUST).register();
   public static final RegistryEntry<GroundItem> NEPTUNIUM_DUST = REGISTRATE.item("neptunium_dust", GroundItem::new).properties(ConfigManager.getProperty("neptunium_dust")).recipe((ctx, p) -> {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.NEPTUNIUM_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.NEPTUNIUM_INGOT, p);
-  }).register();
+  }).tag(GrindrTags.Items.NEPTUNIUM_DUST).register();
 
   public static final List<RegistryEntry<GroundItem>> DUST_ITEMS = Arrays.asList(GOLD_DUST, IRON_DUST, SILVER_DUST, COPPER_DUST, TIN_DUST, NICKEL_DUST, LEAD_DUST, ALUMINUM_DUST, URANIUM_DUST, ZINC_DUST, PLATINUM_DUST, MERCURY_DUST, BISMUTH_DUST, NEPTUNIUM_DUST);
 
