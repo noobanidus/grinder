@@ -106,6 +106,11 @@ public class ConfigManager {
     SPEED_MODIFIER.put("diamond", COMMON_BUILDER.defineInRange("diamond_speed_modifier", 0.7, 0, 10));
     COMMON_BUILDER.pop();
 
+    COMMON_BUILDER.push("obsidian");
+    RESULT_MODIFIER.put("obsidian", COMMON_BUILDER.defineInRange("obsidian_result_modifier", 2.5, 0, 10));
+    SPEED_MODIFIER.put("obsidian", COMMON_BUILDER.defineInRange("obsidian_speed_modifier", 1.1, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.push("platinum");
     RESULT_MODIFIER.put("platinum", COMMON_BUILDER.defineInRange("platinum_result_modifier", 2.2, 0, 10));
     SPEED_MODIFIER.put("platinum", COMMON_BUILDER.defineInRange("platinum_speed_modifier", 0.7, 0, 10));

@@ -1,0 +1,7 @@
+{
+  "parent": "grindr:block/grinder_template",
+  "textures": {
+    "front": "grindr:block/grinder_front_cold",
+    "grindstone": "grindr:block/obsidian"
+  }
+}

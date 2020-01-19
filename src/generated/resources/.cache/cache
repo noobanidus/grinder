@@ -1,6 +1,6 @@
-4042794fe69a283855d653d360092ef7e3bbc105 assets\grindr\blockstates\grinder.json
-c4f0dae2612812b9a865892b68c8823c00ca953c assets\grindr\lang\en_ud.json
-3e8b52a4e47ae95f5cfc303a306dbadeb345fc23 assets\grindr\lang\en_us.json
+a0c244c3b34962d5f54bcd583611e864ab3c521f assets\grindr\blockstates\grinder.json
+be371247c9dc39dfb55e5a6ef80290a411aa742e assets\grindr\lang\en_ud.json
+3a77aac30979f2ec1f701f7e548ff472657bf844 assets\grindr\lang\en_us.json
 11b9a04e7c320cc41a19261cde98cd7d4a8f0a3f assets\grindr\models\block\aluminum_cold.json
 41e22c152fb7133f5ea50556ad540bc6168d126a assets\grindr\models\block\aluminum_hot.json
 7d5994e2e49a134a787802f45ad0e8bc5915825f assets\grindr\models\block\andesite_cold.json
@@ -29,6 +29,8 @@ dea915bc9edce4c8aee7832012e88752ac82d122 assets\grindr\models\block\mercury_cold
 6e14f5aa1b30a5b36f3ae227be9038d31cd18234 assets\grindr\models\block\mercury_hot.json
 afdda89b42aa93141f419292305059d95d00bfd8 assets\grindr\models\block\nickel_cold.json
 73d2919f639594123d0bdaf6c8252dbf44ef4dd2 assets\grindr\models\block\nickel_hot.json
+d57bbfd4a12c6fe61b3a8d5dc8edd5b574ad05bf assets\grindr\models\block\obsidian_cold.json
+ac529a4d564e983524002019ecd82730262bee05 assets\grindr\models\block\obsidian_hot.json
 e3f92bab007be44921a09e97556eb47f5b522b59 assets\grindr\models\block\platinum_cold.json
 71b45765b41d18970a68b1dd61e3c6847c34aaef assets\grindr\models\block\platinum_hot.json
 b157b0ee0a5b5ff80d7a754acc71bc481522ca4e assets\grindr\models\block\silver_cold.json
@@ -57,6 +59,7 @@ a4dcd3fde4311a5e61c06255068578cc9d85437f assets\grindr\models\item\grindstone_ir
 75f34fac53a684179402e22f4909f8868b719f01 assets\grindr\models\item\grindstone_lead.json
 dd4460711399b46676c575b4ac5a4fe3254b0fbd assets\grindr\models\item\grindstone_mercury.json
 0bd56bd8dd3d612d7555699ba0f326c249e66689 assets\grindr\models\item\grindstone_nickel.json
+25a5cbe976eb9e9f7c0d35961c868095a35f9fb2 assets\grindr\models\item\grindstone_obsidian.json
 6cf329417f8a36e58c8859eb3bc5e34e654a7a5c assets\grindr\models\item\grindstone_platinum.json
 36bd70b96e56cd4a28e0354a2c5ad20733c129f5 assets\grindr\models\item\grindstone_silver.json
 76db4f3f8e104c080fac7168f117605273ada753 assets\grindr\models\item\grindstone_stone.json
@@ -92,6 +95,7 @@ b3186be4a84b1b6da759cbfc358570fb7cf136a2 data\grindr\advancements\recipes\blasti
 58079befe2fcba689c6a568e171c6a2821590311 data\grindr\advancements\recipes\building_blocks\recycle\andesite.json
 4a77aa1d5809cfd0089f07c7125e2388baf0a940 data\grindr\advancements\recipes\building_blocks\recycle\diorite.json
 46fb986eef2f49dc11099422e206b4789f3659f7 data\grindr\advancements\recipes\building_blocks\recycle\granite.json
+e2a203162ba1fcaf22cd323430ec3e42e3d32a4e data\grindr\advancements\recipes\building_blocks\recycle\obsidian.json
 87c9c7c29a00b76719333f97ed0080e0c9ebd343 data\grindr\advancements\recipes\building_blocks\recycle\stone.json
 3c09f4b8a25f8b1e510f68044c4aca8b88fa8e6d data\grindr\advancements\recipes\copper.json
 26b7ad4396be534449ad1f7b44f949bfa258c1ed data\grindr\advancements\recipes\grinding\aluminum_dust.json
@@ -139,6 +143,7 @@ d293b5f7cea2f9e230cdb9ad633dbcc1eb829956 data\grindr\advancements\recipes\grindr
 dcb6e8ca9bd7ebb3eba07c9a35830014b10118ab data\grindr\advancements\recipes\grindr\grindstone_gold.json
 adcc7f2e1b090826a9970f6b2999fd7afa7f63f6 data\grindr\advancements\recipes\grindr\grindstone_granite.json
 479d637c4f1e87a10cac38530abebfebc27bf087 data\grindr\advancements\recipes\grindr\grindstone_iron.json
+cd01a3e0b921ee8a989cbbfa7682d69854731450 data\grindr\advancements\recipes\grindr\grindstone_obsidian.json
 3e28ab7ef093fe816f3df5619dececf442ea2009 data\grindr\advancements\recipes\grindr\grindstone_stone.json
 efb19d7e0dffd0f10be2df44196bd606848f0584 data\grindr\advancements\recipes\grindr\recycle\gold.json
 ae86eaf95e66b17ec0f9dda40893595ac1ad2052 data\grindr\advancements\recipes\grindr\recycle\iron.json
@@ -248,6 +253,7 @@ a0b5d23163d6fb8d1782a25cd1933b0c75cfa9f0 data\grindr\recipes\grindstone_bismuth.
 a86e861c1843796e850efccf2fae61e93899225f data\grindr\recipes\grindstone_lead.json
 c56012af68b8ec9d42b6391cd1e8109111cade32 data\grindr\recipes\grindstone_mercury.json
 294cd2987758c23554bcde7eac7107f816c48eee data\grindr\recipes\grindstone_nickel.json
+fdf544b6390df03ed291e3da9df3a9356e3b664e data\grindr\recipes\grindstone_obsidian.json
 e10867010b666e697021bd0579038773f5bafc47 data\grindr\recipes\grindstone_platinum.json
 868d6913a29943615773953dff2c7ec66bb28dbb data\grindr\recipes\grindstone_quicksilver.json
 c15a1918bf1ee9ee24bbe78ac7b70687c61cb435 data\grindr\recipes\grindstone_silver.json
@@ -267,6 +273,7 @@ afc3490cda55ffec15702809c74d0556ea9b2ff1 data\grindr\recipes\recycle\granite.jso
 913d59e3ddae4c5e2e25f969d85868b24c09cd5b data\grindr\recipes\recycle\lead.json
 e03031b73bf9cd8f56833d7648fbb58e9004aad4 data\grindr\recipes\recycle\mercury.json
 792a784f25f50bd22e6b0f8897f100ce4a69d851 data\grindr\recipes\recycle\nickel.json
+95a2f7146841b2a0bae7c3e7df7d426a70d2c63c data\grindr\recipes\recycle\obsidian.json
 1e737b45d4dc34c56f98c012d7e24b50cda43764 data\grindr\recipes\recycle\platinum.json
 0852b4b11e1ca7a287e2fa2301a3aa4f8b36deb0 data\grindr\recipes\recycle\silver.json
 276fb4a465b0f354e5a375aa39b2781667a3cdaa data\grindr\recipes\recycle\stone.json

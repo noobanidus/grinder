@@ -26,7 +26,7 @@ public class ModRecipes {
   public static RegistryEntry<TagFurnaceRecipe.Serializer> TAG_FURNACE_SERIALIZER = REGISTRATE.object("furnace").recipeSerializer(TagFurnaceRecipe.Serializer::new).register();
   public static RegistryEntry<TagBlastingRecipe.Serializer> TAG_BLASTING_SERIALIZER = REGISTRATE.object("blasting").recipeSerializer(TagBlastingRecipe.Serializer::new).register();
 
-  public static Set<GrindstoneType> SKIP = Sets.newHashSet(GrindstoneType.EMPTY, GrindstoneType.STONE, GrindstoneType.GRANITE, GrindstoneType.DIORITE, GrindstoneType.ANDESITE, GrindstoneType.DIAMOND, GrindstoneType.EMERALD);
+  public static Set<GrindstoneType> SKIP = Sets.newHashSet(GrindstoneType.EMPTY, GrindstoneType.STONE, GrindstoneType.GRANITE, GrindstoneType.DIORITE, GrindstoneType.ANDESITE, GrindstoneType.DIAMOND, GrindstoneType.EMERALD, GrindstoneType.OBSIDIAN);
 
   static {
     REGISTRATE.addDataGenerator(ProviderType.RECIPE, (ctx) -> {

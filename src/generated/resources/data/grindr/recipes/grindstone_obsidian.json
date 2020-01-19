@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:ingots/iron"
+    },
+    "X": {
+      "tag": "forge:obsidian"
+    }
+  },
+  "result": {
+    "item": "grindr:grindstone_obsidian"
+  }
+}
