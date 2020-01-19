@@ -1,5 +1,8 @@
-/download
+/DOWNload
 /eclipseBin
+
+## cache
+/src/generated/resources/.cache
 
 ## gradle
 **/.gradle

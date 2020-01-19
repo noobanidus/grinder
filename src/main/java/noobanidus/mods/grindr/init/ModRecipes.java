@@ -3,17 +3,19 @@ package noobanidus.mods.grindr.init;
 import com.google.common.collect.Sets;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.RegistryEntry;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.crafting.ConditionalAdvancement;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
+import net.minecraftforge.common.crafting.conditions.NotCondition;
+import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
 import noobanidus.mods.grindr.Grindr;
 import noobanidus.mods.grindr.blocks.GrindstoneType;
 import noobanidus.mods.grindr.recipes.*;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Set;
 
 import static noobanidus.mods.grindr.Grindr.REGISTRATE;
@@ -47,11 +49,19 @@ public class ModRecipes {
         if (SKIP.contains(type)) {
           continue;
         }
-        GrinderRecipeBuilder.builder(type.getRecycleItem(), type.getTag(), 1, true).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/" + type.toString().toLowerCase() + "_dust_from_ingot"));
+        if (type.getTag() == null) {
+          continue;
+        }
+        ConditionalRecipe.builder()
+            .addCondition(new NotCondition(new TagEmptyCondition(type.getTag().getId())))
+            .addRecipe(GrinderRecipeBuilder.builder(type.getRecycleItem(), type.getTag(), 1, true)::build)
+            .setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/dusts/" + type.name().toLowerCase()), ConditionalAdvancement.builder()
+                .addCondition(new NotCondition(new TagEmptyCondition(type.getTag().getId())))
+                .addAdvancement(Advancement.Builder.builder()))
+            .build(ctx, new ResourceLocation(Grindr.MODID, "grinding/" + type.name().toLowerCase() + "_dust_from_ingot"));
       }
     });
   }
-
 
 
   public static void load() {

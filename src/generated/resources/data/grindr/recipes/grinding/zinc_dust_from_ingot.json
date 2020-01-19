@@ -12,15 +12,31 @@
         }
       ],
       "recipe": {
-        "type": "grindr:grinder",
-        "ingredient": {
-          "tag": "forge:ingots/zinc"
-        },
-        "tagResult": false,
-        "result": "grindr:zinc_dust",
-        "experience": 0.125,
-        "cookingtime": 100,
-        "static": true
+        "type": "forge:conditional",
+        "recipes": [
+          {
+            "conditions": [
+              {
+                "value": {
+                  "tag": "forge:ingots/zinc",
+                  "type": "forge:tag_empty"
+                },
+                "type": "forge:not"
+              }
+            ],
+            "recipe": {
+              "type": "grindr:grinder",
+              "ingredient": {
+                "tag": "forge:ingots/zinc"
+              },
+              "tagResult": false,
+              "result": "grindr:zinc_dust",
+              "experience": 0.125,
+              "cookingtime": 100,
+              "static": true
+            }
+          }
+        ]
       }
     }
   ]
