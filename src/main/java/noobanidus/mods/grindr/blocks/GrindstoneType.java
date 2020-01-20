@@ -28,6 +28,7 @@ public enum GrindstoneType implements IStringSerializable {
   EMERALD("emerald", Tags.Items.GEMS_EMERALD, Items.EMERALD),
   OBSIDIAN("obsidian", Tags.Items.OBSIDIAN, Items.OBSIDIAN),
   ALUMINUM("aluminum", GrindrTags.Items.ALUMINUM_INGOT, ModItems.ALUMINUM_DUST),
+  TIN("tin", GrindrTags.Items.TIN_INGOT, ModItems.TIN_DUST),
   COPPER("copper", GrindrTags.Items.COPPER_INGOT, ModItems.COPPER_DUST),
   NICKEL("nickel", GrindrTags.Items.NICKEL_INGOT, ModItems.NICKEL_DUST),
   LEAD("lead", GrindrTags.Items.LEAD_INGOT, ModItems.LEAD_DUST),
@@ -52,6 +53,7 @@ public enum GrindstoneType implements IStringSerializable {
     INGOT_TO_ORE.put(URANIUM, GrindrTags.Items.URANIUM_ORE);
     INGOT_TO_ORE.put(BISMUTH, GrindrTags.Items.BISMUTH_ORE);
     INGOT_TO_ORE.put(NEPTUNIUM, GrindrTags.Items.NEPTUNIUM_ORE);
+    INGOT_TO_ORE.put(TIN, GrindrTags.Items.TIN_ORE);
   }
 
   private String name;

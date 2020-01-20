@@ -1,10 +1,11 @@
 buildscript {
     repositories {
-        mavenCentral()
         mavenLocal()
+        maven { url = 'http://files.minecraftforge.net/maven' }
+        jcenter()
+        mavenCentral()
         maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            url 'https://dogforce-games.com/maven'
         }
         maven {
             name = "sonatype"
@@ -12,7 +13,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.0.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.0.165-run-configs-rework', changing: true
     }
 }
 plugins {

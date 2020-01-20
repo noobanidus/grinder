@@ -51,6 +51,11 @@ public class ConfigManager {
     SPEED_MODIFIER.put("andesite", COMMON_BUILDER.defineInRange("andesite_speed_modifier", 1.3, 0, 10));
     COMMON_BUILDER.pop();
 
+    COMMON_BUILDER.push("tin");
+    RESULT_MODIFIER.put("tin", COMMON_BUILDER.defineInRange("tin_result_modifier", 1.3, 0, 10));
+    SPEED_MODIFIER.put("tin", COMMON_BUILDER.defineInRange("tin_speed_modifier", 0.75, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.push("aluminum");
     RESULT_MODIFIER.put("aluminum", COMMON_BUILDER.defineInRange("aluminum_result_modifier", 1.6, 0, 10));
     SPEED_MODIFIER.put("aluminum", COMMON_BUILDER.defineInRange("aluminum_speed_modifier", 0.9, 0, 10));

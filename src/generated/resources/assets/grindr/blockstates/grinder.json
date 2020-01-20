@@ -165,6 +165,21 @@
       "model": "grindr:block/aluminum_cold",
       "y": 90
     },
+    "facing=north,grindstone=tin,lit=false": {
+      "model": "grindr:block/tin_cold"
+    },
+    "facing=south,grindstone=tin,lit=false": {
+      "model": "grindr:block/tin_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=tin,lit=false": {
+      "model": "grindr:block/tin_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=tin,lit=false": {
+      "model": "grindr:block/tin_cold",
+      "y": 90
+    },
     "facing=north,grindstone=copper,lit=false": {
       "model": "grindr:block/copper_cold"
     },
@@ -478,6 +493,21 @@
     },
     "facing=east,grindstone=aluminum,lit=true": {
       "model": "grindr:block/aluminum_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=tin,lit=true": {
+      "model": "grindr:block/tin_hot"
+    },
+    "facing=south,grindstone=tin,lit=true": {
+      "model": "grindr:block/tin_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=tin,lit=true": {
+      "model": "grindr:block/tin_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=tin,lit=true": {
+      "model": "grindr:block/tin_hot",
       "y": 90
     },
     "facing=north,grindstone=copper,lit=true": {
