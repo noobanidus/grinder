@@ -48,6 +48,7 @@ public class ModRecipes {
       GrinderRecipeBuilder.builder(Items.BLAZE_POWDER, Items.BLAZE_ROD, 2).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/blaze_powder_from_blaze_rod"));
       GrinderRecipeBuilder.builder(Items.GUNPOWDER, Items.BLAZE_POWDER, 4).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gunpowder_from_blaze_powder"));
       GrinderRecipeBuilder.builder(Items.GUNPOWDER, Items.GHAST_TEAR, 4).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gunpowder_from_ghast_tear"));
+      GrinderRecipeBuilder.builder(Items.CREEPER_HEAD, Items.GUNPOWDER, 10).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gunpowder_from_creeper_head"));
 
 
       for (GrindstoneType type : GrindstoneType.values()) {
