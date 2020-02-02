@@ -44,6 +44,11 @@ public class ModRecipes {
       GrinderRecipeBuilder.builder(Items.GRAVEL, Tags.Items.STONE).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gravel"));
       GrinderRecipeBuilder.builder(Items.FLINT, Tags.Items.GRAVEL).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/flint"));
       GrinderRecipeBuilder.builder(Items.GLOWSTONE_DUST, Items.GLOWSTONE, 4, true).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/glowstone_dust"));
+      GrinderRecipeBuilder.builder(Items.QUARTZ, Tags.Items.STORAGE_BLOCKS_QUARTZ, 4, true).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/quartz_from_quartz_storage"));
+      GrinderRecipeBuilder.builder(Items.BLAZE_POWDER, Items.BLAZE_ROD, 2).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/blaze_powder_from_blaze_rod"));
+      GrinderRecipeBuilder.builder(Items.GUNPOWDER, Items.BLAZE_POWDER, 4).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gunpowder_from_blaze_powder"));
+      GrinderRecipeBuilder.builder(Items.GUNPOWDER, Items.GHAST_TEAR, 4).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gunpowder_from_ghast_tear"));
+
 
       for (GrindstoneType type : GrindstoneType.values()) {
         if (SKIP.contains(type)) {
