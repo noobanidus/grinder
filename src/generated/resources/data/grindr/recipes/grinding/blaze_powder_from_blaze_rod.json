@@ -1,0 +1,11 @@
+{
+  "type": "grindr:grinder",
+  "ingredient": {
+    "item": "minecraft:blaze_rod"
+  },
+  "tagResult": false,
+  "result": "minecraft:blaze_powder",
+  "experience": 0.125,
+  "cookingtime": 100,
+  "count": 4
+}

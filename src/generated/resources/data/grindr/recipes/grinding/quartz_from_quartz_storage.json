@@ -5,7 +5,7 @@
       "conditions": [
         {
           "value": {
-            "tag": "forge:bones",
+            "tag": "forge:storage_blocks/quartz",
             "type": "forge:tag_empty"
           },
           "type": "forge:not"
@@ -14,12 +14,13 @@
       "recipe": {
         "type": "grindr:grinder",
         "ingredient": {
-          "tag": "forge:bones"
+          "tag": "forge:storage_blocks/quartz"
         },
         "tagResult": false,
-        "result": "minecraft:bone_meal",
+        "result": "minecraft:quartz",
         "experience": 0.125,
         "cookingtime": 100,
+        "static": true,
         "count": 4
       }
     }

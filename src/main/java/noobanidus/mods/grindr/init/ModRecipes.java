@@ -38,18 +38,17 @@ public class ModRecipes {
       GrinderRecipeBuilder.builder(Items.DIAMOND, Tags.Items.ORES_DIAMOND).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/diamond"));
       GrinderRecipeBuilder.builder(Items.EMERALD, Tags.Items.ORES_EMERALD).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/emerald"));
       GrinderRecipeBuilder.builder(Items.QUARTZ, Tags.Items.ORES_QUARTZ, 2).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/quartz"));
-      GrinderRecipeBuilder.builder(Items.BONE_MEAL, Tags.Items.BONES, 2).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/bone_meal"));
+      GrinderRecipeBuilder.builder(Items.BONE_MEAL, Tags.Items.BONES, 4).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/bone_meal"));
       GrinderRecipeBuilder.builder(Items.SUGAR, Items.SUGAR_CANE, 2).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/sugar"));
       GrinderRecipeBuilder.builder(Items.SAND, Tags.Items.SANDSTONE, 4).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/sandstone"));
       GrinderRecipeBuilder.builder(Items.GRAVEL, Tags.Items.STONE).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gravel"));
       GrinderRecipeBuilder.builder(Items.FLINT, Tags.Items.GRAVEL).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/flint"));
       GrinderRecipeBuilder.builder(Items.GLOWSTONE_DUST, Items.GLOWSTONE, 4, true).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/glowstone_dust"));
       GrinderRecipeBuilder.builder(Items.QUARTZ, Tags.Items.STORAGE_BLOCKS_QUARTZ, 4, true).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/quartz_from_quartz_storage"));
-      GrinderRecipeBuilder.builder(Items.BLAZE_POWDER, Items.BLAZE_ROD, 2).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/blaze_powder_from_blaze_rod"));
+      GrinderRecipeBuilder.builder(Items.BLAZE_POWDER, Items.BLAZE_ROD, 4).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/blaze_powder_from_blaze_rod"));
       GrinderRecipeBuilder.builder(Items.GUNPOWDER, Items.BLAZE_POWDER, 4).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gunpowder_from_blaze_powder"));
       GrinderRecipeBuilder.builder(Items.GUNPOWDER, Items.GHAST_TEAR, 4).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gunpowder_from_ghast_tear"));
       GrinderRecipeBuilder.builder(Items.CREEPER_HEAD, Items.GUNPOWDER, 10).build(ctx, new ResourceLocation(Grindr.MODID, "grinding/gunpowder_from_creeper_head"));
-
 
       for (GrindstoneType type : GrindstoneType.values()) {
         if (SKIP.contains(type)) {

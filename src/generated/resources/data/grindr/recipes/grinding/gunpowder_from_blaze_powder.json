@@ -1,0 +1,11 @@
+{
+  "type": "grindr:grinder",
+  "ingredient": {
+    "item": "minecraft:blaze_powder"
+  },
+  "tagResult": false,
+  "result": "minecraft:gunpowder",
+  "experience": 0.125,
+  "cookingtime": 100,
+  "count": 4
+}
