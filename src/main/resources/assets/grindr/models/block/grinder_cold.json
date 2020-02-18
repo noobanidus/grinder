@@ -1,0 +1,10 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "grindr:block/grinder_hot",
+	"textures": {
+		"post": "block/anvil",
+		"particle": "block/polished_andesite",
+		"sides": "block/polished_andesite",
+		"front": "grindr:block/grinder_front_cold"
+	}
+}

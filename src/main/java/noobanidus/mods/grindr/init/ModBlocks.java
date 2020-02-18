@@ -4,6 +4,7 @@ import com.tterrag.registrate.util.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.client.renderer.model.Model;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -23,20 +24,34 @@ public class ModBlocks {
 
   public static final RegistryEntry<GrinderBlock> GRINDER = REGISTRATE.block("grinder", GrinderBlock::new)
       .properties(STONE_PROPS)
-      .item().model((ctx, p) -> p.withExistingParent("grinder", new ResourceLocation(Grindr.MODID, "block/grinder_no_grindstone"))).build()
+      .item().model((ctx, p) -> p.withExistingParent("grinder", new ResourceLocation(Grindr.MODID, "block/grinder_empty"))).build()
       .blockstate((ctx, p) -> p.getVariantBuilder(ctx.getEntry())
           .forAllStates((state) -> {
-            GrindstoneType type = state.get(GrinderBlock.GRINDSTONE);
+/*            GrindstoneType type = state.get(GrinderBlock.GRINDSTONE);*/
             boolean active = state.get(GrinderBlock.ACTIVE);
+            boolean empty = !state.get(GrinderBlock.HAS_GRINDSTONE);
 
-            ModelFile existing = type == GrindstoneType.EMPTY ? p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_no_grindstone")) : p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_template"));
+/*            ModelFile existing = type == GrindstoneType.EMPTY ? p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_no_grindstone")) : p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_template"));
 
-            String texture = type == GrindstoneType.EMPTY ? "granite" : type.toString().toLowerCase();
+            String texture = type == GrindstoneType.EMPTY ? "granite" : type.toString().toLowerCase();*/
 
-            ModelFile model = p.getBuilder(type.toString() + (active ? "_hot" : "_cold"))
+            ModelFile model;
+            if (empty) {
+              model = p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_empty"));
+            } else {
+              if (active) {
+                model = p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_hot"));
+              } else {
+              model = p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_cold"));
+              }
+            }
+
+/*            ModelFile model = (active) ? p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_no_grindstone_no_front")) : p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_no_grindstone_no_front"));*/
+
+/*                p.getBuilder(type.toString() + (active ? "_hot" : "_cold"))
                 .parent(existing)
                 .texture("front", new ResourceLocation(Grindr.MODID, active ? "block/grinder_front_hot" : "block/grinder_front_cold"))
-                .texture("grindstone", new ResourceLocation(Grindr.MODID, "block/" + texture));
+                .texture("grindstone", new ResourceLocation(Grindr.MODID, "block/" + texture));*/
 
             return ConfiguredModel.builder()
                 .modelFile(model)

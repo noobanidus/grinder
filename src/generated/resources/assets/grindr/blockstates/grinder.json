@@ -1,663 +1,1323 @@
 {
   "variants": {
-    "facing=north,grindstone=empty,lit=false": {
-      "model": "grindr:block/empty_cold"
+    "facing=north,grindstone=empty,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=empty,lit=false": {
-      "model": "grindr:block/empty_cold",
+    "facing=south,grindstone=empty,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=empty,lit=false": {
-      "model": "grindr:block/empty_cold",
+    "facing=west,grindstone=empty,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=empty,lit=false": {
-      "model": "grindr:block/empty_cold",
+    "facing=east,grindstone=empty,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=stone,lit=false": {
-      "model": "grindr:block/stone_cold"
+    "facing=north,grindstone=stone,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=stone,lit=false": {
-      "model": "grindr:block/stone_cold",
+    "facing=south,grindstone=stone,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=stone,lit=false": {
-      "model": "grindr:block/stone_cold",
+    "facing=west,grindstone=stone,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=stone,lit=false": {
-      "model": "grindr:block/stone_cold",
+    "facing=east,grindstone=stone,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=granite,lit=false": {
-      "model": "grindr:block/granite_cold"
+    "facing=north,grindstone=granite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=granite,lit=false": {
-      "model": "grindr:block/granite_cold",
+    "facing=south,grindstone=granite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=granite,lit=false": {
-      "model": "grindr:block/granite_cold",
+    "facing=west,grindstone=granite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=granite,lit=false": {
-      "model": "grindr:block/granite_cold",
+    "facing=east,grindstone=granite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=diorite,lit=false": {
-      "model": "grindr:block/diorite_cold"
+    "facing=north,grindstone=diorite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=diorite,lit=false": {
-      "model": "grindr:block/diorite_cold",
+    "facing=south,grindstone=diorite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=diorite,lit=false": {
-      "model": "grindr:block/diorite_cold",
+    "facing=west,grindstone=diorite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=diorite,lit=false": {
-      "model": "grindr:block/diorite_cold",
+    "facing=east,grindstone=diorite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=andesite,lit=false": {
-      "model": "grindr:block/andesite_cold"
+    "facing=north,grindstone=andesite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=andesite,lit=false": {
-      "model": "grindr:block/andesite_cold",
+    "facing=south,grindstone=andesite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=andesite,lit=false": {
-      "model": "grindr:block/andesite_cold",
+    "facing=west,grindstone=andesite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=andesite,lit=false": {
-      "model": "grindr:block/andesite_cold",
+    "facing=east,grindstone=andesite,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=iron,lit=false": {
-      "model": "grindr:block/iron_cold"
+    "facing=north,grindstone=iron,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=iron,lit=false": {
-      "model": "grindr:block/iron_cold",
+    "facing=south,grindstone=iron,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=iron,lit=false": {
-      "model": "grindr:block/iron_cold",
+    "facing=west,grindstone=iron,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=iron,lit=false": {
-      "model": "grindr:block/iron_cold",
+    "facing=east,grindstone=iron,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=gold,lit=false": {
-      "model": "grindr:block/gold_cold"
+    "facing=north,grindstone=gold,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=gold,lit=false": {
-      "model": "grindr:block/gold_cold",
+    "facing=south,grindstone=gold,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=gold,lit=false": {
-      "model": "grindr:block/gold_cold",
+    "facing=west,grindstone=gold,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=gold,lit=false": {
-      "model": "grindr:block/gold_cold",
+    "facing=east,grindstone=gold,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=diamond,lit=false": {
-      "model": "grindr:block/diamond_cold"
+    "facing=north,grindstone=diamond,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=diamond,lit=false": {
-      "model": "grindr:block/diamond_cold",
+    "facing=south,grindstone=diamond,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=diamond,lit=false": {
-      "model": "grindr:block/diamond_cold",
+    "facing=west,grindstone=diamond,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=diamond,lit=false": {
-      "model": "grindr:block/diamond_cold",
+    "facing=east,grindstone=diamond,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=emerald,lit=false": {
-      "model": "grindr:block/emerald_cold"
+    "facing=north,grindstone=emerald,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=emerald,lit=false": {
-      "model": "grindr:block/emerald_cold",
+    "facing=south,grindstone=emerald,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=emerald,lit=false": {
-      "model": "grindr:block/emerald_cold",
+    "facing=west,grindstone=emerald,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=emerald,lit=false": {
-      "model": "grindr:block/emerald_cold",
+    "facing=east,grindstone=emerald,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=obsidian,lit=false": {
-      "model": "grindr:block/obsidian_cold"
+    "facing=north,grindstone=obsidian,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=obsidian,lit=false": {
-      "model": "grindr:block/obsidian_cold",
+    "facing=south,grindstone=obsidian,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=obsidian,lit=false": {
-      "model": "grindr:block/obsidian_cold",
+    "facing=west,grindstone=obsidian,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=obsidian,lit=false": {
-      "model": "grindr:block/obsidian_cold",
+    "facing=east,grindstone=obsidian,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=aluminum,lit=false": {
-      "model": "grindr:block/aluminum_cold"
+    "facing=north,grindstone=aluminum,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=aluminum,lit=false": {
-      "model": "grindr:block/aluminum_cold",
+    "facing=south,grindstone=aluminum,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=aluminum,lit=false": {
-      "model": "grindr:block/aluminum_cold",
+    "facing=west,grindstone=aluminum,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=aluminum,lit=false": {
-      "model": "grindr:block/aluminum_cold",
+    "facing=east,grindstone=aluminum,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=tin,lit=false": {
-      "model": "grindr:block/tin_cold"
+    "facing=north,grindstone=tin,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=tin,lit=false": {
-      "model": "grindr:block/tin_cold",
+    "facing=south,grindstone=tin,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=tin,lit=false": {
-      "model": "grindr:block/tin_cold",
+    "facing=west,grindstone=tin,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=tin,lit=false": {
-      "model": "grindr:block/tin_cold",
+    "facing=east,grindstone=tin,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=copper,lit=false": {
-      "model": "grindr:block/copper_cold"
+    "facing=north,grindstone=copper,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=copper,lit=false": {
-      "model": "grindr:block/copper_cold",
+    "facing=south,grindstone=copper,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=copper,lit=false": {
-      "model": "grindr:block/copper_cold",
+    "facing=west,grindstone=copper,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=copper,lit=false": {
-      "model": "grindr:block/copper_cold",
+    "facing=east,grindstone=copper,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=nickel,lit=false": {
-      "model": "grindr:block/nickel_cold"
+    "facing=north,grindstone=nickel,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=nickel,lit=false": {
-      "model": "grindr:block/nickel_cold",
+    "facing=south,grindstone=nickel,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=nickel,lit=false": {
-      "model": "grindr:block/nickel_cold",
+    "facing=west,grindstone=nickel,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=nickel,lit=false": {
-      "model": "grindr:block/nickel_cold",
+    "facing=east,grindstone=nickel,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=lead,lit=false": {
-      "model": "grindr:block/lead_cold"
+    "facing=north,grindstone=lead,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=lead,lit=false": {
-      "model": "grindr:block/lead_cold",
+    "facing=south,grindstone=lead,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=lead,lit=false": {
-      "model": "grindr:block/lead_cold",
+    "facing=west,grindstone=lead,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=lead,lit=false": {
-      "model": "grindr:block/lead_cold",
+    "facing=east,grindstone=lead,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=silver,lit=false": {
-      "model": "grindr:block/silver_cold"
+    "facing=north,grindstone=silver,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=silver,lit=false": {
-      "model": "grindr:block/silver_cold",
+    "facing=south,grindstone=silver,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=silver,lit=false": {
-      "model": "grindr:block/silver_cold",
+    "facing=west,grindstone=silver,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=silver,lit=false": {
-      "model": "grindr:block/silver_cold",
+    "facing=east,grindstone=silver,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=platinum,lit=false": {
-      "model": "grindr:block/platinum_cold"
+    "facing=north,grindstone=platinum,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=platinum,lit=false": {
-      "model": "grindr:block/platinum_cold",
+    "facing=south,grindstone=platinum,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=platinum,lit=false": {
-      "model": "grindr:block/platinum_cold",
+    "facing=west,grindstone=platinum,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=platinum,lit=false": {
-      "model": "grindr:block/platinum_cold",
+    "facing=east,grindstone=platinum,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=mercury,lit=false": {
-      "model": "grindr:block/mercury_cold"
+    "facing=north,grindstone=mercury,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=mercury,lit=false": {
-      "model": "grindr:block/mercury_cold",
+    "facing=south,grindstone=mercury,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=mercury,lit=false": {
-      "model": "grindr:block/mercury_cold",
+    "facing=west,grindstone=mercury,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=mercury,lit=false": {
-      "model": "grindr:block/mercury_cold",
+    "facing=east,grindstone=mercury,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=zinc,lit=false": {
-      "model": "grindr:block/zinc_cold"
+    "facing=north,grindstone=zinc,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=zinc,lit=false": {
-      "model": "grindr:block/zinc_cold",
+    "facing=south,grindstone=zinc,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=zinc,lit=false": {
-      "model": "grindr:block/zinc_cold",
+    "facing=west,grindstone=zinc,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=zinc,lit=false": {
-      "model": "grindr:block/zinc_cold",
+    "facing=east,grindstone=zinc,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=bismuth,lit=false": {
-      "model": "grindr:block/bismuth_cold"
+    "facing=north,grindstone=bismuth,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=bismuth,lit=false": {
-      "model": "grindr:block/bismuth_cold",
+    "facing=south,grindstone=bismuth,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=bismuth,lit=false": {
-      "model": "grindr:block/bismuth_cold",
+    "facing=west,grindstone=bismuth,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=bismuth,lit=false": {
-      "model": "grindr:block/bismuth_cold",
+    "facing=east,grindstone=bismuth,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=neptunium,lit=false": {
-      "model": "grindr:block/neptunium_cold"
+    "facing=north,grindstone=neptunium,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=neptunium,lit=false": {
-      "model": "grindr:block/neptunium_cold",
+    "facing=south,grindstone=neptunium,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=neptunium,lit=false": {
-      "model": "grindr:block/neptunium_cold",
+    "facing=west,grindstone=neptunium,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=neptunium,lit=false": {
-      "model": "grindr:block/neptunium_cold",
+    "facing=east,grindstone=neptunium,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=uranium,lit=false": {
-      "model": "grindr:block/uranium_cold"
+    "facing=north,grindstone=uranium,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty"
     },
-    "facing=south,grindstone=uranium,lit=false": {
-      "model": "grindr:block/uranium_cold",
+    "facing=south,grindstone=uranium,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 180
     },
-    "facing=west,grindstone=uranium,lit=false": {
-      "model": "grindr:block/uranium_cold",
+    "facing=west,grindstone=uranium,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 270
     },
-    "facing=east,grindstone=uranium,lit=false": {
-      "model": "grindr:block/uranium_cold",
+    "facing=east,grindstone=uranium,has_grindstone=false,lit=false": {
+      "model": "grindr:block/grinder_empty",
       "y": 90
     },
-    "facing=north,grindstone=empty,lit=true": {
-      "model": "grindr:block/empty_hot"
+    "facing=north,grindstone=empty,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=empty,lit=true": {
-      "model": "grindr:block/empty_hot",
+    "facing=south,grindstone=empty,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=empty,lit=true": {
-      "model": "grindr:block/empty_hot",
+    "facing=west,grindstone=empty,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=empty,lit=true": {
-      "model": "grindr:block/empty_hot",
+    "facing=east,grindstone=empty,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=stone,lit=true": {
-      "model": "grindr:block/stone_hot"
+    "facing=north,grindstone=stone,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=stone,lit=true": {
-      "model": "grindr:block/stone_hot",
+    "facing=south,grindstone=stone,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=stone,lit=true": {
-      "model": "grindr:block/stone_hot",
+    "facing=west,grindstone=stone,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=stone,lit=true": {
-      "model": "grindr:block/stone_hot",
+    "facing=east,grindstone=stone,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=granite,lit=true": {
-      "model": "grindr:block/granite_hot"
+    "facing=north,grindstone=granite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=granite,lit=true": {
-      "model": "grindr:block/granite_hot",
+    "facing=south,grindstone=granite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=granite,lit=true": {
-      "model": "grindr:block/granite_hot",
+    "facing=west,grindstone=granite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=granite,lit=true": {
-      "model": "grindr:block/granite_hot",
+    "facing=east,grindstone=granite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=diorite,lit=true": {
-      "model": "grindr:block/diorite_hot"
+    "facing=north,grindstone=diorite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=diorite,lit=true": {
-      "model": "grindr:block/diorite_hot",
+    "facing=south,grindstone=diorite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=diorite,lit=true": {
-      "model": "grindr:block/diorite_hot",
+    "facing=west,grindstone=diorite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=diorite,lit=true": {
-      "model": "grindr:block/diorite_hot",
+    "facing=east,grindstone=diorite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=andesite,lit=true": {
-      "model": "grindr:block/andesite_hot"
+    "facing=north,grindstone=andesite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=andesite,lit=true": {
-      "model": "grindr:block/andesite_hot",
+    "facing=south,grindstone=andesite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=andesite,lit=true": {
-      "model": "grindr:block/andesite_hot",
+    "facing=west,grindstone=andesite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=andesite,lit=true": {
-      "model": "grindr:block/andesite_hot",
+    "facing=east,grindstone=andesite,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=iron,lit=true": {
-      "model": "grindr:block/iron_hot"
+    "facing=north,grindstone=iron,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=iron,lit=true": {
-      "model": "grindr:block/iron_hot",
+    "facing=south,grindstone=iron,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=iron,lit=true": {
-      "model": "grindr:block/iron_hot",
+    "facing=west,grindstone=iron,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=iron,lit=true": {
-      "model": "grindr:block/iron_hot",
+    "facing=east,grindstone=iron,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=gold,lit=true": {
-      "model": "grindr:block/gold_hot"
+    "facing=north,grindstone=gold,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=gold,lit=true": {
-      "model": "grindr:block/gold_hot",
+    "facing=south,grindstone=gold,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=gold,lit=true": {
-      "model": "grindr:block/gold_hot",
+    "facing=west,grindstone=gold,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=gold,lit=true": {
-      "model": "grindr:block/gold_hot",
+    "facing=east,grindstone=gold,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=diamond,lit=true": {
-      "model": "grindr:block/diamond_hot"
+    "facing=north,grindstone=diamond,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=diamond,lit=true": {
-      "model": "grindr:block/diamond_hot",
+    "facing=south,grindstone=diamond,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=diamond,lit=true": {
-      "model": "grindr:block/diamond_hot",
+    "facing=west,grindstone=diamond,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=diamond,lit=true": {
-      "model": "grindr:block/diamond_hot",
+    "facing=east,grindstone=diamond,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=emerald,lit=true": {
-      "model": "grindr:block/emerald_hot"
+    "facing=north,grindstone=emerald,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=emerald,lit=true": {
-      "model": "grindr:block/emerald_hot",
+    "facing=south,grindstone=emerald,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=emerald,lit=true": {
-      "model": "grindr:block/emerald_hot",
+    "facing=west,grindstone=emerald,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=emerald,lit=true": {
-      "model": "grindr:block/emerald_hot",
+    "facing=east,grindstone=emerald,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=obsidian,lit=true": {
-      "model": "grindr:block/obsidian_hot"
+    "facing=north,grindstone=obsidian,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=obsidian,lit=true": {
-      "model": "grindr:block/obsidian_hot",
+    "facing=south,grindstone=obsidian,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=obsidian,lit=true": {
-      "model": "grindr:block/obsidian_hot",
+    "facing=west,grindstone=obsidian,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=obsidian,lit=true": {
-      "model": "grindr:block/obsidian_hot",
+    "facing=east,grindstone=obsidian,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=aluminum,lit=true": {
-      "model": "grindr:block/aluminum_hot"
+    "facing=north,grindstone=aluminum,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=aluminum,lit=true": {
-      "model": "grindr:block/aluminum_hot",
+    "facing=south,grindstone=aluminum,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=aluminum,lit=true": {
-      "model": "grindr:block/aluminum_hot",
+    "facing=west,grindstone=aluminum,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=aluminum,lit=true": {
-      "model": "grindr:block/aluminum_hot",
+    "facing=east,grindstone=aluminum,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=tin,lit=true": {
-      "model": "grindr:block/tin_hot"
+    "facing=north,grindstone=tin,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=tin,lit=true": {
-      "model": "grindr:block/tin_hot",
+    "facing=south,grindstone=tin,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=tin,lit=true": {
-      "model": "grindr:block/tin_hot",
+    "facing=west,grindstone=tin,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=tin,lit=true": {
-      "model": "grindr:block/tin_hot",
+    "facing=east,grindstone=tin,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=copper,lit=true": {
-      "model": "grindr:block/copper_hot"
+    "facing=north,grindstone=copper,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=copper,lit=true": {
-      "model": "grindr:block/copper_hot",
+    "facing=south,grindstone=copper,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=copper,lit=true": {
-      "model": "grindr:block/copper_hot",
+    "facing=west,grindstone=copper,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=copper,lit=true": {
-      "model": "grindr:block/copper_hot",
+    "facing=east,grindstone=copper,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=nickel,lit=true": {
-      "model": "grindr:block/nickel_hot"
+    "facing=north,grindstone=nickel,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=nickel,lit=true": {
-      "model": "grindr:block/nickel_hot",
+    "facing=south,grindstone=nickel,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=nickel,lit=true": {
-      "model": "grindr:block/nickel_hot",
+    "facing=west,grindstone=nickel,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=nickel,lit=true": {
-      "model": "grindr:block/nickel_hot",
+    "facing=east,grindstone=nickel,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=lead,lit=true": {
-      "model": "grindr:block/lead_hot"
+    "facing=north,grindstone=lead,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=lead,lit=true": {
-      "model": "grindr:block/lead_hot",
+    "facing=south,grindstone=lead,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=lead,lit=true": {
-      "model": "grindr:block/lead_hot",
+    "facing=west,grindstone=lead,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=lead,lit=true": {
-      "model": "grindr:block/lead_hot",
+    "facing=east,grindstone=lead,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=silver,lit=true": {
-      "model": "grindr:block/silver_hot"
+    "facing=north,grindstone=silver,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=silver,lit=true": {
-      "model": "grindr:block/silver_hot",
+    "facing=south,grindstone=silver,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=silver,lit=true": {
-      "model": "grindr:block/silver_hot",
+    "facing=west,grindstone=silver,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=silver,lit=true": {
-      "model": "grindr:block/silver_hot",
+    "facing=east,grindstone=silver,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=platinum,lit=true": {
-      "model": "grindr:block/platinum_hot"
+    "facing=north,grindstone=platinum,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=platinum,lit=true": {
-      "model": "grindr:block/platinum_hot",
+    "facing=south,grindstone=platinum,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=platinum,lit=true": {
-      "model": "grindr:block/platinum_hot",
+    "facing=west,grindstone=platinum,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=platinum,lit=true": {
-      "model": "grindr:block/platinum_hot",
+    "facing=east,grindstone=platinum,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=mercury,lit=true": {
-      "model": "grindr:block/mercury_hot"
+    "facing=north,grindstone=mercury,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=mercury,lit=true": {
-      "model": "grindr:block/mercury_hot",
+    "facing=south,grindstone=mercury,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=mercury,lit=true": {
-      "model": "grindr:block/mercury_hot",
+    "facing=west,grindstone=mercury,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=mercury,lit=true": {
-      "model": "grindr:block/mercury_hot",
+    "facing=east,grindstone=mercury,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=zinc,lit=true": {
-      "model": "grindr:block/zinc_hot"
+    "facing=north,grindstone=zinc,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=zinc,lit=true": {
-      "model": "grindr:block/zinc_hot",
+    "facing=south,grindstone=zinc,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=zinc,lit=true": {
-      "model": "grindr:block/zinc_hot",
+    "facing=west,grindstone=zinc,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=zinc,lit=true": {
-      "model": "grindr:block/zinc_hot",
+    "facing=east,grindstone=zinc,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=bismuth,lit=true": {
-      "model": "grindr:block/bismuth_hot"
+    "facing=north,grindstone=bismuth,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=bismuth,lit=true": {
-      "model": "grindr:block/bismuth_hot",
+    "facing=south,grindstone=bismuth,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=bismuth,lit=true": {
-      "model": "grindr:block/bismuth_hot",
+    "facing=west,grindstone=bismuth,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=bismuth,lit=true": {
-      "model": "grindr:block/bismuth_hot",
+    "facing=east,grindstone=bismuth,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=neptunium,lit=true": {
-      "model": "grindr:block/neptunium_hot"
+    "facing=north,grindstone=neptunium,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=neptunium,lit=true": {
-      "model": "grindr:block/neptunium_hot",
+    "facing=south,grindstone=neptunium,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=neptunium,lit=true": {
-      "model": "grindr:block/neptunium_hot",
+    "facing=west,grindstone=neptunium,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=neptunium,lit=true": {
-      "model": "grindr:block/neptunium_hot",
+    "facing=east,grindstone=neptunium,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 90
     },
-    "facing=north,grindstone=uranium,lit=true": {
-      "model": "grindr:block/uranium_hot"
+    "facing=north,grindstone=uranium,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold"
     },
-    "facing=south,grindstone=uranium,lit=true": {
-      "model": "grindr:block/uranium_hot",
+    "facing=south,grindstone=uranium,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 180
     },
-    "facing=west,grindstone=uranium,lit=true": {
-      "model": "grindr:block/uranium_hot",
+    "facing=west,grindstone=uranium,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
       "y": 270
     },
-    "facing=east,grindstone=uranium,lit=true": {
-      "model": "grindr:block/uranium_hot",
+    "facing=east,grindstone=uranium,has_grindstone=true,lit=false": {
+      "model": "grindr:block/grinder_cold",
+      "y": 90
+    },
+    "facing=north,grindstone=empty,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=empty,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=empty,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=empty,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=stone,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=stone,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=stone,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=stone,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=granite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=granite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=granite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=granite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=diorite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=diorite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=diorite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=diorite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=andesite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=andesite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=andesite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=andesite,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=iron,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=iron,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=iron,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=iron,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=gold,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=gold,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=gold,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=gold,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=diamond,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=diamond,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=diamond,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=diamond,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=emerald,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=emerald,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=emerald,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=emerald,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=obsidian,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=obsidian,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=obsidian,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=obsidian,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=aluminum,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=aluminum,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=aluminum,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=aluminum,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=tin,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=tin,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=tin,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=tin,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=copper,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=copper,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=copper,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=copper,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=nickel,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=nickel,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=nickel,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=nickel,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=lead,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=lead,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=lead,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=lead,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=silver,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=silver,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=silver,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=silver,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=platinum,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=platinum,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=platinum,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=platinum,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=mercury,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=mercury,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=mercury,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=mercury,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=zinc,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=zinc,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=zinc,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=zinc,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=bismuth,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=bismuth,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=bismuth,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=bismuth,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=neptunium,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=neptunium,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=neptunium,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=neptunium,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=uranium,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty"
+    },
+    "facing=south,grindstone=uranium,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 180
+    },
+    "facing=west,grindstone=uranium,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 270
+    },
+    "facing=east,grindstone=uranium,has_grindstone=false,lit=true": {
+      "model": "grindr:block/grinder_empty",
+      "y": 90
+    },
+    "facing=north,grindstone=empty,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=empty,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=empty,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=empty,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=stone,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=stone,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=stone,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=stone,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=granite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=granite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=granite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=granite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=diorite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=diorite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=diorite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=diorite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=andesite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=andesite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=andesite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=andesite,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=iron,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=iron,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=iron,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=iron,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=gold,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=gold,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=gold,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=gold,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=diamond,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=diamond,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=diamond,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=diamond,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=emerald,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=emerald,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=emerald,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=emerald,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=obsidian,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=obsidian,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=obsidian,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=obsidian,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=aluminum,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=aluminum,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=aluminum,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=aluminum,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=tin,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=tin,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=tin,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=tin,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=copper,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=copper,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=copper,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=copper,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=nickel,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=nickel,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=nickel,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=nickel,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=lead,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=lead,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=lead,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=lead,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=silver,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=silver,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=silver,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=silver,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=platinum,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=platinum,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=platinum,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=platinum,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=mercury,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=mercury,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=mercury,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=mercury,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=zinc,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=zinc,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=zinc,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=zinc,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=bismuth,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=bismuth,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=bismuth,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=bismuth,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=neptunium,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=neptunium,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=neptunium,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=neptunium,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=uranium,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot"
+    },
+    "facing=south,grindstone=uranium,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=uranium,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=uranium,has_grindstone=true,lit=true": {
+      "model": "grindr:block/grinder_hot",
       "y": 90
     }
   }

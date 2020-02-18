@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"texture_size": [32, 19],
 	"textures": {
-		"post": "block/anvil",
 		"grindstone": "grindr:block/granite"
 	},
 	"elements": [
@@ -12,12 +12,12 @@
 			"to": [12, 6, 12],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3, 8]},
 			"faces": {
-				"north": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
-				"east": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
-				"south": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
-				"west": {"uv": [0, 10, 10, 16], "texture": "#grindstone"},
-				"up": {"uv": [0, 0, 10, 10], "texture": "#grindstone"},
-				"down": {"uv": [0, 0, 10, 10], "texture": "#grindstone"}
+				"north": {"uv": [0, 6.736, 3.998, 11.89305], "texture": "#grindstone"},
+				"east": {"uv": [0, 6.736, 3.998, 11.89305], "texture": "#grindstone"},
+				"south": {"uv": [0, 6.736, 3.998, 11.89305], "texture": "#grindstone"},
+				"west": {"uv": [0, 6.736, 3.998, 11.89305], "texture": "#grindstone"},
+				"up": {"uv": [3.9995, 0, 7.9985, 6.62989], "texture": "#grindstone"},
+				"down": {"uv": [3.9995, 0, 7.9985, 6.62989], "texture": "#grindstone"}
 			}
 		},
 		{
@@ -26,12 +26,12 @@
 			"to": [9.5, 8, 9.5],
 			"rotation": {"angle": 0, "axis": "y", "origin": [17.5, 14, 17.5]},
 			"faces": {
-				"north": {"uv": [1, 1, 4, 3], "texture": "#post"},
-				"east": {"uv": [1, 1, 4, 3], "texture": "#post"},
-				"south": {"uv": [1, 1, 4, 3], "texture": "#post"},
-				"west": {"uv": [1, 1, 4, 3], "texture": "#post"},
-				"up": {"uv": [1, 1, 4, 4], "texture": "#post"},
-				"down": {"uv": [1, 1, 3, 3], "texture": "#post"}
+				"north": {"uv": [0, 14.31495, 1.5, 15.99916], "texture": "#grindstone"},
+				"east": {"uv": [0, 14.31495, 1.5, 15.99916], "texture": "#grindstone"},
+				"south": {"uv": [0, 14.31495, 1.5, 15.99916], "texture": "#grindstone"},
+				"west": {"uv": [0, 14.31495, 1.5, 15.99916], "texture": "#grindstone"},
+				"up": {"uv": [1.4995, 11.78947, 2.9995, 14.31579], "texture": "#grindstone"},
+				"down": {"uv": [1.4995, 11.78947, 2.9995, 14.31579], "texture": "#grindstone"}
 			}
 		}
 	],

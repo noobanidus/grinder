@@ -3,6 +3,7 @@ package noobanidus.mods.grindr.tiles;
 import com.google.common.collect.Maps;
 import com.tterrag.registrate.util.RegistryEntry;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.GrindstoneBlock;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -17,6 +18,8 @@ import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.AbstractFurnaceTileEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.LockableTileEntity;
@@ -25,10 +28,12 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
+import noobanidus.libs.noobutil.util.TileUtil;
 import noobanidus.mods.grindr.blocks.GrinderBlock;
 import noobanidus.mods.grindr.blocks.GrindstoneType;
 import noobanidus.mods.grindr.containers.GrinderContainer;
@@ -38,6 +43,7 @@ import noobanidus.mods.grindr.init.ModTiles;
 import noobanidus.mods.grindr.items.GrindstoneItem;
 import noobanidus.mods.grindr.recipes.GrinderRecipe;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.Random;
@@ -102,6 +108,17 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
   private boolean isValid = false;
   private int count = -1;
 
+  private GrindstoneType type = GrindstoneType.EMPTY;
+
+  // Client-side only stuff
+  public float rotation = 0;
+  public int rotationIndex = 0;
+  public int lastRotationIndex = 0;
+  public float rotationInterval = 60;
+  public float desiredRotation = rotationInterval;
+  public float previousRotation = 0;
+  public int tickPause = 45;
+
   @SuppressWarnings("ConstantConditions")
   public GrinderTile() {
     super(ModTiles.GRINDER.get());
@@ -122,12 +139,11 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
       return;
     }
 
-    BlockState state = world.getBlockState(pos);
-    if (state.get(GrinderBlock.GRINDSTONE) == GrindstoneType.EMPTY) {
+    if (getGrindstone() == GrindstoneType.EMPTY) {
       return;
     }
 
-    RegistryEntry<GrindstoneItem> item = ModItems.GRINDSTONE_MAP.get(state.get(GrinderBlock.GRINDSTONE));
+    RegistryEntry<GrindstoneItem> item = ModItems.GRINDSTONE_MAP.get(getGrindstone());
     if (item == null) {
       return;
     }
@@ -135,7 +151,13 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     ItemStack stack = new ItemStack(item.get());
     ItemEntity entity = new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 1.5, pos.getZ() + 0.5, stack);
     world.addEntity(entity);
-    world.setBlockState(pos, state.with(GrinderBlock.GRINDSTONE, GrindstoneType.EMPTY), 3);
+    this.type = GrindstoneType.EMPTY;
+    BlockState state = world.getBlockState(pos);
+    if (state.get(GrinderBlock.HAS_GRINDSTONE)) {
+      world.setBlockState(pos, state.with(GrinderBlock.HAS_GRINDSTONE, false));
+    } else {
+      TileUtil.updateViaState(this);
+    }
     isValid = false;
     count = -1;
   }
@@ -145,8 +167,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
       return;
     }
 
-    BlockState state = world.getBlockState(pos);
-    if (state.get(GrinderBlock.GRINDSTONE) != GrindstoneType.EMPTY) {
+    if (getGrindstone() != GrindstoneType.EMPTY) {
       return;
     }
 
@@ -158,8 +179,15 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     grindstone.shrink(1);
     player.setHeldItem(Hand.MAIN_HAND, grindstone);
 
-    world.setBlockState(pos, state.with(GrinderBlock.GRINDSTONE, type), 3);
+    this.type = type;
     isValid = true;
+    BlockState state = world.getBlockState(pos);
+    failedMatch = ItemStack.EMPTY;
+    if (!state.get(GrinderBlock.HAS_GRINDSTONE)) {
+      world.setBlockState(pos, state.with(GrinderBlock.HAS_GRINDSTONE, true));
+    } else {
+      TileUtil.updateViaState(this);
+    }
     count = -1;
   }
 
@@ -186,8 +214,8 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     return this.count;
   }
 
-  private GrindstoneType getGrindstone() {
-    return world == null ? GrindstoneType.EMPTY : world.getBlockState(pos).get(GrinderBlock.GRINDSTONE);
+  public GrindstoneType getGrindstone() {
+    return type;
   }
 
   @Override
@@ -208,6 +236,11 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
       int k = compound.getInt("RecipeAmount" + j);
       this.recipeMap.put(resourcelocation, k);
     }
+    if (compound.contains("GrindstoneType", Constants.NBT.TAG_INT)) {
+      this.type = GrindstoneType.byOrdinal(compound.getInt("GrindstoneType"));
+    } else {
+      this.type = GrindstoneType.EMPTY;
+    }
   }
 
   @Override
@@ -227,6 +260,8 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
       result.putInt("RecipeAmount" + i, entry.getValue());
       ++i;
     }
+
+    result.putInt("GrindstoneType", type.ordinal());
     return result;
   }
 
@@ -234,11 +269,16 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
 
   @Override
   public void tick() {
-    if (!isValid && world != null) {
+    if (world != null) {
       BlockState state = world.getBlockState(pos);
-      if (state.get(GrinderBlock.GRINDSTONE) != GrindstoneType.EMPTY) {
-        isValid = true;
+      GrindstoneType type = state.get(GrinderBlock.GRINDSTONE);
+      if (type != GrindstoneType.EMPTY) {
+        this.type = type;
+        world.setBlockState(pos, state.with(GrinderBlock.GRINDSTONE, GrindstoneType.EMPTY));
       }
+    }
+    if (!isValid && world != null) {
+      isValid = getGrindstone() != GrindstoneType.EMPTY;
     }
     boolean wasBurning = this.isBurning();
     boolean dirty = false;
@@ -502,6 +542,23 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
       else failedMatch = ItemStack.EMPTY;
       return curRecipe = rec;
     }
+  }
+
+  @Override
+  @Nonnull
+  public CompoundNBT getUpdateTag() {
+    return write(new CompoundNBT());
+  }
+
+  @Override
+  @Nullable
+  public SUpdateTileEntityPacket getUpdatePacket() {
+    return new SUpdateTileEntityPacket(getPos(), 0, getUpdateTag());
+  }
+
+  @Override
+  public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt) {
+    read(pkt.getNbtCompound());
   }
 }
 

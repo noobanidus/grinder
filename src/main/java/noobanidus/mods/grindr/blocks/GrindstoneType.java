@@ -6,7 +6,9 @@ import net.minecraft.item.Items;
 import net.minecraft.tags.Tag;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
+import noobanidus.libs.noobutil.util.EnumUtil;
 import noobanidus.mods.grindr.Grindr;
 import noobanidus.mods.grindr.GrindrTags;
 import noobanidus.mods.grindr.config.ConfigManager;
@@ -61,6 +63,7 @@ public enum GrindstoneType implements IStringSerializable {
   private IItemProvider item = Items.AIR;
   private double resultModifier = -100;
   private double speedModifier = -100;
+  private ResourceLocation texture;
 
   private IItemProvider recycleItem = null;
   private RegistryEntry<? extends Item> recycleItemEntry = null;
@@ -69,17 +72,20 @@ public enum GrindstoneType implements IStringSerializable {
     this.name = name;
     this.itemType = itemType;
     this.recycleItemEntry = recycle;
+    setTexture(name);
   }
 
   GrindstoneType(String name, Tag<Item> itemType, IItemProvider recycle) {
     this.name = name;
     this.itemType = itemType;
     this.recycleItem = recycle;
+    setTexture(name);
   }
 
   GrindstoneType(String name, IItemProvider item) {
     this.name = name;
     this.item = item;
+    setTexture(name);
   }
 
   @Nullable
@@ -141,5 +147,18 @@ public enum GrindstoneType implements IStringSerializable {
   @Override
   public String getName() {
     return name;
+  }
+
+  private void setTexture (String name) {
+    this.texture = new ResourceLocation(Grindr.MODID, "textures/block/" + name + ".png");
+  }
+
+  public ResourceLocation getTexture () {
+    return texture;
+  }
+
+  @Nullable
+  public static GrindstoneType byOrdinal (int ordinal) {
+    return EnumUtil.fromOrdinal(GrindstoneType.class, ordinal);
   }
 }
