@@ -14,6 +14,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.util.ResourceLocation;
 import noobanidus.mods.grindr.Grindr;
+import noobanidus.mods.grindr.blocks.GrindstoneType;
 import noobanidus.mods.grindr.client.screen.GrinderScreen;
 import noobanidus.mods.grindr.containers.GrinderContainer;
 import noobanidus.mods.grindr.init.ModBlocks;
@@ -25,6 +26,7 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 @SuppressWarnings("unchecked")
 @JeiPlugin
@@ -77,8 +79,10 @@ public class JEIPlugin implements IModPlugin {
   @Override
   public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
     registration.addRecipeCatalyst(new ItemStack(ModBlocks.GRINDER.get()), GrinderCategory.UID, VanillaRecipeCategoryUid.FUEL);
-    for (RegistryEntry<GrindstoneItem> grindstone : ModItems.GRINDSTONE_MAP.values()) {
-      registration.addRecipeCatalyst(new ItemStack(grindstone.get()), GrindstoneCategory.UID);
+    for (Map.Entry<GrindstoneType, RegistryEntry<GrindstoneItem>> grindstone : ModItems.GRINDSTONE_MAP.entrySet()) {
+      if (!grindstone.getKey().isEnabled()) {
+        registration.addRecipeCatalyst(new ItemStack(grindstone.getValue().get()), GrindstoneCategory.UID);
+      }
     }
   }
 }

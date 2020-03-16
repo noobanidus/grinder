@@ -2,6 +2,7 @@ package noobanidus.mods.grindr.config;
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
+import com.google.common.collect.Lists;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ForgeConfigSpec;
@@ -18,22 +19,40 @@ public class ConfigManager {
 
   public static ForgeConfigSpec COMMON_CONFIG;
   private static Map<String, ForgeConfigSpec.BooleanValue> CONFIG_MAP = new HashMap<>();
+  public static Map<String, ForgeConfigSpec.BooleanValue> GRINDSTONE_MAP = new HashMap<>();
   public static Map<String, ForgeConfigSpec.DoubleValue> RESULT_MODIFIER = new HashMap<>();
   public static Map<String, ForgeConfigSpec.DoubleValue> SPEED_MODIFIER = new HashMap<>();
 
-  public static ForgeConfigSpec.ConfigValue<Boolean> SHOW_HUD;
+  private static List<String> dusts = Lists.newArrayList("gold", "iron", "silver", "copper", "tin", "nickel", "lead", "aluminum", "uranium", "zinc", "platinum", "mercury", "bismuth", "neptunium");
 
-  private static List<String> dusts = Arrays.asList("gold_dust", "iron_dust", "silver_dust", "copper_dust", "tin_dust", "nickel_dust", "lead_dust", "aluminum_dust", "uranium_dust", "zinc_dust", "platinum_dust", "mercury_dust", "bismuth_dust", "neptunium_dust");
+  private static List<String> vanillas = Arrays.asList("stone", "granite", "diorite", "andesite", "iron", "gold", "diamond", "emerald", "obsidian");
 
   static {
-    COMMON_BUILDER.push("dust_settings");
+    COMMON_BUILDER.comment("invidiaully configure which dusts are visible").push("dust_settings");
     for (String d : dusts) {
-      String dust = d.toLowerCase();
-      CONFIG_MAP.put(dust, COMMON_BUILDER.define("hide_" + dust, true));
+      String dust = d.toLowerCase() + "_dust";
+      boolean val = false;
+      if (!vanillas.contains(d)) {
+        val = true;
+      }
+      CONFIG_MAP.put(dust, COMMON_BUILDER.define("hide_" + dust, val));
     }
     COMMON_BUILDER.pop();
 
-    COMMON_BUILDER.push("grindstone_settings");
+    dusts.addAll(vanillas);
+
+    COMMON_BUILDER.comment("individually configure which grindstones are visible").push("grindstone_settings");
+    for (String g : dusts) {
+      String grindstone = g.toLowerCase();
+      boolean val = false;
+      if (!vanillas.contains(g)) {
+        val = true;
+      }
+      GRINDSTONE_MAP.put(g, COMMON_BUILDER.define("hide_" + grindstone, val));
+    }
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("grindstone_types");
     COMMON_BUILDER.push("stone");
     RESULT_MODIFIER.put("stone", COMMON_BUILDER.defineInRange("stone_result_modifier", 1.1, 0, 10));
     SPEED_MODIFIER.put("stone", COMMON_BUILDER.defineInRange("stone_speed_modifier", 1.3, 0, 10));
@@ -97,7 +116,7 @@ public class ConfigManager {
     COMMON_BUILDER.pop();
 
     COMMON_BUILDER.push("uranium");
-    RESULT_MODIFIER.put("uranium", COMMON_BUILDER.defineInRange("uranium_result_modifier", 0.75, 0, 10));
+    RESULT_MODIFIER.put("uranium", COMMON_BUILDER.defineInRange("uranium_result_modifier", 1.75, 0, 10));
     SPEED_MODIFIER.put("uranium", COMMON_BUILDER.defineInRange("uranium_speed_modifier", 0.2, 0, 10));
     COMMON_BUILDER.pop();
 
@@ -138,18 +157,36 @@ public class ConfigManager {
 
     COMMON_BUILDER.pop();
 
-    COMMON_BUILDER.push("client").comment("whether or not a helpful (but annoying) hud should be displayed when targeting the grinder");
-    SHOW_HUD = COMMON_BUILDER.define("show_grinder_hud", false);
     COMMON_CONFIG = COMMON_BUILDER.build();
   }
 
+  public static boolean isDustHidden (String dust) {
+    ForgeConfigSpec.ConfigValue<Boolean> val = CONFIG_MAP.get(dust);
+    return val == null || !val.get();
+  }
+
+  public static boolean isGrindstoneHidden (String grindstone) {
+     ForgeConfigSpec.ConfigValue<Boolean> val = GRINDSTONE_MAP.get(grindstone);
+    return val == null || !val.get();
+  }
+
   @SuppressWarnings("ConstantConditions")
-  public static NonNullUnaryOperator<Item.Properties> getProperty(String dust) {
+  public static NonNullUnaryOperator<Item.Properties> getDustProperty(String dust) {
     ForgeConfigSpec.ConfigValue<Boolean> val = CONFIG_MAP.get(dust);
     if (val == null || !val.get()) {
-      return (o) -> o.group(null);
-    } else {
       return (o) -> o.group(Grindr.ITEM_GROUP);
+    } else {
+      return (o) -> o.group(null);
+    }
+  }
+
+  @SuppressWarnings("ConstantConditions")
+  public static NonNullUnaryOperator<Item.Properties> getGrindstoneProperty(String grindstone) {
+    ForgeConfigSpec.ConfigValue<Boolean> val = GRINDSTONE_MAP.get(grindstone);
+    if (val == null || !val.get()) {
+      return (o) -> o.group(Grindr.ITEM_GROUP);
+    } else {
+      return (o) -> o.group(null);
     }
   }
 

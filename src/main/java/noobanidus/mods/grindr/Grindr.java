@@ -14,7 +14,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import noobanidus.mods.grindr.blocks.GrinderBlock;
 import noobanidus.mods.grindr.blocks.GrindstoneType;
-import noobanidus.mods.grindr.client.hud.ManageHUD;
 import noobanidus.mods.grindr.config.ConfigManager;
 import noobanidus.mods.grindr.init.*;
 import noobanidus.mods.grindr.registrate.CustomRegistrate;
@@ -45,7 +44,6 @@ public class Grindr {
 
     DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
       modBus.addListener(ClientSetup::init);
-      MinecraftForge.EVENT_BUS.addListener(ManageHUD::onRender);
     });
 
     MinecraftForge.EVENT_BUS.addListener(GrinderBlock::onInteractWith);

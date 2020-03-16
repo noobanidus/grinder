@@ -64,6 +64,8 @@ public enum GrindstoneType implements IStringSerializable {
 
   private IItemProvider recycleItem = null;
   private RegistryEntry<? extends Item> recycleItemEntry = null;
+  private int enabled = -1;
+  private boolean isEnabled = false;
 
   GrindstoneType(String name, Tag<Item> itemType, RegistryEntry<? extends Item> recycle) {
     this.name = name;
@@ -80,6 +82,14 @@ public enum GrindstoneType implements IStringSerializable {
   GrindstoneType(String name, IItemProvider item) {
     this.name = name;
     this.item = item;
+  }
+
+  public boolean isEnabled () {
+    if (this.enabled == -1) {
+      isEnabled = !ConfigManager.isGrindstoneHidden(name);
+    }
+
+    return isEnabled;
   }
 
   @Nullable
