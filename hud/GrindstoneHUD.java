@@ -1,4 +1,4 @@
-package noobanidus.mods.grindr.client.hud;
+/*package noobanidus.mods.grindr.client.hud;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
@@ -78,10 +78,10 @@ public class GrindstoneHUD extends TileEntityHUD<GrinderTile> {
     Tessellator tessellator = Tessellator.getInstance();
     BufferBuilder bufferbuilder = tessellator.getBuffer();
     bufferbuilder.begin(7, DefaultVertexFormats.POSITION_TEX);
-    bufferbuilder.pos((double) x, (double) (y + height), 0.0D).tex((double) (u * f), (double) ((v + (float) height) * f1)).endVertex();
-    bufferbuilder.pos((double) (x + width), (double) (y + height), 0.0D).tex((double) ((u + (float) width) * f), (double) ((v + (float) height) * f1)).endVertex();
-    bufferbuilder.pos((double) (x + width), (double) y, 0.0D).tex((double) ((u + (float) width) * f), (double) (v * f1)).endVertex();
-    bufferbuilder.pos((double) x, (double) y, 0.0D).tex((double) (u * f), (double) (v * f1)).endVertex();
+    bufferbuilder.vertex((double) x, (double) (y + height), 0.0D).texture((u * f), ((v + (float) height) * f1)).endVertex();
+    bufferbuilder.vertex((double) (x + width), (double) (y + height), 0.0D).texture(((u + (float) width) * f), ((v + (float) height) * f1)).endVertex();
+    bufferbuilder.vertex((double) (x + width), (double) y, 0.0D).texture(((u + (float) width) * f), (v * f1)).endVertex();
+    bufferbuilder.vertex((double) x, (double) y, 0.0D).texture((u * f), (v * f1)).endVertex();
     tessellator.draw();
   }
-}
+}*/

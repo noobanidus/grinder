@@ -1,4 +1,4 @@
-package noobanidus.mods.grindr.client.hud;
+/*package noobanidus.mods.grindr.client.hud;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -56,4 +56,4 @@ public class ManageHUD {
       }
     }
   }
-}
+}*/

@@ -15,7 +15,7 @@ public class CustomRegistrate extends AbstractRegistrate<CustomRegistrate> {
   }
 
   public static CustomRegistrate create(String modid) {
-    return (CustomRegistrate) new CustomRegistrate(modid).registerEventListeners(FMLJavaModLoadingContext.get().getModEventBus());
+    return new CustomRegistrate(modid).registerEventListeners(FMLJavaModLoadingContext.get().getModEventBus());
   }
 
   public <T extends IRecipeSerializer<?>> RecipeSerializerBuilder<T, CustomRegistrate> recipeSerializer(Supplier<? extends T> factory) {

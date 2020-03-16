@@ -1,4 +1,4 @@
-package noobanidus.mods.grindr.client.hud;
+/*package noobanidus.mods.grindr.client.hud;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
@@ -31,4 +31,4 @@ public abstract class TileEntityHUD<T extends TileEntity> {
   }
 
   public abstract void render (Minecraft mc, BlockPos pos, BlockState state, RenderGameOverlayEvent.Post event, T tile);
-}
+}*/

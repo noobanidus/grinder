@@ -74,7 +74,7 @@ public class GrinderBlock extends AbstractFurnaceBlock {
           event.setCancellationResult(ActionResultType.SUCCESS);
           event.setCanceled(true);
           if (!world.isRemote) {
-            ModBlocks.GRINDER.get().onBlockActivated(state, world, event.getPos(), event.getPlayer(), event.getHand(), null);
+            ModBlocks.GRINDER.get().onUse(state, world, event.getPos(), event.getPlayer(), event.getHand(), null);
           }
         }
       }

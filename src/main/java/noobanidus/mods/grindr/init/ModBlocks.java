@@ -29,11 +29,11 @@ public class ModBlocks {
             GrindstoneType type = state.get(GrinderBlock.GRINDSTONE);
             boolean active = state.get(GrinderBlock.ACTIVE);
 
-            ModelFile existing = type == GrindstoneType.EMPTY ? p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_no_grindstone")) : p.getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_template"));
+            ModelFile existing = type == GrindstoneType.EMPTY ? p.models().getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_no_grindstone")) : p.models().getExistingFile(new ResourceLocation(Grindr.MODID, "block/grinder_template"));
 
             String texture = type == GrindstoneType.EMPTY ? "granite" : type.toString().toLowerCase();
 
-            ModelFile model = p.getBuilder(type.toString() + (active ? "_hot" : "_cold"))
+            ModelFile model = p.models().getBuilder(type.toString() + (active ? "_hot" : "_cold"))
                 .parent(existing)
                 .texture("front", new ResourceLocation(Grindr.MODID, active ? "block/grinder_front_hot" : "block/grinder_front_cold"))
                 .texture("grindstone", new ResourceLocation(Grindr.MODID, "block/" + texture));
