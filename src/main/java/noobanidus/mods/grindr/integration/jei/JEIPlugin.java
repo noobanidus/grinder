@@ -80,9 +80,7 @@ public class JEIPlugin implements IModPlugin {
   public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
     registration.addRecipeCatalyst(new ItemStack(ModBlocks.GRINDER.get()), GrinderCategory.UID, VanillaRecipeCategoryUid.FUEL);
     for (Map.Entry<GrindstoneType, RegistryEntry<GrindstoneItem>> grindstone : ModItems.GRINDSTONE_MAP.entrySet()) {
-      if (!grindstone.getKey().isEnabled()) {
-        registration.addRecipeCatalyst(new ItemStack(grindstone.getValue().get()), GrindstoneCategory.UID);
-      }
+      registration.addRecipeCatalyst(new ItemStack(grindstone.getValue().get()), GrindstoneCategory.UID);
     }
   }
 }

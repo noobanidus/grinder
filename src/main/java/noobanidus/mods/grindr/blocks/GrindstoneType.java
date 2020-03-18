@@ -83,14 +83,6 @@ public enum GrindstoneType implements IStringSerializable {
     this.item = item;
   }
 
-  public boolean isEnabled() {
-    if (this.enabled == -1) {
-      isEnabled = !ConfigManager.isGrindstoneHidden(name);
-    }
-
-    return isEnabled;
-  }
-
   @Nullable
   public Tag<Item> getTag() {
     return itemType;
