@@ -211,7 +211,7 @@ public class ConfigManager {
     reset(event.getConfig());
   }
 
-  public static void configReloaded(ModConfig.ConfigReloading event) {
+  public static void configReloaded(ModConfig.Reloading event) {
     reset(event.getConfig());
   }
 
