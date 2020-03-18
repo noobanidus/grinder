@@ -19,45 +19,14 @@ public class ConfigManager {
   private static ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
 
   public static ForgeConfigSpec COMMON_CONFIG;
-  private static Map<String, ForgeConfigSpec.BooleanValue> CONFIG_MAP = new HashMap<>();
-  private static Map<String, ForgeConfigSpec.BooleanValue> GRINDSTONE_MAP_RAW = new HashMap<>();
+
   private static Map<String, ForgeConfigSpec.DoubleValue> RESULT_MODIFIER = new HashMap<>();
   private static Map<String, ForgeConfigSpec.DoubleValue> SPEED_MODIFIER = new HashMap<>();
 
   public static Object2DoubleOpenHashMap<String> RESULT_MODIFIER_MAP = new Object2DoubleOpenHashMap<>();
   public static Object2DoubleOpenHashMap<String> SPEED_MODIFIER_MAP = new Object2DoubleOpenHashMap<>();
-  public static Object2BooleanOpenHashMap<String> DUST_MAP = new Object2BooleanOpenHashMap<>();
-  public static Object2BooleanOpenHashMap<String> GRINDSTONE_MAP = new Object2BooleanOpenHashMap<>();
-
-  private static List<String> dusts = Lists.newArrayList("gold", "iron", "silver", "copper", "tin", "nickel", "lead", "aluminum", "uranium", "zinc", "platinum", "mercury", "bismuth", "neptunium");
-
-  private static List<String> vanillas = Arrays.asList("stone", "granite", "diorite", "andesite", "iron", "gold", "diamond", "emerald", "obsidian");
 
   static {
-    COMMON_BUILDER.comment("invidiaully configure which dusts are visible").push("dust_settings");
-    for (String d : dusts) {
-      String dust = d.toLowerCase() + "_dust";
-      boolean val = false;
-      if (!vanillas.contains(d)) {
-        val = true;
-      }
-      CONFIG_MAP.put(dust, COMMON_BUILDER.define("hide_" + dust, val));
-    }
-    COMMON_BUILDER.pop();
-
-    dusts.addAll(vanillas);
-
-    COMMON_BUILDER.comment("individually configure which grindstones are visible").push("grindstone_settings");
-    for (String g : dusts) {
-      String grindstone = g.toLowerCase();
-      boolean val = false;
-      if (!vanillas.contains(g)) {
-        val = true;
-      }
-      GRINDSTONE_MAP_RAW.put(g, COMMON_BUILDER.define("hide_" + grindstone, val));
-    }
-    COMMON_BUILDER.pop();
-
     COMMON_BUILDER.push("grindstone_types");
     COMMON_BUILDER.push("stone");
     RESULT_MODIFIER.put("stone", COMMON_BUILDER.defineInRange("stone_result_modifier", 1.1, 0, 10));
@@ -166,20 +135,6 @@ public class ConfigManager {
     COMMON_CONFIG = COMMON_BUILDER.build();
   }
 
-  public static boolean isDustHidden(String dust) {
-    return GRINDSTONE_MAP.computeBooleanIfAbsent(dust, (key) -> {
-      ForgeConfigSpec.ConfigValue<Boolean> val = CONFIG_MAP.get(dust);
-      return !(val == null || !val.get());
-    });
-  }
-
-  public static boolean isGrindstoneHidden(String grindstone) {
-    return GRINDSTONE_MAP.computeBooleanIfAbsent(grindstone, (key) -> {
-      ForgeConfigSpec.ConfigValue<Boolean> val = GRINDSTONE_MAP_RAW.get(grindstone);
-      return !(val == null || !val.get());
-    });
-  }
-
   public static double resultModifier (GrindstoneType type) {
     return RESULT_MODIFIER_MAP.computeDoubleIfAbsent(type.toString(), (key) -> {
       ForgeConfigSpec.ConfigValue<Double> val = RESULT_MODIFIER.get(key);
@@ -219,7 +174,5 @@ public class ConfigManager {
     COMMON_CONFIG.setConfig(config.getConfigData());
     RESULT_MODIFIER_MAP.clear();
     SPEED_MODIFIER_MAP.clear();
-    DUST_MAP.clear();
-    GRINDSTONE_MAP.clear();
   }
 }

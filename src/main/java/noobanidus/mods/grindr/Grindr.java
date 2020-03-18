@@ -47,6 +47,8 @@ public class Grindr {
     });
 
     MinecraftForge.EVENT_BUS.addListener(GrinderBlock::onInteractWith);
+    modBus.addListener(ConfigManager::configLoaded);
+    modBus.addListener(ConfigManager::configReloaded);
 
     REGISTRATE = CustomRegistrate.create(MODID);
     REGISTRATE.itemGroup(NonNullSupplier.of(() -> ITEM_GROUP));
