@@ -3,10 +3,11 @@ package noobanidus.mods.grindr.config;
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
 import com.google.common.collect.Lists;
-import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
-import net.minecraft.item.Item;
+import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
+import it.unimi.dsi.fastutil.objects.Object2DoubleOpenHashMap;
 import net.minecraftforge.common.ForgeConfigSpec;
-import noobanidus.mods.grindr.Grindr;
+import net.minecraftforge.fml.config.ModConfig;
+import noobanidus.mods.grindr.blocks.GrindstoneType;
 
 import java.nio.file.Path;
 import java.util.Arrays;
@@ -19,9 +20,14 @@ public class ConfigManager {
 
   public static ForgeConfigSpec COMMON_CONFIG;
   private static Map<String, ForgeConfigSpec.BooleanValue> CONFIG_MAP = new HashMap<>();
-  public static Map<String, ForgeConfigSpec.BooleanValue> GRINDSTONE_MAP = new HashMap<>();
-  public static Map<String, ForgeConfigSpec.DoubleValue> RESULT_MODIFIER = new HashMap<>();
-  public static Map<String, ForgeConfigSpec.DoubleValue> SPEED_MODIFIER = new HashMap<>();
+  private static Map<String, ForgeConfigSpec.BooleanValue> GRINDSTONE_MAP_RAW = new HashMap<>();
+  private static Map<String, ForgeConfigSpec.DoubleValue> RESULT_MODIFIER = new HashMap<>();
+  private static Map<String, ForgeConfigSpec.DoubleValue> SPEED_MODIFIER = new HashMap<>();
+
+  public static Object2DoubleOpenHashMap<String> RESULT_MODIFIER_MAP = new Object2DoubleOpenHashMap<>();
+  public static Object2DoubleOpenHashMap<String> SPEED_MODIFIER_MAP = new Object2DoubleOpenHashMap<>();
+  public static Object2BooleanOpenHashMap<String> DUST_MAP = new Object2BooleanOpenHashMap<>();
+  public static Object2BooleanOpenHashMap<String> GRINDSTONE_MAP = new Object2BooleanOpenHashMap<>();
 
   private static List<String> dusts = Lists.newArrayList("gold", "iron", "silver", "copper", "tin", "nickel", "lead", "aluminum", "uranium", "zinc", "platinum", "mercury", "bismuth", "neptunium");
 
@@ -48,7 +54,7 @@ public class ConfigManager {
       if (!vanillas.contains(g)) {
         val = true;
       }
-      GRINDSTONE_MAP.put(g, COMMON_BUILDER.define("hide_" + grindstone, val));
+      GRINDSTONE_MAP_RAW.put(g, COMMON_BUILDER.define("hide_" + grindstone, val));
     }
     COMMON_BUILDER.pop();
 
@@ -160,39 +166,60 @@ public class ConfigManager {
     COMMON_CONFIG = COMMON_BUILDER.build();
   }
 
-  public static boolean isDustHidden (String dust) {
-    ForgeConfigSpec.ConfigValue<Boolean> val = CONFIG_MAP.get(dust);
-    return val == null || !val.get();
+  public static boolean isDustHidden(String dust) {
+    return GRINDSTONE_MAP.computeBooleanIfAbsent(dust, (key) -> {
+      ForgeConfigSpec.ConfigValue<Boolean> val = CONFIG_MAP.get(dust);
+      return !(val == null || !val.get());
+    });
   }
 
-  public static boolean isGrindstoneHidden (String grindstone) {
-     ForgeConfigSpec.ConfigValue<Boolean> val = GRINDSTONE_MAP.get(grindstone);
-    return val == null || !val.get();
+  public static boolean isGrindstoneHidden(String grindstone) {
+    return GRINDSTONE_MAP.computeBooleanIfAbsent(grindstone, (key) -> {
+      ForgeConfigSpec.ConfigValue<Boolean> val = GRINDSTONE_MAP_RAW.get(grindstone);
+      return !(val == null || !val.get());
+    });
   }
 
-  @SuppressWarnings("ConstantConditions")
-  public static NonNullUnaryOperator<Item.Properties> getDustProperty(String dust) {
-    ForgeConfigSpec.ConfigValue<Boolean> val = CONFIG_MAP.get(dust);
-    if (val == null || !val.get()) {
-      return (o) -> o.group(Grindr.ITEM_GROUP);
-    } else {
-      return (o) -> o.group(null);
-    }
+  public static double resultModifier (GrindstoneType type) {
+    return RESULT_MODIFIER_MAP.computeDoubleIfAbsent(type.toString(), (key) -> {
+      ForgeConfigSpec.ConfigValue<Double> val = RESULT_MODIFIER.get(key);
+      if (val == null) {
+        return -100.0;
+      }
+      return val.get();
+    });
   }
 
-  @SuppressWarnings("ConstantConditions")
-  public static NonNullUnaryOperator<Item.Properties> getGrindstoneProperty(String grindstone) {
-    ForgeConfigSpec.ConfigValue<Boolean> val = GRINDSTONE_MAP.get(grindstone);
-    if (val == null || !val.get()) {
-      return (o) -> o.group(Grindr.ITEM_GROUP);
-    } else {
-      return (o) -> o.group(null);
-    }
+  public static double speedModifier (GrindstoneType type) {
+    return SPEED_MODIFIER_MAP.computeDoubleIfAbsent(type.toString(), (key) -> {
+      ForgeConfigSpec.ConfigValue<Double> val = SPEED_MODIFIER.get(key);
+      if (val == null) {
+        return -100.0;
+      }
+      return val.get();
+    });
   }
+
 
   public static void loadConfig(ForgeConfigSpec spec, Path path) {
     CommentedFileConfig configData = CommentedFileConfig.builder(path).sync().autosave().writingMode(WritingMode.REPLACE).build();
     configData.load();
     spec.setConfig(configData);
+  }
+
+  public static void configLoaded(ModConfig.Loading event) {
+    reset(event.getConfig());
+  }
+
+  public static void configReloaded(ModConfig.ConfigReloading event) {
+    reset(event.getConfig());
+  }
+
+  public static void reset(ModConfig config) {
+    COMMON_CONFIG.setConfig(config.getConfigData());
+    RESULT_MODIFIER_MAP.clear();
+    SPEED_MODIFIER_MAP.clear();
+    DUST_MAP.clear();
+    GRINDSTONE_MAP.clear();
   }
 }

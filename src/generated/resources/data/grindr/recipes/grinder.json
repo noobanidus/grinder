@@ -13,7 +13,7 @@
       "item": "minecraft:furnace"
     },
     "X": {
-      "item": "minecraft:polished_andesite"
+      "tag": "forge:stone"
     }
   },
   "result": {
