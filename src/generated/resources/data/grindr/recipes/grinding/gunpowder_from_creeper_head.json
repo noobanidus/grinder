@@ -1,10 +1,10 @@
 {
   "type": "grindr:grinder",
   "ingredient": {
-    "item": "minecraft:gunpowder"
+    "item": "minecraft:creeper_head"
   },
   "tagResult": false,
-  "result": "minecraft:creeper_head",
+  "result": "minecraft:gunpowder",
   "experience": 0.125,
   "cookingtime": 100,
   "count": 10

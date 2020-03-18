@@ -41,6 +41,7 @@ public enum GrindstoneType implements IStringSerializable {
   URANIUM("uranium", GrindrTags.Items.URANIUM_INGOT, ModItems.URANIUM_DUST);
 
   public static Map<GrindstoneType, Tag<Item>> INGOT_TO_ORE = new HashMap<>();
+
   static {
     INGOT_TO_ORE.put(ALUMINUM, GrindrTags.Items.ALUMINUM_ORE);
     INGOT_TO_ORE.put(COPPER, GrindrTags.Items.COPPER_ORE);
@@ -59,8 +60,6 @@ public enum GrindstoneType implements IStringSerializable {
   private String name;
   private Tag<Item> itemType = null;
   private IItemProvider item = Items.AIR;
-  private double resultModifier = -100;
-  private double speedModifier = -100;
 
   private IItemProvider recycleItem = null;
   private RegistryEntry<? extends Item> recycleItemEntry = null;
@@ -84,7 +83,7 @@ public enum GrindstoneType implements IStringSerializable {
     this.item = item;
   }
 
-  public boolean isEnabled () {
+  public boolean isEnabled() {
     if (this.enabled == -1) {
       isEnabled = !ConfigManager.isGrindstoneHidden(name);
     }
@@ -114,33 +113,29 @@ public enum GrindstoneType implements IStringSerializable {
   }
 
   public double getResultModifier() {
-    if (resultModifier == -100) {
-      if (this == EMPTY) {
-        resultModifier = 0;
-      } else {
-        if (ConfigManager.RESULT_MODIFIER == null || ConfigManager.RESULT_MODIFIER.get(this.name) == null) {
-          Grindr.LOG.error("No configuration information found for Grindstone type: " + this.name);
-          return 1;
-        }
-        resultModifier = ConfigManager.RESULT_MODIFIER.get(this.name).get();
-      }
+    if (this == EMPTY) {
+      return 0;
     }
-    return resultModifier;
+
+    double result = ConfigManager.resultModifier(this);
+    if (result == -100) {
+      Grindr.LOG.error("No configuration information found for Grindstone type: " + this.name);
+      return 1;
+    }
+    return result;
   }
 
   public double getSpeedModifier() {
-    if (speedModifier == -100) {
-      if (this == EMPTY) {
-        speedModifier = 0;
-      } else {
-        if (ConfigManager.SPEED_MODIFIER == null || ConfigManager.SPEED_MODIFIER.get(this.name) == null) {
-          Grindr.LOG.error("No configuration information found for Grindstone type: " + this.name);
-          return 1;
-        }
-        speedModifier = ConfigManager.SPEED_MODIFIER.get(this.name).get();
-      }
+    if (this == EMPTY) {
+      return 0;
     }
-    return speedModifier;
+
+    double result = ConfigManager.speedModifier(this);
+    if (result == -100) {
+      Grindr.LOG.error("No configuration information found for Grindstone type: " + this.name);
+      return 1;
+    }
+    return result;
   }
 
   @Override
