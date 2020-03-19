@@ -1,0 +1,47 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/osmium",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "grindr:smelting/osmium_by_smelting"
+          ]
+        },
+        "criteria": {
+          "has_dust": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "item": "grindr:osmium_dust"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "grindr:smelting/osmium_by_smelting"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_dust",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}
