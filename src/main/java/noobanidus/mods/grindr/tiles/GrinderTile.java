@@ -25,6 +25,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -67,6 +68,8 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
           return GrinderTile.this.cookTime;
         case 3:
           return GrinderTile.this.cookTimeTotal;
+        case 4:
+          return GrinderTile.this.getGrindstone().ordinal();
         default:
           return 0;
       }
@@ -86,13 +89,15 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
           break;
         case 3:
           GrinderTile.this.cookTimeTotal = value;
+          break;
+        case 4:
+          break;
       }
-
     }
 
     @Override
     public int size() {
-      return 4;
+      return 5;
     }
   };
   private final Map<ResourceLocation, Integer> recipeMap = Maps.newHashMap();
@@ -441,6 +446,8 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
       handler.invalidate();
     }
   }
+
+
 
   // ------------------
 

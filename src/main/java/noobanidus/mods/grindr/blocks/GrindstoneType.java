@@ -7,6 +7,7 @@ import net.minecraft.tags.Tag;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.common.Tags;
+import noobanidus.libs.noobutil.util.EnumUtil;
 import noobanidus.mods.grindr.Grindr;
 import noobanidus.mods.grindr.GrindrTags;
 import noobanidus.mods.grindr.config.ConfigManager;
@@ -140,5 +141,14 @@ public enum GrindstoneType implements IStringSerializable {
   @Override
   public String getName() {
     return name;
+  }
+
+  public static GrindstoneType fromOrdinal (int ordinal) {
+    GrindstoneType result = EnumUtil.fromOrdinal(GrindstoneType.class, ordinal);
+    if (result == null) {
+      return EMPTY;
+    }
+
+    return result;
   }
 }
