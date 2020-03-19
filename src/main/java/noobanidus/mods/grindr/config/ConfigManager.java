@@ -130,6 +130,11 @@ public class ConfigManager {
     SPEED_MODIFIER.put("neptunium", COMMON_BUILDER.defineInRange("neptunium_speed_modifier", 0.8, 0, 10));
     COMMON_BUILDER.pop();
 
+    COMMON_BUILDER.push("osmium");
+    RESULT_MODIFIER.put("osmium", COMMON_BUILDER.defineInRange("osmium_result_modifier", 1.85, 0, 10));
+    SPEED_MODIFIER.put("osmium", COMMON_BUILDER.defineInRange("osmium_speed_modifier", 0.95, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.pop();
 
     COMMON_CONFIG = COMMON_BUILDER.build();
