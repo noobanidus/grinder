@@ -4,6 +4,7 @@ import com.tterrag.registrate.util.RegistryEntry;
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.InventoryHelper;
@@ -20,6 +21,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.text.*;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -30,6 +32,7 @@ import noobanidus.mods.grindr.items.GrindstoneItem;
 import noobanidus.mods.grindr.tiles.GrinderTile;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class GrinderBlock extends AbstractFurnaceBlock {
   public static EnumProperty<GrindstoneType> GRINDSTONE = EnumProperty.create("grindstone", GrindstoneType.class);
@@ -131,5 +134,13 @@ public class GrinderBlock extends AbstractFurnaceBlock {
   @Override
   public TileEntity createNewTileEntity(IBlockReader worldIn) {
     return new GrinderTile();
+  }
+
+  @Override
+  public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    super.addInformation(stack, worldIn, tooltip, flagIn);
+
+    tooltip.add(new StringTextComponent(""));
+    tooltip.add(new TranslationTextComponent("grinder.tooltip.grinder.desc").setStyle(new Style().setColor(TextFormatting.GOLD).setBold(true)));
   }
 }

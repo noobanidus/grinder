@@ -8,6 +8,7 @@
   "grinder.hud.sneak": "Sneak-",
   "grinder.jei.grinder": "Grinding",
   "grinder.jei.grindstone": "Grindstone Installation",
+  "grinder.tooltip.grinder.desc": "Requires a grindstone to function.",
   "grinder.tooltip.grindstone.desc1": "Speed bonus: %s",
   "grinder.tooltip.grindstone.desc2": "Output bonus: %s",
   "item.grindr.aluminum_dust": "Aluminum Dust",
