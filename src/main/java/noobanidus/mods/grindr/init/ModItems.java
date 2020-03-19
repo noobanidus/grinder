@@ -89,8 +89,12 @@ public class ModItems {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.NEPTUNIUM_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.NEPTUNIUM_INGOT, p);
   }).tag(GrindrTags.Items.NEPTUNIUM_DUST).register();
+  public static final RegistryEntry<GroundItem> OSMIUM_DUST = REGISTRATE.item("osmium_dust", GroundItem::new).properties(ITEM_PROPERTIES).recipe((ctx, p) -> {
+    GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.OSMIUM_ORE).build(p);
+    TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.OSMIUM_INGOT, p);
+  }).tag(GrindrTags.Items.OSMIUM_DUST).register();
 
-  public static final List<RegistryEntry<GroundItem>> DUST_ITEMS = Arrays.asList(GOLD_DUST, IRON_DUST, SILVER_DUST, COPPER_DUST, TIN_DUST, NICKEL_DUST, LEAD_DUST, ALUMINUM_DUST, URANIUM_DUST, ZINC_DUST, PLATINUM_DUST, MERCURY_DUST, BISMUTH_DUST, NEPTUNIUM_DUST);
+  public static final List<RegistryEntry<GroundItem>> DUST_ITEMS = Arrays.asList(GOLD_DUST, IRON_DUST, SILVER_DUST, COPPER_DUST, TIN_DUST, NICKEL_DUST, LEAD_DUST, ALUMINUM_DUST, URANIUM_DUST, ZINC_DUST, PLATINUM_DUST, MERCURY_DUST, BISMUTH_DUST, NEPTUNIUM_DUST, OSMIUM_DUST);
 
   public static Map<GrindstoneType, RegistryEntry<GrindstoneItem>> GRINDSTONE_MAP = new HashMap<>();
 

@@ -330,6 +330,21 @@
       "model": "grindr:block/uranium_cold",
       "y": 90
     },
+    "facing=north,grindstone=osmium,lit=false": {
+      "model": "grindr:block/osmium_cold"
+    },
+    "facing=south,grindstone=osmium,lit=false": {
+      "model": "grindr:block/osmium_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=osmium,lit=false": {
+      "model": "grindr:block/osmium_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=osmium,lit=false": {
+      "model": "grindr:block/osmium_cold",
+      "y": 90
+    },
     "facing=north,grindstone=empty,lit=true": {
       "model": "grindr:block/empty_hot"
     },
@@ -658,6 +673,21 @@
     },
     "facing=east,grindstone=uranium,lit=true": {
       "model": "grindr:block/uranium_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=osmium,lit=true": {
+      "model": "grindr:block/osmium_hot"
+    },
+    "facing=south,grindstone=osmium,lit=true": {
+      "model": "grindr:block/osmium_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=osmium,lit=true": {
+      "model": "grindr:block/osmium_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=osmium,lit=true": {
+      "model": "grindr:block/osmium_hot",
       "y": 90
     }
   }
