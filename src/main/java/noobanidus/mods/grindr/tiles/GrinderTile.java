@@ -166,6 +166,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     world.setBlockState(pos, state.with(GrinderBlock.GRINDSTONE, type), 3);
     isValid = true;
     count = -1;
+    // TODO
   }
 
   private int getCount() {
