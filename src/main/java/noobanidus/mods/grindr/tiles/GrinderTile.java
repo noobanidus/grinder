@@ -143,6 +143,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     world.setBlockState(pos, state.with(GrinderBlock.GRINDSTONE, GrindstoneType.EMPTY), 3);
     isValid = false;
     count = -1;
+    curRecipe = null;
   }
 
   public void addGrindstone(PlayerEntity player, ItemStack grindstone) {
@@ -166,7 +167,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     world.setBlockState(pos, state.with(GrinderBlock.GRINDSTONE, type), 3);
     isValid = true;
     count = -1;
-    // TODO
+    curRecipe = null;
   }
 
   private int getCount() {
