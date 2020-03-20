@@ -168,6 +168,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     isValid = true;
     count = -1;
     curRecipe = null;
+    // TODO
   }
 
   private int getCount() {
