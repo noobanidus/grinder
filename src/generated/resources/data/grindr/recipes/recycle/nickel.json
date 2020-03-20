@@ -5,7 +5,7 @@
       "conditions": [
         {
           "value": {
-            "tag": "forge:ores/nickel",
+            "tag": "forge:ingots/nickel",
             "type": "forge:tag_empty"
           },
           "type": "forge:not"

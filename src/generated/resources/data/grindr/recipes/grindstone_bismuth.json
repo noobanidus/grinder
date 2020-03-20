@@ -5,7 +5,7 @@
       "conditions": [
         {
           "value": {
-            "tag": "forge:ores/bismuth",
+            "tag": "forge:ingots/bismuth",
             "type": "forge:tag_empty"
           },
           "type": "forge:not"

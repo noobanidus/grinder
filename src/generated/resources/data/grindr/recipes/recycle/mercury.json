@@ -5,7 +5,7 @@
       "conditions": [
         {
           "value": {
-            "tag": "forge:ores/mercury",
+            "tag": "forge:ingots/mercury",
             "type": "forge:tag_empty"
           },
           "type": "forge:not"

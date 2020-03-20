@@ -5,7 +5,7 @@
       "conditions": [
         {
           "value": {
-            "tag": "forge:ores/platinum",
+            "tag": "forge:ingots/platinum",
             "type": "forge:tag_empty"
           },
           "type": "forge:not"

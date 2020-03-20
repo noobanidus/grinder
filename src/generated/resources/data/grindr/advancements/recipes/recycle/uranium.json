@@ -4,7 +4,7 @@
       "conditions": [
         {
           "value": {
-            "tag": "forge:ores/uranium",
+            "tag": "forge:ingots/uranium",
             "type": "forge:tag_empty"
           },
           "type": "forge:not"
