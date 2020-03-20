@@ -127,12 +127,12 @@ public class ModItems {
               throw new IllegalArgumentException("Invalid Grindstone Type " + type.toString() + ": no Tag or associated Item");
             }
 
-            if (GrindstoneType.INGOT_TO_ORE.containsKey(type)) {
+            if (GrindstoneType.INGOT_TO_ORE.containsKey(type) && type.getTag() != null) {
               ConditionalRecipe.builder()
-                  .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
+                  .addCondition(new NotCondition(new TagEmptyCondition(type.getTag().getId())))
                   .addRecipe(result::build)
                   .setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/" + type.name().toLowerCase()), ConditionalAdvancement.builder()
-                      .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
+                      .addCondition(new NotCondition(new TagEmptyCondition(type.getTag().getId())))
                       .addAdvancement(Advancement.Builder.builder()))
                   .build(p, new ResourceLocation(Grindr.MODID, ctx.getEntry().getRegistryName().getPath()));
               if (type == GrindstoneType.MERCURY) {
@@ -144,18 +144,18 @@ public class ModItems {
                     .key('X', GrindrTags.Items.QUICKSILVER_ORE)
                     .addCriterion("has_quicksilver", p.hasItem(GrindrTags.Items.QUICKSILVER_INGOT));
                 ConditionalRecipe.builder()
-                    .addCondition(new NotCondition(new TagEmptyCondition(GrindrTags.Items.QUICKSILVER_ORE.getId())))
+                    .addCondition(new NotCondition(new TagEmptyCondition(GrindrTags.Items.QUICKSILVER_INGOT.getId())))
                     .addRecipe(quicksilver::build)
                     .setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/quicksilver"), ConditionalAdvancement.builder()
-                        .addCondition(new NotCondition(new TagEmptyCondition(GrindrTags.Items.QUICKSILVER_ORE.getId())))
+                        .addCondition(new NotCondition(new TagEmptyCondition(GrindrTags.Items.QUICKSILVER_INGOT.getId())))
                         .addAdvancement(Advancement.Builder.builder()))
                     .build(p, new ResourceLocation(Grindr.MODID, "grindstone_quicksilver"));
               }
               ConditionalRecipe.builder()
-                  .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
+                  .addCondition(new NotCondition(new TagEmptyCondition(type.getTag().getId())))
                   .addRecipe(GrinderRecipeBuilder.builder(type.getRecycleItem(), GRINDSTONE_MAP.get(type).get(), 6, true)::build)
                   .setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/recycle/" + type.name().toLowerCase()), ConditionalAdvancement.builder()
-                      .addCondition(new NotCondition(new TagEmptyCondition(GrindstoneType.INGOT_TO_ORE.get(type).getId())))
+                      .addCondition(new NotCondition(new TagEmptyCondition(type.getTag().getId())))
                       .addAdvancement(Advancement.Builder.builder()))
                   .build(p, new ResourceLocation(Grindr.MODID, "recycle/" + type.name().toLowerCase()));
             } else {
