@@ -30,6 +30,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
+import noobanidus.mods.grindr.Grindr;
 import noobanidus.mods.grindr.blocks.GrinderBlock;
 import noobanidus.mods.grindr.blocks.GrindstoneType;
 import noobanidus.mods.grindr.containers.GrinderContainer;
@@ -168,7 +169,6 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     isValid = true;
     count = -1;
     curRecipe = null;
-    // TODO
   }
 
   private int getCount() {
