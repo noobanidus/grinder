@@ -4,7 +4,7 @@
       "conditions": [
         {
           "value": {
-            "tag": "forge:ores/lead",
+            "tag": "forge:ingots/lead",
             "type": "forge:tag_empty"
           },
           "type": "forge:not"
