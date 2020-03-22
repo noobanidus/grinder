@@ -25,6 +25,8 @@ public class GrindrTags {
     public static Tag<Item> BISMUTH_ORE = compatTag("ores/bismuth");
     public static Tag<Item> NEPTUNIUM_ORE = compatTag("ores/neptunium");
     public static Tag<Item> OSMIUM_ORE = compatTag("ores/osmium");
+    public static Tag<Item> ARDITE_ORE = compatTag("ores/ardite");
+    public static Tag<Item> COBALT_ORE = compatTag("ores/cobalt");
 
     public static Tag<Item> GOLD_INGOT = compatTag("ingots/gold");
     public static Tag<Item> IRON_INGOT = compatTag("ingots/iron");
@@ -42,6 +44,8 @@ public class GrindrTags {
     public static Tag<Item> BISMUTH_INGOT = compatTag("ingots/bismuth");
     public static Tag<Item> NEPTUNIUM_INGOT = compatTag("ingots/neptunium");
     public static Tag<Item> OSMIUM_INGOT = compatTag("ingots/osmium");
+    public static Tag<Item> ARDITE_INGOT = compatTag("ingots/ardite");
+    public static Tag<Item> COBALT_INGOT = compatTag("ingots/cobalt");
 
     public static Tag<Item> GOLD_DUST = compatTag("dusts/gold");
     public static Tag<Item> IRON_DUST = compatTag("dusts/iron");
@@ -59,6 +63,8 @@ public class GrindrTags {
     public static Tag<Item> BISMUTH_DUST = compatTag("dusts/bismuth");
     public static Tag<Item> NEPTUNIUM_DUST = compatTag("dusts/neptunium");
     public static Tag<Item> OSMIUM_DUST = compatTag("dusts/osmium");
+    public static Tag<Item> COBALT_DUST = compatTag("dusts/cobalt");
+    public static Tag<Item> ARDITE_DUST = compatTag("dusts/ardite");
 
     static Tag<Item> tag(String modid, String name) {
       return tag(ItemTags.Wrapper::new, modid, name);

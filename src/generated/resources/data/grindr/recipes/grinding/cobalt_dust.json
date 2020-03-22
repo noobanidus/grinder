@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ores/cobalt",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:grinder",
+        "ingredient": {
+          "tag": "forge:ores/cobalt"
+        },
+        "tagResult": false,
+        "result": "grindr:cobalt_dust",
+        "experience": 0.125,
+        "cookingtime": 100
+      }
+    }
+  ]
+}
