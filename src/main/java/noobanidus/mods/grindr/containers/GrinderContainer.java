@@ -20,6 +20,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import noobanidus.mods.grindr.blocks.GrindstoneType;
 import noobanidus.mods.grindr.init.ModContainers;
 import noobanidus.mods.grindr.init.ModRecipes;
+import noobanidus.mods.grindr.tiles.GrinderTile;
 
 public class GrinderContainer extends Container {
   public GrinderContainer(int id, PlayerInventory playerInventoryIn) {
@@ -122,6 +123,8 @@ public class GrinderContainer extends Container {
 
       slot.onTake(playerIn, itemstack1);
     }
+
+    ((GrinderTile) furnaceInventory).resetRecipe();
 
     return itemstack;
   }
