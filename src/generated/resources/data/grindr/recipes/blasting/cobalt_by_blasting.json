@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/cobalt",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:blasting",
+        "ingredient": {
+          "item": "grindr:cobalt_dust"
+        },
+        "result": {
+          "tag": "forge:ingots/cobalt"
+        },
+        "experience": 0.125,
+        "cookingtime": 100
+      }
+    }
+  ]
+}

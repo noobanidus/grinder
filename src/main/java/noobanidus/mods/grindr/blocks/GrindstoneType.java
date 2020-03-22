@@ -40,7 +40,9 @@ public enum GrindstoneType implements IStringSerializable {
   BISMUTH("bismuth", GrindrTags.Items.BISMUTH_INGOT, ModItems.BISMUTH_DUST),
   NEPTUNIUM("neptunium", GrindrTags.Items.NEPTUNIUM_INGOT, ModItems.NEPTUNIUM_DUST),
   URANIUM("uranium", GrindrTags.Items.URANIUM_INGOT, ModItems.URANIUM_DUST),
-  OSMIUM("osmium", GrindrTags.Items.OSMIUM_INGOT, ModItems.OSMIUM_DUST);
+  OSMIUM("osmium", GrindrTags.Items.OSMIUM_INGOT, ModItems.OSMIUM_DUST),
+  ARDITE("ardite", GrindrTags.Items.ARDITE_INGOT, ModItems.ARDITE_DUST),
+  COBALT("cobalt", GrindrTags.Items.COBALT_INGOT, ModItems.COBALT_DUST);
 
   public static Map<GrindstoneType, Tag<Item>> INGOT_TO_ORE = new HashMap<>();
 
@@ -57,7 +59,9 @@ public enum GrindstoneType implements IStringSerializable {
     INGOT_TO_ORE.put(BISMUTH, GrindrTags.Items.BISMUTH_ORE);
     INGOT_TO_ORE.put(NEPTUNIUM, GrindrTags.Items.NEPTUNIUM_ORE);
     INGOT_TO_ORE.put(TIN, GrindrTags.Items.TIN_ORE);
-    INGOT_TO_ORE.put(OSMIUM, GrindrTags.Items.OSMIUM_INGOT);
+    INGOT_TO_ORE.put(OSMIUM, GrindrTags.Items.OSMIUM_ORE);
+    INGOT_TO_ORE.put(COBALT, GrindrTags.Items.COBALT_ORE);
+    INGOT_TO_ORE.put(ARDITE, GrindrTags.Items.ARDITE_ORE);
   }
 
   private String name;
@@ -66,8 +70,6 @@ public enum GrindstoneType implements IStringSerializable {
 
   private IItemProvider recycleItem = null;
   private RegistryEntry<? extends Item> recycleItemEntry = null;
-  private int enabled = -1;
-  private boolean isEnabled = false;
 
   GrindstoneType(String name, Tag<Item> itemType, RegistryEntry<? extends Item> recycle) {
     this.name = name;

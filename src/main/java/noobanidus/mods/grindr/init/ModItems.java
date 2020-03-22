@@ -15,16 +15,12 @@ import noobanidus.libs.noobutil.util.StringUtil;
 import noobanidus.mods.grindr.Grindr;
 import noobanidus.mods.grindr.GrindrTags;
 import noobanidus.mods.grindr.blocks.GrindstoneType;
-import noobanidus.mods.grindr.config.ConfigManager;
 import noobanidus.mods.grindr.items.GrindstoneItem;
 import noobanidus.mods.grindr.items.GroundItem;
 import noobanidus.mods.grindr.recipes.GrinderRecipeBuilder;
 import noobanidus.mods.grindr.recipes.TagCookingRecipeBuilder;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static noobanidus.mods.grindr.Grindr.REGISTRATE;
 
@@ -93,8 +89,16 @@ public class ModItems {
     GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.OSMIUM_ORE).build(p);
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.OSMIUM_INGOT, p);
   }).tag(GrindrTags.Items.OSMIUM_DUST).register();
+  public static final RegistryEntry<GroundItem> COBALT_DUST = REGISTRATE.item("cobalt_dust", GroundItem::new).properties(ITEM_PROPERTIES).recipe((ctx, p) -> {
+    GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.COBALT_ORE).build(p);
+    TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.COBALT_INGOT, p);
+  }).tag(GrindrTags.Items.COBALT_DUST).register();
+  public static final RegistryEntry<GroundItem> ARDITE_DUST = REGISTRATE.item("ardite_dust", GroundItem::new).properties(ITEM_PROPERTIES).recipe((ctx, p) -> {
+    GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.ARDITE_ORE).build(p);
+    TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.ARDITE_INGOT, p);
+  }).tag(GrindrTags.Items.ARDITE_DUST).register();
 
-  public static final List<RegistryEntry<GroundItem>> DUST_ITEMS = Arrays.asList(GOLD_DUST, IRON_DUST, SILVER_DUST, COPPER_DUST, TIN_DUST, NICKEL_DUST, LEAD_DUST, ALUMINUM_DUST, URANIUM_DUST, ZINC_DUST, PLATINUM_DUST, MERCURY_DUST, BISMUTH_DUST, NEPTUNIUM_DUST, OSMIUM_DUST);
+  public static final List<RegistryEntry<GroundItem>> DUST_ITEMS = Arrays.asList(GOLD_DUST, IRON_DUST, SILVER_DUST, COPPER_DUST, TIN_DUST, NICKEL_DUST, LEAD_DUST, ALUMINUM_DUST, URANIUM_DUST, ZINC_DUST, PLATINUM_DUST, MERCURY_DUST, BISMUTH_DUST, NEPTUNIUM_DUST, OSMIUM_DUST, ARDITE_DUST, COBALT_DUST);
 
   public static Map<GrindstoneType, RegistryEntry<GrindstoneItem>> GRINDSTONE_MAP = new HashMap<>();
 
@@ -134,7 +138,7 @@ public class ModItems {
                   .setAdvancement(new ResourceLocation(Grindr.MODID, "recipes/" + type.name().toLowerCase()), ConditionalAdvancement.builder()
                       .addCondition(new NotCondition(new TagEmptyCondition(type.getTag().getId())))
                       .addAdvancement(Advancement.Builder.builder()))
-                  .build(p, new ResourceLocation(Grindr.MODID, ctx.getEntry().getRegistryName().getPath()));
+                  .build(p, new ResourceLocation(Grindr.MODID, Objects.requireNonNull(ctx.getEntry().getRegistryName()).getPath()));
               if (type == GrindstoneType.MERCURY) {
                 ShapedRecipeBuilder quicksilver = ShapedRecipeBuilder.shapedRecipe(ctx.getEntry(), 1)
                     .patternLine(" I ")

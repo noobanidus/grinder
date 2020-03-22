@@ -135,6 +135,16 @@ public class ConfigManager {
     SPEED_MODIFIER.put("osmium", COMMON_BUILDER.defineInRange("osmium_speed_modifier", 0.95, 0, 10));
     COMMON_BUILDER.pop();
 
+    COMMON_BUILDER.push("cobalt");
+    RESULT_MODIFIER.put("cobalt", COMMON_BUILDER.defineInRange("cobalt_result_modifier", 2.75, 0, 10));
+    SPEED_MODIFIER.put("cobalt", COMMON_BUILDER.defineInRange("cobalt_speed_modifier", 0.4, 0, 10));
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("ardite");
+    RESULT_MODIFIER.put("ardite", COMMON_BUILDER.defineInRange("ardite_result_modifier", 3.2, 0, 10));
+    SPEED_MODIFIER.put("ardite", COMMON_BUILDER.defineInRange("ardite_speed_modifier", 1.2, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.pop();
 
     COMMON_CONFIG = COMMON_BUILDER.build();
