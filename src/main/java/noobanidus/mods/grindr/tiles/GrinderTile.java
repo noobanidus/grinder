@@ -197,6 +197,11 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     return world == null ? GrindstoneType.EMPTY : world.getBlockState(pos).get(GrinderBlock.GRINDSTONE);
   }
 
+  public void resetRecipe () {
+    this.isValid = false;
+    this.curRecipe = null;
+  }
+
   @Override
   public void read(CompoundNBT compound) {
     this.isValid = compound.getBoolean("isValid");
