@@ -22,7 +22,7 @@ public class ModLang {
       ctx.add("grinder.hud.install", "to install");
       ctx.add("itemGroup.grindr", "Grindr");
       ctx.add("grinder.tooltip.speed_desc", "Positive values in red mean increased processing time. Negative values in green denote decreased processing time.");
-      ctx.add("grinder.tooltip.result_desc", "Values in red indicate percentage chance of additional output.");
+      ctx.add("grinder.tooltip.result_desc", "Result values in red or green indicate percentage chance of additional output (or reduction of output).");
       ctx.add("grinder.tooltip.shift_for_more", "[Hold Shift for more]");
     });
   }
