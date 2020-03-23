@@ -124,7 +124,9 @@ public class GrinderContainer extends Container {
       slot.onTake(playerIn, itemstack1);
     }
 
-    ((GrinderTile) furnaceInventory).resetRecipe();
+    if (furnaceInventory instanceof GrinderTile) {
+      ((GrinderTile) furnaceInventory).resetRecipe();
+    }
 
     return itemstack;
   }
