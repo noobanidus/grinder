@@ -124,12 +124,17 @@ dependencies {
     def noobutil = "noobanidus.libs:noobutil:${minecraft_version}-${noobutil_version}"
     implementation fg.deobf(noobutil)
     shade noobutil
+
+    def shoulders = "noobanidus.mods.shoulders:shoulders:${minecraft_version}-${shoulders_version}:embed"
+    implementation fg.deobf(shoulders)
+    shade shoulders
 }
 
 shadowJar {
     configurations = [project.configurations.shade]
     relocate 'com.tterrag.registrate', 'noobanidus.mods.repack_grindr.registrate'
     relocate 'noobanidus.libs.noobutil', 'noobanids.libs.repack_grindr.noobutil'
+    relocate 'noobanidus.mods.shoulders', 'noobanidus.mods.repack_grindr.shoulders'
     classifier ''
 }
 
