@@ -168,6 +168,11 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     isValid = true;
     count = -1;
     curRecipe = null;
+    if (!getStackInSlot(0).isEmpty()) {
+      this.cookTimeTotal = this.getCookTime();
+      this.cookTime = 0;
+    }
+    this.markDirty();
   }
 
   private int getCount() {
@@ -259,7 +264,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
       --this.burnTime;
     }
 
-    if (world != null && !this.world.isRemote) {
+    if (world != null && !this.world.isRemote && isValid) {
       ItemStack fuel = this.items.get(FUEL);
       if (this.isBurning() || !fuel.isEmpty() && !this.items.get(INPUT).isEmpty()) {
         GrinderRecipe irecipe = getRecipe();
@@ -509,8 +514,12 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     ItemStack input = this.getStackInSlot(INPUT);
     if (input.isEmpty() || input == failedMatch) return null;
     if (world == null) return null;
-    if (curRecipe != null && curRecipe.matches(this, world)) return curRecipe;
-    else {
+    if (curRecipe != null && !curRecipe.matches(this, world)) {
+      curRecipe = null;
+    }
+    if (curRecipe != null && curRecipe.matches(this, world)) {
+      return curRecipe;
+    } else {
       GrinderRecipe rec = world.getRecipeManager().getRecipe(ModRecipes.GRINDER_TYPE, this, this.world).orElse(null);
       if (rec == null) failedMatch = input;
       else failedMatch = ItemStack.EMPTY;
