@@ -25,7 +25,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -173,19 +172,20 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
 
   private int getCount() {
     if (this.count == -1) {
-      if (getRecipe().hasStaticOutput()) {
-        this.count = getRecipe().getRecipeOutput().getCount();
-      } else {
-        GrindstoneType type = getGrindstone();
-        if (type == GrindstoneType.EMPTY) {
-          this.count = -1;
-        }
+      GrindstoneType type = getGrindstone();
+      if (type == GrindstoneType.EMPTY) {
+        return -1;
+      }
 
+      int itemCount = getRecipe().getRecipeOutput().getCount();
+      if (getRecipe().hasStaticOutput()) {
+        this.count = itemCount;
+      } else {
         double modifier = type.getResultModifier();
         this.count = 0;
         for (; modifier > 0; modifier--) {
           if (random.nextFloat() < modifier) {
-            this.count++;
+            this.count += itemCount;
           }
         }
       }
@@ -198,7 +198,7 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
     return world == null ? GrindstoneType.EMPTY : world.getBlockState(pos).get(GrinderBlock.GRINDSTONE);
   }
 
-  public void resetRecipe () {
+  public void resetRecipe() {
     this.isValid = false;
     this.curRecipe = null;
   }
@@ -454,7 +454,6 @@ public class GrinderTile extends LockableTileEntity implements ISidedInventory, 
       handler.invalidate();
     }
   }
-
 
 
   // ------------------
