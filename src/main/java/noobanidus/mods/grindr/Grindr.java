@@ -44,6 +44,7 @@ public class Grindr {
 
     DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
       modBus.addListener(ClientSetup::init);
+      modBus.addListener(ClientSetup::loadComplete);
     });
 
     MinecraftForge.EVENT_BUS.addListener(GrinderBlock::onInteractWith);
