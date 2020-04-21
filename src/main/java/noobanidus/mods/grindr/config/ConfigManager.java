@@ -2,17 +2,13 @@ package noobanidus.mods.grindr.config;
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
-import com.google.common.collect.Lists;
-import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2DoubleOpenHashMap;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.config.ModConfig;
 import noobanidus.mods.grindr.blocks.GrindstoneType;
 
 import java.nio.file.Path;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ConfigManager {
@@ -145,12 +141,22 @@ public class ConfigManager {
     SPEED_MODIFIER.put("ardite", COMMON_BUILDER.defineInRange("ardite_speed_modifier", 1.2, 0, 10));
     COMMON_BUILDER.pop();
 
+    COMMON_BUILDER.push("zitrite");
+    RESULT_MODIFIER.put("zitrite", COMMON_BUILDER.defineInRange("zitrite_result_modifier", 1.5, 0, 10));
+    SPEED_MODIFIER.put("zitrite", COMMON_BUILDER.defineInRange("zitrite_speed_modifier", 1.5, 0, 10));
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("rainbow");
+    RESULT_MODIFIER.put("rainbow", COMMON_BUILDER.defineInRange("rainbow_result_modifier", 1.5, 0, 10));
+    SPEED_MODIFIER.put("rainbow", COMMON_BUILDER.defineInRange("rainbow_speed_modifier", 1.5, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.pop();
 
     COMMON_CONFIG = COMMON_BUILDER.build();
   }
 
-  public static double resultModifier (GrindstoneType type) {
+  public static double resultModifier(GrindstoneType type) {
     return RESULT_MODIFIER_MAP.computeDoubleIfAbsent(type.toString(), (key) -> {
       ForgeConfigSpec.ConfigValue<Double> val = RESULT_MODIFIER.get(key);
       if (val == null) {
@@ -160,7 +166,7 @@ public class ConfigManager {
     });
   }
 
-  public static double speedModifier (GrindstoneType type) {
+  public static double speedModifier(GrindstoneType type) {
     return SPEED_MODIFIER_MAP.computeDoubleIfAbsent(type.toString(), (key) -> {
       ForgeConfigSpec.ConfigValue<Double> val = SPEED_MODIFIER.get(key);
       if (val == null) {
@@ -169,7 +175,6 @@ public class ConfigManager {
       return val.get();
     });
   }
-
 
   public static void loadConfig(ForgeConfigSpec spec, Path path) {
     CommentedFileConfig configData = CommentedFileConfig.builder(path).sync().autosave().writingMode(WritingMode.REPLACE).build();
