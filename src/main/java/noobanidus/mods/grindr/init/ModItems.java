@@ -98,7 +98,17 @@ public class ModItems {
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.ARDITE_INGOT, p);
   }).tag(GrindrTags.Items.ARDITE_DUST).register();
 
-  public static final List<RegistryEntry<GroundItem>> DUST_ITEMS = Arrays.asList(GOLD_DUST, IRON_DUST, SILVER_DUST, COPPER_DUST, TIN_DUST, NICKEL_DUST, LEAD_DUST, ALUMINUM_DUST, URANIUM_DUST, ZINC_DUST, PLATINUM_DUST, MERCURY_DUST, BISMUTH_DUST, NEPTUNIUM_DUST, OSMIUM_DUST, ARDITE_DUST, COBALT_DUST);
+  public static final RegistryEntry<GroundItem> ZITRITE_DUST = REGISTRATE.item("zitrite_dust", GroundItem::new).properties(ITEM_PROPERTIES).recipe((ctx, p) -> {
+    GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.ZITRITE_ORE).build(p);
+    TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.ZITRITE_INGOT, p);
+  }).tag(GrindrTags.Items.ZITRITE_DUST).register();
+
+  public static final RegistryEntry<GroundItem> RAINBOW_DUST = REGISTRATE.item("rainbow_dust", GroundItem::new).properties(ITEM_PROPERTIES).recipe((ctx, p) -> {
+    GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.RAINBOW_ORE).build(p);
+    TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.RAINBOW_INGOT, p);
+  }).tag(GrindrTags.Items.RAINBOW_DUST).register();
+
+  public static final List<RegistryEntry<GroundItem>> DUST_ITEMS = Arrays.asList(GOLD_DUST, IRON_DUST, SILVER_DUST, COPPER_DUST, TIN_DUST, NICKEL_DUST, LEAD_DUST, ALUMINUM_DUST, URANIUM_DUST, ZINC_DUST, PLATINUM_DUST, MERCURY_DUST, BISMUTH_DUST, NEPTUNIUM_DUST, OSMIUM_DUST, ARDITE_DUST, COBALT_DUST, ZITRITE_DUST, RAINBOW_DUST);
 
   public static Map<GrindstoneType, RegistryEntry<GrindstoneItem>> GRINDSTONE_MAP = new HashMap<>();
 
