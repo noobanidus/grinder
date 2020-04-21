@@ -42,7 +42,9 @@ public enum GrindstoneType implements IStringSerializable {
   URANIUM("uranium", GrindrTags.Items.URANIUM_INGOT, ModItems.URANIUM_DUST),
   OSMIUM("osmium", GrindrTags.Items.OSMIUM_INGOT, ModItems.OSMIUM_DUST),
   ARDITE("ardite", GrindrTags.Items.ARDITE_INGOT, ModItems.ARDITE_DUST),
-  COBALT("cobalt", GrindrTags.Items.COBALT_INGOT, ModItems.COBALT_DUST);
+  COBALT("cobalt", GrindrTags.Items.COBALT_INGOT, ModItems.COBALT_DUST),
+  ZITRITE("zitrite", GrindrTags.Items.ZITRITE_INGOT, ModItems.ZITRITE_DUST),
+  RAINBOW("rainbow", GrindrTags.Items.RAINBOW_INGOT, ModItems.RAINBOW_DUST);
 
   public static Map<GrindstoneType, Tag<Item>> INGOT_TO_ORE = new HashMap<>();
 
@@ -62,6 +64,8 @@ public enum GrindstoneType implements IStringSerializable {
     INGOT_TO_ORE.put(OSMIUM, GrindrTags.Items.OSMIUM_ORE);
     INGOT_TO_ORE.put(COBALT, GrindrTags.Items.COBALT_ORE);
     INGOT_TO_ORE.put(ARDITE, GrindrTags.Items.ARDITE_ORE);
+    INGOT_TO_ORE.put(ZITRITE, GrindrTags.Items.ZITRITE_ORE);
+    INGOT_TO_ORE.put(RAINBOW, GrindrTags.Items.RAINBOW_ORE);
   }
 
   private String name;
