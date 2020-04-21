@@ -19,9 +19,9 @@ public class GrinderScreen extends ContainerScreen<GrinderContainer> {
   }
 
   @Override
-  public void render(int x, int y, float whoknows) {
+  public void render(int x, int y, float partialTicks) {
     this.renderBackground();
-    super.render(x, y, whoknows);
+    super.render(x, y, partialTicks);
     this.renderHoveredToolTip(x, y);
   }
 
