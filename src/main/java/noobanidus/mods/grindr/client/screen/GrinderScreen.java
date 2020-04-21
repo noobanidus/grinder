@@ -19,6 +19,13 @@ public class GrinderScreen extends ContainerScreen<GrinderContainer> {
   }
 
   @Override
+  public void render(int x, int y, float whoknows) {
+    this.renderBackground();
+    super.render(x, y, whoknows);
+    this.renderHoveredToolTip(x, y);
+  }
+
+  @Override
   protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
     String s = this.title.getFormattedText();
     this.font.drawString(s, (float) (this.xSize / 2 - this.font.getStringWidth(s) / 2), 6.0F, 4210752);
