@@ -375,6 +375,36 @@
       "model": "grindr:block/cobalt_cold",
       "y": 90
     },
+    "facing=north,grindstone=zitrite,lit=false": {
+      "model": "grindr:block/zitrite_cold"
+    },
+    "facing=south,grindstone=zitrite,lit=false": {
+      "model": "grindr:block/zitrite_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=zitrite,lit=false": {
+      "model": "grindr:block/zitrite_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=zitrite,lit=false": {
+      "model": "grindr:block/zitrite_cold",
+      "y": 90
+    },
+    "facing=north,grindstone=rainbow,lit=false": {
+      "model": "grindr:block/rainbow_cold"
+    },
+    "facing=south,grindstone=rainbow,lit=false": {
+      "model": "grindr:block/rainbow_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=rainbow,lit=false": {
+      "model": "grindr:block/rainbow_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=rainbow,lit=false": {
+      "model": "grindr:block/rainbow_cold",
+      "y": 90
+    },
     "facing=north,grindstone=empty,lit=true": {
       "model": "grindr:block/empty_hot"
     },
@@ -748,6 +778,36 @@
     },
     "facing=east,grindstone=cobalt,lit=true": {
       "model": "grindr:block/cobalt_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=zitrite,lit=true": {
+      "model": "grindr:block/zitrite_hot"
+    },
+    "facing=south,grindstone=zitrite,lit=true": {
+      "model": "grindr:block/zitrite_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=zitrite,lit=true": {
+      "model": "grindr:block/zitrite_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=zitrite,lit=true": {
+      "model": "grindr:block/zitrite_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=rainbow,lit=true": {
+      "model": "grindr:block/rainbow_hot"
+    },
+    "facing=south,grindstone=rainbow,lit=true": {
+      "model": "grindr:block/rainbow_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=rainbow,lit=true": {
+      "model": "grindr:block/rainbow_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=rainbow,lit=true": {
+      "model": "grindr:block/rainbow_hot",
       "y": 90
     }
   }

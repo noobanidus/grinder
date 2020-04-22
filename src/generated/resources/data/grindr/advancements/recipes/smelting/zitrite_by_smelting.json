@@ -1,0 +1,47 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/zitrite",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "grindr:smelting/zitrite_by_smelting"
+          ]
+        },
+        "criteria": {
+          "has_dust": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "item": "grindr:zitrite_dust"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "grindr:smelting/zitrite_by_smelting"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_dust",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}
