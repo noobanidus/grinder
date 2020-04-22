@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ores/zitrite",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:grinder",
+        "ingredient": {
+          "tag": "forge:ores/zitrite"
+        },
+        "tagResult": false,
+        "result": "grindr:zitrite_dust",
+        "experience": 0.125,
+        "cookingtime": 100
+      }
+    }
+  ]
+}
