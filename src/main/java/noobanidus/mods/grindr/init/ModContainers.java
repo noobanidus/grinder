@@ -1,6 +1,6 @@
 package noobanidus.mods.grindr.init;
 
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.inventory.container.ContainerType;
 import noobanidus.mods.grindr.containers.GrinderContainer;
 

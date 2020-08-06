@@ -405,6 +405,51 @@
       "model": "grindr:block/rainbow_cold",
       "y": 90
     },
+    "facing=north,grindstone=starmetal,lit=false": {
+      "model": "grindr:block/starmetal_cold"
+    },
+    "facing=south,grindstone=starmetal,lit=false": {
+      "model": "grindr:block/starmetal_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=starmetal,lit=false": {
+      "model": "grindr:block/starmetal_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=starmetal,lit=false": {
+      "model": "grindr:block/starmetal_cold",
+      "y": 90
+    },
+    "facing=north,grindstone=tungsten,lit=false": {
+      "model": "grindr:block/tungsten_cold"
+    },
+    "facing=south,grindstone=tungsten,lit=false": {
+      "model": "grindr:block/tungsten_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=tungsten,lit=false": {
+      "model": "grindr:block/tungsten_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=tungsten,lit=false": {
+      "model": "grindr:block/tungsten_cold",
+      "y": 90
+    },
+    "facing=north,grindstone=iesnium,lit=false": {
+      "model": "grindr:block/iesnium_cold"
+    },
+    "facing=south,grindstone=iesnium,lit=false": {
+      "model": "grindr:block/iesnium_cold",
+      "y": 180
+    },
+    "facing=west,grindstone=iesnium,lit=false": {
+      "model": "grindr:block/iesnium_cold",
+      "y": 270
+    },
+    "facing=east,grindstone=iesnium,lit=false": {
+      "model": "grindr:block/iesnium_cold",
+      "y": 90
+    },
     "facing=north,grindstone=empty,lit=true": {
       "model": "grindr:block/empty_hot"
     },
@@ -808,6 +853,51 @@
     },
     "facing=east,grindstone=rainbow,lit=true": {
       "model": "grindr:block/rainbow_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=starmetal,lit=true": {
+      "model": "grindr:block/starmetal_hot"
+    },
+    "facing=south,grindstone=starmetal,lit=true": {
+      "model": "grindr:block/starmetal_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=starmetal,lit=true": {
+      "model": "grindr:block/starmetal_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=starmetal,lit=true": {
+      "model": "grindr:block/starmetal_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=tungsten,lit=true": {
+      "model": "grindr:block/tungsten_hot"
+    },
+    "facing=south,grindstone=tungsten,lit=true": {
+      "model": "grindr:block/tungsten_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=tungsten,lit=true": {
+      "model": "grindr:block/tungsten_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=tungsten,lit=true": {
+      "model": "grindr:block/tungsten_hot",
+      "y": 90
+    },
+    "facing=north,grindstone=iesnium,lit=true": {
+      "model": "grindr:block/iesnium_hot"
+    },
+    "facing=south,grindstone=iesnium,lit=true": {
+      "model": "grindr:block/iesnium_hot",
+      "y": 180
+    },
+    "facing=west,grindstone=iesnium,lit=true": {
+      "model": "grindr:block/iesnium_hot",
+      "y": 270
+    },
+    "facing=east,grindstone=iesnium,lit=true": {
+      "model": "grindr:block/iesnium_hot",
       "y": 90
     }
   }

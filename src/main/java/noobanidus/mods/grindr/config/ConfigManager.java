@@ -151,6 +151,22 @@ public class ConfigManager {
     SPEED_MODIFIER.put("rainbow", COMMON_BUILDER.defineInRange("rainbow_speed_modifier", 1.5, 0, 10));
     COMMON_BUILDER.pop();
 
+
+    COMMON_BUILDER.push("tungsten");
+    RESULT_MODIFIER.put("tungsten", COMMON_BUILDER.defineInRange("tungsten_result_modifier", 1.9, 0, 10));
+    SPEED_MODIFIER.put("tungsten", COMMON_BUILDER.defineInRange("tungsten_speed_modifier", 1.9, 0, 10));
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("starmetal");
+    RESULT_MODIFIER.put("starmetal", COMMON_BUILDER.defineInRange("starmetal_result_modifier", 2.75, 0, 10));
+    SPEED_MODIFIER.put("starmetal", COMMON_BUILDER.defineInRange("starmetal_speed_modifier", 2.75, 0, 10));
+    COMMON_BUILDER.pop();
+
+    COMMON_BUILDER.push("iesnium");
+    RESULT_MODIFIER.put("iesnium", COMMON_BUILDER.defineInRange("rainbow_result_modifier", 1.4, 0, 10));
+    SPEED_MODIFIER.put("iesnium", COMMON_BUILDER.defineInRange("rainbow_speed_modifier", 1.4, 0, 10));
+    COMMON_BUILDER.pop();
+
     COMMON_BUILDER.pop();
 
     COMMON_CONFIG = COMMON_BUILDER.build();

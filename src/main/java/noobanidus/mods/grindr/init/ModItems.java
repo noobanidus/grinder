@@ -1,6 +1,6 @@
 package noobanidus.mods.grindr.init;
 
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.data.ShapedRecipeBuilder;
@@ -108,7 +108,20 @@ public class ModItems {
     TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.RAINBOW_INGOT, p);
   }).tag(GrindrTags.Items.RAINBOW_DUST).register();
 
-  public static final List<RegistryEntry<GroundItem>> DUST_ITEMS = Arrays.asList(GOLD_DUST, IRON_DUST, SILVER_DUST, COPPER_DUST, TIN_DUST, NICKEL_DUST, LEAD_DUST, ALUMINUM_DUST, URANIUM_DUST, ZINC_DUST, PLATINUM_DUST, MERCURY_DUST, BISMUTH_DUST, NEPTUNIUM_DUST, OSMIUM_DUST, ARDITE_DUST, COBALT_DUST, ZITRITE_DUST, RAINBOW_DUST);
+  public static final RegistryEntry<GroundItem> IESNIUM_DUST = REGISTRATE.item("iesnium_dust", GroundItem::new).properties(ITEM_PROPERTIES).recipe((ctx, p) -> {
+    GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.IESNIUM_ORE).build(p);
+    TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.IESNIUM_INGOT, p);
+  }).tag(GrindrTags.Items.IESNIUM_DUST).register();
+
+  public static final RegistryEntry<GroundItem> STARMETAL_DUST = REGISTRATE.item("starmetal_dust", GroundItem::new).properties(ITEM_PROPERTIES).recipe((ctx, p) -> {
+    GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.STARMETAL_ORE).build(p);
+    TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.STARMETAL_INGOT, p);
+  }).tag(GrindrTags.Items.STARMETAL_DUST).register();
+
+  public static final RegistryEntry<GroundItem> TUNGSTEN_DUST = REGISTRATE.item("tungsten_dust", GroundItem::new).properties(ITEM_PROPERTIES).recipe((ctx, p) -> {
+    GrinderRecipeBuilder.builder(ctx.getEntry(), GrindrTags.Items.TUNGSTEN_ORE).build(p);
+    TagCookingRecipeBuilder.ingot(ctx.getEntry(), GrindrTags.Items.TUNGSTEN_INGOT, p);
+  }).tag(GrindrTags.Items.TUNGSTEN_DUST).register();
 
   public static Map<GrindstoneType, RegistryEntry<GrindstoneItem>> GRINDSTONE_MAP = new HashMap<>();
 

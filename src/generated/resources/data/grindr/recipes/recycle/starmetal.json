@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/starmetal",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "grindr:grinder",
+        "ingredient": {
+          "item": "grindr:grindstone_starmetal"
+        },
+        "tagResult": false,
+        "result": "grindr:starmetal_dust",
+        "experience": 0.125,
+        "cookingtime": 100,
+        "static": true,
+        "count": 6
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 package noobanidus.mods.grindr.blocks;
 
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tags.Tag;
@@ -44,7 +44,10 @@ public enum GrindstoneType implements IStringSerializable {
   ARDITE("ardite", GrindrTags.Items.ARDITE_INGOT, ModItems.ARDITE_DUST),
   COBALT("cobalt", GrindrTags.Items.COBALT_INGOT, ModItems.COBALT_DUST),
   ZITRITE("zitrite", GrindrTags.Items.ZITRITE_INGOT, ModItems.ZITRITE_DUST),
-  RAINBOW("rainbow", GrindrTags.Items.RAINBOW_INGOT, ModItems.RAINBOW_DUST);
+  RAINBOW("rainbow", GrindrTags.Items.RAINBOW_INGOT, ModItems.RAINBOW_DUST),
+  STARMETAL("starmetal", GrindrTags.Items.STARMETAL_INGOT, ModItems.STARMETAL_DUST),
+  TUNGSTEN("tungsten", GrindrTags.Items.TUNGSTEN_INGOT, ModItems.TUNGSTEN_DUST),
+  IESNIUM("iesnium", GrindrTags.Items.IESNIUM_INGOT, ModItems.IESNIUM_DUST);
 
   public static Map<GrindstoneType, Tag<Item>> INGOT_TO_ORE = new HashMap<>();
 
@@ -66,6 +69,9 @@ public enum GrindstoneType implements IStringSerializable {
     INGOT_TO_ORE.put(ARDITE, GrindrTags.Items.ARDITE_ORE);
     INGOT_TO_ORE.put(ZITRITE, GrindrTags.Items.ZITRITE_ORE);
     INGOT_TO_ORE.put(RAINBOW, GrindrTags.Items.RAINBOW_ORE);
+    INGOT_TO_ORE.put(IESNIUM, GrindrTags.Items.IESNIUM_ORE);
+    INGOT_TO_ORE.put(TUNGSTEN, GrindrTags.Items.TUNGSTEN_ORE);
+    INGOT_TO_ORE.put(STARMETAL, GrindrTags.Items.STARMETAL_ORE);
   }
 
   private String name;

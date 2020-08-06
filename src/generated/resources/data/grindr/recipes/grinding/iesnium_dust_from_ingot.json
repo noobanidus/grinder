@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/iesnium",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "forge:conditional",
+        "recipes": [
+          {
+            "conditions": [
+              {
+                "value": {
+                  "tag": "forge:ingots/iesnium",
+                  "type": "forge:tag_empty"
+                },
+                "type": "forge:not"
+              }
+            ],
+            "recipe": {
+              "type": "grindr:grinder",
+              "ingredient": {
+                "tag": "forge:ingots/iesnium"
+              },
+              "tagResult": false,
+              "result": "grindr:iesnium_dust",
+              "experience": 0.125,
+              "cookingtime": 100,
+              "static": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

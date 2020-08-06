@@ -1,7 +1,7 @@
 package noobanidus.mods.grindr.tiles;
 
 import com.google.common.collect.Maps;
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;

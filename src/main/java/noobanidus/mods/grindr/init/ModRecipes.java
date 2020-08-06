@@ -2,7 +2,7 @@ package noobanidus.mods.grindr.init;
 
 import com.google.common.collect.Sets;
 import com.tterrag.registrate.providers.ProviderType;
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipeType;

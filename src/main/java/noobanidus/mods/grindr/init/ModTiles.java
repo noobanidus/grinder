@@ -1,6 +1,6 @@
 package noobanidus.mods.grindr.init;
 
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.minecraft.tileentity.TileEntityType;
 import noobanidus.mods.grindr.tiles.GrinderTile;

@@ -1,6 +1,6 @@
 package noobanidus.mods.grindr.blocks;
 
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -77,7 +77,7 @@ public class GrinderBlock extends AbstractFurnaceBlock {
           event.setCancellationResult(ActionResultType.SUCCESS);
           event.setCanceled(true);
           if (!world.isRemote) {
-            ModBlocks.GRINDER.get().onUse(state, world, event.getPos(), event.getPlayer(), event.getHand(), null);
+            ModBlocks.GRINDER.get().onBlockActivated(state, world, event.getPos(), event.getPlayer(), event.getHand(), null);
           }
         }
       }

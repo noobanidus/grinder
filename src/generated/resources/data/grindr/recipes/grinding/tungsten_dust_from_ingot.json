@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/tungsten",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "forge:conditional",
+        "recipes": [
+          {
+            "conditions": [
+              {
+                "value": {
+                  "tag": "forge:ingots/tungsten",
+                  "type": "forge:tag_empty"
+                },
+                "type": "forge:not"
+              }
+            ],
+            "recipe": {
+              "type": "grindr:grinder",
+              "ingredient": {
+                "tag": "forge:ingots/tungsten"
+              },
+              "tagResult": false,
+              "result": "grindr:tungsten_dust",
+              "experience": 0.125,
+              "cookingtime": 100,
+              "static": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
