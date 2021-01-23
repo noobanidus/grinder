@@ -11,25 +11,33 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+        maven {
+            url='https://dist.creeper.host/Sponge/maven'
+        }
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 plugins {
     id 'com.github.johnrengelman.shadow' version '5.2.0'
 }
-
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'maven-publish'
+// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
 
 version = "${minecraft_version}-${mod_version}"
-group = "noobanidus.mods"
-archivesBaseName = "grindr"
+if (System.getenv('BUILD_NUMBER') != null) {
+    version = "${minecraft_version}-${mod_version}-" + System.getenv('BUILD_NUMBER')
+}
+group = 'noobanidus.mods' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'grinder'
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+
 
 minecraft {
     mappings channel: 'snapshot', version: "${mcp_mappings}"
@@ -38,112 +46,129 @@ minecraft {
 
     runs {
         client {
-            taskName 'runClient'
-
             workingDirectory project.file('run')
 
-            //property 'forge.logging.markers', 'CORE,REGISTRIES'
+            // Recommended logging data for a userdev environment
+
+            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
+            arg "-mixin.config=grinder.mixins.json"
+             properties 'mixin.env.disableRefMap': 'true'
 
             mods {
-                grindr {
+                grinder {
                     source sourceSets.main
                 }
             }
         }
 
         server {
-            taskName 'runServer'
-
             workingDirectory project.file('run')
 
-            //property 'forge.logging.markers', 'CORE,REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
+            // Recommended logging data for a userdev environment
 
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+            properties 'mixin.env.disableRefMap': 'true'
+            arg "-mixin.config=grinder.mixins.json"
             mods {
-                grindr {
+                grinder {
                     source sourceSets.main
                 }
             }
         }
 
         data {
-            taskName 'runData'
-
             workingDirectory project.file('run')
 
-            environment 'target', 'fmluserdevdata'
+            // Recommended logging data for a userdev environment
 
-            //property 'forge.logging.markers', 'CORE,REGISTRIES'
+            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
+            properties 'mixin.env.disableRefMap': 'true'
+            arg "-mixin.config=grinder.mixins.json"
+            args '--mod', 'grinder', '--all', '--output', file('src/generated/resources/'), '--existing', sourceSets.main.resources.srcDirs[0]
 
             mods {
-                grindr {
+                grinder {
                     source sourceSets.main
                 }
             }
-
-            args '--mod', 'grindr', '--all', '--output', '"' + rootProject.file('src/generated/resources/') + '"',
-                    '--existing', '"' + rootProject.file('src/main/resources') + '"'//, '--existing', '"' + rootProject.file('src/generated/resources') + '"'
-
         }
     }
+}
+
+repositories {
+    maven {
+        url 'https://maven.mcmoddev.com'
+    }
+    maven {
+        name = "Jared"
+        url = "https://maven.blamejared.com"
+    }
+    maven {
+        url "http://maven.tterrag.com"
+    }
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name = "JER"
+        url = "https://dl.bintray.com/way2muchnoise/dev"
+    }
+    maven {url = 'https://repo.spongepowered.org/maven/'}
+
+    maven {url = 'https://dist.creeper.host/Sponge/maven'}
+    jcenter()
+    mavenCentral()
 }
 
 configurations {
     shade
 }
 
-sourceSets.main.resources {
-    srcDir 'src/generated/resources'
-}
-
-repositories {
-    maven {
-        url "https://maven.blamejared.com"
-    }
-    maven {
-        url "http://maven.tterrag.com/"
-    }
-    maven { // JEI
-        url "http://dvs1.progwml6.com/files/maven"
-    }
-}
-
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    compile fg.deobf("com.blamejared.crafttweaker:CraftTweaker-${minecraft_version}:${crt_version}")
-
-    compile fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}")
-
-    def registrate = "com.tterrag.registrate:Registrate:MC${minecraft_version}-${registrate_version}"
+    def registrate = "com.tterrag.registrate:Registrate:${registrate_version}"
     implementation fg.deobf(registrate)
     shade registrate
 
     def noobutil = "noobanidus.libs:noobutil:${minecraft_version}-${noobutil_version}"
     implementation fg.deobf(noobutil)
     shade noobutil
+
+    compile fg.deobf("mezz.jei:jei-${jei_version}")
+    compile fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
+    compile 'org.spongepowered:mixin:0.8'
+    annotationProcessor 'org.spongepowered:mixin:0.8:processor'
+}
+
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
 }
 
 jar {
     manifest {
         attributes([
-            "Specification-Title": "Grindr",
-            "Specification-Vendor": "Noobanidus",
-            "Specification-Version": "1.1", // We are version 1 of ourselves
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"noobanidus",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Specification-Title"     : "Grinder",
+                "Specification-Vendor"    : "Noobanidus",
+                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : "${version}",
+                "Implementation-Vendor"   : "Noobanidus",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs": "grinder.mixins.json"
         ])
     }
 }
 
 shadowJar {
     configurations = [project.configurations.shade]
-    relocate 'com.tterrag.registrate', 'noobanidus.mods.repack_grindr.registrate'
-    relocate 'noobanidus.libs.noobutil', 'noobanids.libs.repack_grindr.noobutil'
+    relocate 'com.tterrag.registrate', 'noobanidus.mods.grinder.repack.registrate'
+    relocate 'noobanidus.libs.noobutil', 'noobanidus.libs.repack_grinder.noobutil'
     classifier ''
 }
 
@@ -155,4 +180,6 @@ reobf {
 
 build.dependsOn reobfShadowJar
 
-
+mixin {
+    add sourceSets.main, "grinder.refmap.json"
+}
