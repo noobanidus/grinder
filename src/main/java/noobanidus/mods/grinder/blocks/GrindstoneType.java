@@ -1,0 +1,167 @@
+package noobanidus.mods.grinder.blocks;
+
+import com.tterrag.registrate.util.entry.RegistryEntry;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.tags.ITag;
+import net.minecraft.tags.Tag;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.IStringSerializable;
+import net.minecraftforge.common.Tags;
+import noobanidus.libs.noobutil.util.EnumUtil;
+import noobanidus.mods.grinder.Grinder;
+import noobanidus.mods.grinder.GrindrTags;
+import noobanidus.mods.grinder.config.ConfigManager;
+import noobanidus.mods.grinder.init.ModItems;
+
+import javax.annotation.Nullable;
+import java.util.HashMap;
+import java.util.Map;
+
+public enum GrindstoneType implements IStringSerializable {
+  EMPTY("empty", Items.AIR),
+  STONE("stone", Items.STONE),
+  GRANITE("granite", Items.GRANITE),
+  DIORITE("diorite", Items.DIORITE),
+  ANDESITE("andesite", Items.ANDESITE),
+  IRON("iron", Tags.Items.INGOTS_IRON, ModItems.IRON_DUST),
+  GOLD("gold", Tags.Items.INGOTS_GOLD, ModItems.GOLD_DUST),
+  DIAMOND("diamond", Tags.Items.GEMS_DIAMOND, Items.DIAMOND),
+  EMERALD("emerald", Tags.Items.GEMS_EMERALD, Items.EMERALD),
+  OBSIDIAN("obsidian", Tags.Items.OBSIDIAN, Items.OBSIDIAN),
+  ALUMINUM("aluminum", GrindrTags.Items.ALUMINUM_INGOT, ModItems.ALUMINUM_DUST),
+  TIN("tin", GrindrTags.Items.TIN_INGOT, ModItems.TIN_DUST),
+  COPPER("copper", GrindrTags.Items.COPPER_INGOT, ModItems.COPPER_DUST),
+  NICKEL("nickel", GrindrTags.Items.NICKEL_INGOT, ModItems.NICKEL_DUST),
+  LEAD("lead", GrindrTags.Items.LEAD_INGOT, ModItems.LEAD_DUST),
+  SILVER("silver", GrindrTags.Items.SILVER_INGOT, ModItems.SILVER_DUST),
+  PLATINUM("platinum", GrindrTags.Items.PLATINUM_INGOT, ModItems.PLATINUM_DUST),
+  MERCURY("mercury", GrindrTags.Items.MERCURY_INGOT, ModItems.MERCURY_DUST),
+  ZINC("zinc", GrindrTags.Items.ZINC_INGOT, ModItems.ZINC_DUST),
+  BISMUTH("bismuth", GrindrTags.Items.BISMUTH_INGOT, ModItems.BISMUTH_DUST),
+  NEPTUNIUM("neptunium", GrindrTags.Items.NEPTUNIUM_INGOT, ModItems.NEPTUNIUM_DUST),
+  URANIUM("uranium", GrindrTags.Items.URANIUM_INGOT, ModItems.URANIUM_DUST),
+  OSMIUM("osmium", GrindrTags.Items.OSMIUM_INGOT, ModItems.OSMIUM_DUST),
+  ARDITE("ardite", GrindrTags.Items.ARDITE_INGOT, ModItems.ARDITE_DUST),
+  COBALT("cobalt", GrindrTags.Items.COBALT_INGOT, ModItems.COBALT_DUST),
+  ZITRITE("zitrite", GrindrTags.Items.ZITRITE_INGOT, ModItems.ZITRITE_DUST),
+  RAINBOW("rainbow", GrindrTags.Items.RAINBOW_INGOT, ModItems.RAINBOW_DUST),
+  STARMETAL("starmetal", GrindrTags.Items.STARMETAL_INGOT, ModItems.STARMETAL_DUST),
+  TUNGSTEN("tungsten", GrindrTags.Items.TUNGSTEN_INGOT, ModItems.TUNGSTEN_DUST),
+  IESNIUM("iesnium", GrindrTags.Items.IESNIUM_INGOT, ModItems.IESNIUM_DUST);
+
+  public static Map<GrindstoneType, ITag.INamedTag<Item>> INGOT_TO_ORE = new HashMap<>();
+
+  static {
+    INGOT_TO_ORE.put(ALUMINUM, GrindrTags.Items.ALUMINUM_ORE);
+    INGOT_TO_ORE.put(COPPER, GrindrTags.Items.COPPER_ORE);
+    INGOT_TO_ORE.put(NICKEL, GrindrTags.Items.NICKEL_ORE);
+    INGOT_TO_ORE.put(LEAD, GrindrTags.Items.LEAD_ORE);
+    INGOT_TO_ORE.put(SILVER, GrindrTags.Items.SILVER_ORE);
+    INGOT_TO_ORE.put(PLATINUM, GrindrTags.Items.PLATINUM_ORE);
+    INGOT_TO_ORE.put(MERCURY, GrindrTags.Items.MERCURY_ORE);
+    INGOT_TO_ORE.put(ZINC, GrindrTags.Items.ZINC_ORE);
+    INGOT_TO_ORE.put(URANIUM, GrindrTags.Items.URANIUM_ORE);
+    INGOT_TO_ORE.put(BISMUTH, GrindrTags.Items.BISMUTH_ORE);
+    INGOT_TO_ORE.put(NEPTUNIUM, GrindrTags.Items.NEPTUNIUM_ORE);
+    INGOT_TO_ORE.put(TIN, GrindrTags.Items.TIN_ORE);
+    INGOT_TO_ORE.put(OSMIUM, GrindrTags.Items.OSMIUM_ORE);
+    INGOT_TO_ORE.put(COBALT, GrindrTags.Items.COBALT_ORE);
+    INGOT_TO_ORE.put(ARDITE, GrindrTags.Items.ARDITE_ORE);
+    INGOT_TO_ORE.put(ZITRITE, GrindrTags.Items.ZITRITE_ORE);
+    INGOT_TO_ORE.put(RAINBOW, GrindrTags.Items.RAINBOW_ORE);
+    INGOT_TO_ORE.put(IESNIUM, GrindrTags.Items.IESNIUM_ORE);
+    INGOT_TO_ORE.put(TUNGSTEN, GrindrTags.Items.TUNGSTEN_ORE);
+    INGOT_TO_ORE.put(STARMETAL, GrindrTags.Items.STARMETAL_ORE);
+  }
+
+  private String name;
+  private ITag.INamedTag<Item> itemType = null;
+  private IItemProvider item = Items.AIR;
+
+  private IItemProvider recycleItem = null;
+  private RegistryEntry<? extends Item> recycleItemEntry = null;
+
+  GrindstoneType(String name, ITag.INamedTag<Item> itemType, RegistryEntry<? extends Item> recycle) {
+    this.name = name;
+    this.itemType = itemType;
+    this.recycleItemEntry = recycle;
+  }
+
+  GrindstoneType(String name, ITag.INamedTag<Item> itemType, IItemProvider recycle) {
+    this.name = name;
+    this.itemType = itemType;
+    this.recycleItem = recycle;
+  }
+
+  GrindstoneType(String name, IItemProvider item) {
+    this.name = name;
+    this.item = item;
+  }
+
+  @Nullable
+  public ITag.INamedTag<Item> getTag() {
+    return itemType;
+  }
+
+  @Nullable
+  public IItemProvider getItem() {
+    return item;
+  }
+
+  public IItemProvider getRecycleItem() {
+    if (itemType == null) {
+      return item;
+    }
+    if (recycleItem != null) {
+      return recycleItem;
+    } else {
+      return recycleItemEntry.get();
+    }
+  }
+
+  public double getResultModifier() {
+    if (this == EMPTY) {
+      return 0;
+    }
+
+    double result = ConfigManager.resultModifier(this);
+    if (result == -100) {
+      Grinder.LOG.error("No configuration information found for Grindstone type: " + this.name);
+      return 1;
+    }
+    return result;
+  }
+
+  public double getSpeedModifier() {
+    if (this == EMPTY) {
+      return 0;
+    }
+
+    double result = ConfigManager.speedModifier(this);
+    if (result == -100) {
+      Grinder.LOG.error("No configuration information found for Grindstone type: " + this.name);
+      return 1;
+    }
+    return result;
+  }
+
+  @Override
+  public String toString() {
+    return name;
+  }
+
+  @Override
+  public String getString() {
+    return name;
+  }
+
+  public static GrindstoneType fromOrdinal (int ordinal) {
+    GrindstoneType result = EnumUtil.fromOrdinal(GrindstoneType.class, ordinal);
+    if (result == null) {
+      return EMPTY;
+    }
+
+    return result;
+  }
+}
