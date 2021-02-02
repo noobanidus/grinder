@@ -8,7 +8,7 @@ import org.openzen.zencode.java.ZenCodeType;
 import javax.annotation.Nullable;
 
 @ZenRegister
-@ZenCodeType.Name("mods.grindr.Grinder")
+@ZenCodeType.Name("mods.grinder.Grinder")
 public class Grinder {
 
   @ZenCodeType.Method
@@ -17,10 +17,10 @@ public class Grinder {
   }
 
   @ZenRegister
-  @ZenCodeType.Name("mods.grindr.RecipeBuilder")
+  @ZenCodeType.Name("mods.grinder.RecipeBuilder")
   public static class RecipeBuilder {
     final private String name;
-    private String group = "grindr";
+    private String group = "grinder";
     private IIngredient ingredient = null;
     private IIngredient result = null;
     private float experience = 0.125f;

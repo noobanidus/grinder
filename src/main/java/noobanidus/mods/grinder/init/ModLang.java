@@ -18,7 +18,7 @@ public class ModLang {
       ctx.add("grinder.hud.requires_empty", "Requires empty hand");
       ctx.add("grinder.hud.remove", "to remove");
       ctx.add("grinder.hud.install", "to install");
-      ctx.add("itemGroup.grindr", "Grindr");
+      ctx.add("itemGroup.grinder", "Grinder");
       ctx.add("grinder.tooltip.speed_desc", "Positive values in red mean increased processing time. Negative values in green denote decreased processing time.");
       ctx.add("grinder.tooltip.result_desc", "Values in red indicate percentage chance of additional output.");
       ctx.add("grinder.tooltip.shift_for_more", "[Hold Shift for more]");

@@ -44,6 +44,6 @@ public class AddRecipe implements IRuntimeAction {
 
   @Override
   public String describe() {
-    return "Adding a Grindr recipe named " + this.name;
+    return "Adding a Grinder recipe named " + this.name;
   }
 }

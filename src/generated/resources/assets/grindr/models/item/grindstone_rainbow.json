@@ -1,6 +1,0 @@
-{
-  "parent": "grindr:item/grindstone_template",
-  "textures": {
-    "grindstone": "grindr:block/rainbow"
-  }
-}
